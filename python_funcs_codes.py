@@ -6,12 +6,13 @@ usful python functions
 ########################################################################
 # dirs / files --------------------------------------------------
 ########################################################################
+FnSave='test.txt'
 import io, json
 data = {'DataHome':DataHome,
         'Wav_path':Wav_path,
         'DataPath':Wav_path
         }
-with io.open(pproject_info, 'w', encoding='utf8') as outfile:
+with io.open(FnSave, 'w', encoding='utf8') as outfile:
     str_ = json.dumps(data,indent=4, sort_keys=True,separators=(',', ':'), ensure_ascii=False)
     outfile.write(str_)
 #uses:
