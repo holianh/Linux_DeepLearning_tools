@@ -6,6 +6,20 @@ usful python functions
 ########################################################################
 # dirs / files --------------------------------------------------
 ########################################################################
+import io, json
+data = {'DataHome':DataHome,
+        'Wav_path':Wav_path,
+        'DataPath':Wav_path
+        }
+with io.open(pproject_info, 'w', encoding='utf8') as outfile:
+    str_ = json.dumps(data,indent=4, sort_keys=True,separators=(',', ':'), ensure_ascii=False)
+    outfile.write(str_)
+#uses:
+#with open(pproject_info) as data_file:data_loaded = json.load(data_file)
+#print(data_loaded['DataPath'])
+########################################################################
+
+
 import os
 from random import shuffle
 Wav_path='/home/tact/AudioDBs/All_DataBase/'#
