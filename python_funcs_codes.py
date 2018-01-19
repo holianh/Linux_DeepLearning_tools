@@ -3,7 +3,15 @@ Nguyen Tuan Anh, 2018-01-19
 usful python functions
 --------------------------
 '''
+########################################################################
 # dirs / files --------------------------------------------------
+########################################################################
+import os
+from random import shuffle
+Wav_path='/home/tact/AudioDBs/All_DataBase/'#
+sNeedRemove='/home/tact/AudioDBs/All_DataBase' # loại bỏ đường dẫn dư thừa.
+# .....
+#--------------- --------------- --------------- ---------------
 def Files_2csv_inDir(path, wav_ext, lbl_ext):
     count = 0
     Fis=[]
@@ -30,5 +38,38 @@ def Files_2csv_inDir(path, wav_ext, lbl_ext):
     fn.close()
     ft.close()
     return count
+''' #--------------- --------------- --------------- ---------------
+/home/tact/ta/asr_ta_2018_01/info
+|===data_test__path.csv
+        /home/tact/AudioDBs/All_DataBase/tadb106/BAC009S0059W0246.wav
+        /home/tact/AudioDBs/All_DataBase/tadb128/BAC009S0663W0453.wav
+        /home/tact/AudioDBs/All_DataBase/tadb169/BAC009S0745W0291.wav
+|===data_train_path.csv
+'''
+########################################################################
+# Timing ------------ ------------------- ------------------- ---------
+########################################################################
 
+import timeit
+start = timeit.default_timer()  # Start counting time
+#--------------- --------------- --------------- ---------------
+def format_seconds_to_hhmmss(seconds):
+    hours = seconds // (60*60)
+    seconds %= (60*60)
+    minutes = seconds // 60
+    seconds %= 60
+    return "%02i:%02i:%02i" % (hours, minutes, seconds)
+#--------------- --------------- --------------- ---------------
+ # Stop counting time, make a time string to print out to screen
+stop = timeit.default_timer()
+total_time=stop-start # in seconds
+tRan=format_seconds_to_hhmmss(math.trunc(total_time))
+tWait=format_seconds_to_hhmmss(math.trunc(((Max_samples-k)*total_time)/k))
+
+########################################################################
+
+
+
+
+            
 
