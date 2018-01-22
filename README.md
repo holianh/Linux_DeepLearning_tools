@@ -4,7 +4,16 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
 # Linux system:
   - htop: to view in %CPU uses by threads, %RAM: kill thread, filter, search,...
   - ncdu: to view files/folders size over local or ssh
-  - find -name "\*ASR\*" : find all file/dir name include ASR
-  - find -typy d -name "\*ASR\*" : find all *dir* name include ASR
+  - find file/folder in Linux:
+    - find -name "\*ASR\*" : find all file/dir name include ASR
+    - find -typy d -name "\*ASR\*" : find all *dir* name include ASR
+    - find -type f -name "*libcudart*"   : find all files libcudart.so.* in current folder
+    - find -type f -name "*libcudnn.so*"   : find all files libcudnn.so.*
+
+# Check Envs for Deep Learning:
+  - nvidia-smi
+  - nvcc -V
+  - find -type f -name "*libcudnn.so*"
+  
   
   
