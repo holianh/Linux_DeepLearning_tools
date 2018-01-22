@@ -16,7 +16,7 @@ with io.open(FnSave, 'w', encoding='utf8') as outfile:
     str_ = json.dumps(data,indent=4, sort_keys=True,separators=(',', ':'), ensure_ascii=False)
     outfile.write(str_)
 #uses:
-#with open(pproject_info) as data_file:data_loaded = json.load(data_file)
+#with open(FnSave) as data_file:data_loaded = json.load(data_file)
 #print(data_loaded['DataPath'])
 ########################################################################
 
