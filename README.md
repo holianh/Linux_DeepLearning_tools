@@ -18,6 +18,8 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
   - nvidia-smi --format=csv,noheader --query-gpu=temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics
   - nvidia-smi --format=csv --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics
 
-  
+  # Install Deeplearning Libraries:
+  - pip install python-levenshtein
+  - 
   
   
