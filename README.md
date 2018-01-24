@@ -20,11 +20,12 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
 
   # Install Deeplearning Libraries:
   - PYTHON - AUTO GENERATE REQUIREMENTS.TXT:
+  
     Method 1:
-      - pip freeze > requirements.txt   
+      * pip freeze > requirements.txt   
     Method 2:
-      - pip install pipreqs
-      - pipreqs /path/to/project
+      * pip install pipreqs
+      * pipreqs /path/to/project
     (to install: pip install -r requirements.txt)
       
   - pip install python-levenshtein
