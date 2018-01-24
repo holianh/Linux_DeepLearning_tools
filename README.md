@@ -23,6 +23,7 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
   
     Method 1:
       * pip freeze > requirements.txt   
+
     Method 2:
       * pip install pipreqs
       * pipreqs /path/to/project
