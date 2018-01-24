@@ -19,6 +19,14 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
   - nvidia-smi --format=csv --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics
 
   # Install Deeplearning Libraries:
+  - PYTHON - AUTO GENERATE REQUIREMENTS.TXT:
+    Method 1:
+      - pip freeze > requirements.txt   
+    Method 2:
+      - pip install pipreqs
+      - pipreqs /path/to/project
+    (to install: pip install -r requirements.txt)
+      
   - pip install python-levenshtein
   - 
   
