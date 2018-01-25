@@ -1,11 +1,11 @@
 # Menu
 This is all Header in this file:
-1. Linux DeepLearning tools
-2. Linux system
+1. Linux DeepLearning tools, [view](#1-linux-deeplearning-tools)
+2. Linux system, [view](#2-linux-system)
 3. Check Envs for Deep Learning, [view](#check-envs-for-deep-learning)
-4. Install Deeplearning Libraries
-5. Python functions List
-6. Keras funcs list
+4. Install Deeplearning Libraries, [view](#4-install-deeplearning-libraries)
+5. Python functions List, [view](#5-python-functions-list)
+6. Keras funcs list, [view](#6-keras-funcs-list)
 
 
 # 1. Linux DeepLearning tools
