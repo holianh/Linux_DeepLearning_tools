@@ -9,26 +9,21 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
     - find -typy d -name "\*ASR\*" : find all *dir* name include ASR
     - find -type f -name "*libcudart*"   : find all files libcudart.so.* in current folder
     - find -type f -name "*libcudnn.so*"   : find all files libcudnn.so.*
-
+  - [rm -fdr <dir_name>: Remove a dir with contents](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L2)
 # Check Envs for Deep Learning:
   - nvidia-smi
   - nvcc -V
   - find -type f -name "*libcudnn.so*"
-  - nvidia-smi --format=csv --query-gpu=temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics
-  - nvidia-smi --format=csv,noheader --query-gpu=temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics
-  - nvidia-smi --format=csv --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics
+  - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics [more](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L6)
 
   # Install Deeplearning Libraries:
   - PYTHON - AUTO GENERATE REQUIREMENTS.TXT:
-  
     Method 1:
       * pip freeze > requirements.txt   
-
     Method 2:
       * pip install pipreqs
       * pipreqs /path/to/project
-    (to install: pip install -r requirements.txt)
-      
+    (to install: pip install -r requirements.txt)      
   - pip install python-levenshtein
   - 
   
