@@ -192,6 +192,43 @@ tRan=format_seconds_to_hhmmss(math.trunc(total_time))
 tWait=format_seconds_to_hhmmss(math.trunc(((Max_samples-k)*total_time)/k))
 
 ########################################################################
+# post (upload) file/string to PHP webpage
+##########################################################################    
+#import datetime
+#import requests
+#tenmay="/path/to/file/will/upload.txt"
+#LastNlines(): function to get last n line with keyword of file.
+# replace 'xxxxxxxx' to real path on server
+t=0
+def Upload2Server():
+        global t
+    #try:
+        with open(tenmay,'r') as f: ND=f.read();
+        tgian=datetime.datetime.now()
+        sTgian=str(tgian).split('.')[0].replace(':','-')
+        ND=ND+sTgian+'\n\r'
+        Liness=LastNlines() 
+        for s in Liness:
+            ND=ND+s
+        
+        r = requests.post("http://anh.000webhostapp.com/xxxxxxxx/index.php?machineName="+tenmay+'&contents='+ND)
+        print('upload:',r.status_code, r.reason)
+        t+=1
+    #except:
+    #    print ('Upload status errors')
+#uses: Upload2Server()
+#exit()
+
+
+
+
+
+
+
+
+
+
+
 
 
 
