@@ -7,7 +7,7 @@ Useful linux command
   - __ncdu__: to view files/folders size over local or ssh
   - __find -type f -name "*libcudnn.so*"__ : find file/folder in Linux, [more](ubuntu_commands.sh#L14)
   - __rm -fdr <dir_name>__: Remove a dir with contents, [more](ubuntu_commands.sh#L2)
-  
+  - __sudo lshw -class disk -short__ : List Physical Hardisk in Ubuntu, [view](ubuntu_commands.sh#L21)
 # Check Envs for Deep Learning:
   - nvidia-smi
   - nvcc -V
@@ -15,15 +15,7 @@ Useful linux command
   - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics, [more](ubuntu_commands.sh#L6)
 
   # Install Deeplearning Libraries:
-  - PYTHON - AUTO GENERATE REQUIREMENTS.TXT:
-  
-    Method 1:
-      * pip freeze > requirements.txt   
-      
-    Method 2:
-      * pip install pipreqs
-      * pipreqs /path/to/project
-    (to install: pip install -r requirements.txt)      
+  - pipreqs /path/to/project: PYTHON - AUTO GENERATE REQUIREMENTS.TXT, [more]((ubuntu_commands.sh#L33))
   - pip install python-levenshtein
   - 
   
