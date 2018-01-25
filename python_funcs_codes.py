@@ -190,10 +190,6 @@ stop = timeit.default_timer()
 total_time=stop-start # in seconds
 tRan=format_seconds_to_hhmmss(math.trunc(total_time))
 tWait=format_seconds_to_hhmmss(math.trunc(((Max_samples-k)*total_time)/k))
-now = datetime.datetime.now()
-    cnt+=1
-    if cnt%10==0:
-        print (now.year,'-', now.month,'-', now.day,'   ', now.hour,':', now.minute,':', now.second)
 
 ########################################################################
 # post (upload) file/string to PHP webpage
@@ -272,7 +268,12 @@ def MinutelyAction_mm():
     Stmp = os.popen("nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics").read();
     fntxt.write(Stmp+'\n\n')
     fntxt.close() 
-
+########################################################################
+# Get date time, month, day, hour, minute,...
+##########################################################################    
+import datetime
+now = datetime.datetime.now()
+print (now.year,'-', now.month,'-', now.day,'   ', now.hour,':', now.minute,':', now.second)
 
 
 
