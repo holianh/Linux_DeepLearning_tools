@@ -17,6 +17,17 @@ Find files or folders in Ubuntu:
 - find -type f -name "*libcudart*"   : find all files libcudart.so.* in current folder
 - find -type f -name "*libcudnn.so*"   : find all files libcudnn.so.*
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+List Physical Hardisk in Ubuntu:
+- sudo lshw -class disk -short
+Results:
+H/W path               Device           Class          Description
+==================================================================
+/0/100/14/1/5/0.0.0    /dev/sdd         disk           1TB Elements 10A8
+/0/1/0.0.0             /dev/sda         disk           256GB Reeinno CY256GB
+/0/2/0.0.0             /dev/sdb         disk           1TB WDC WD10EZEX-08Y
+/0/3/0.0.0             /dev/sdc         disk           1TB ST31000528AS
+- sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
 
 
 
