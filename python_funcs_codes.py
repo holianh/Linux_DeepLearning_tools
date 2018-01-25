@@ -219,6 +219,11 @@ def Upload2Server():
 #uses: Upload2Server()
 #exit()
 
+########################################################################
+# Run a system Ubuntu command:
+##########################################################################    
+def runCMD(sudopass,cmd):
+    os.system('echo '+sudopass+' | sudo -S '+cmd)
 
 
 
