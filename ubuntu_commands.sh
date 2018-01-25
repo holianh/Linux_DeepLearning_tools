@@ -29,6 +29,15 @@ H/W path               Device           Class          Description
 /0/3/0.0.0             /dev/sdc         disk           1TB ST31000528AS
 - sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+PYTHON - AUTO GENERATE REQUIREMENTS.TXT:
+    Method 1:
+      * pip freeze > requirements.txt   
+      
+    Method 2:
+      * pip install pipreqs
+      * pipreqs /path/to/project
+    (to install: pip install -r requirements.txt)      
 
 
 
