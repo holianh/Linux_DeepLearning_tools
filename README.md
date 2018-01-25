@@ -32,4 +32,30 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
   - pip install python-levenshtein
   - 
   
-  
+  # Python functions List:
+   - (def LastNlines(NLs=15,LineContainKey="Key to Fine"))   [https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L7]
+   - ( Plot history and accuray when training with Keras to PDF)[https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L38]
+   - (Save data to json file)[https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L113] 
+   - (Files_2csv_inDir: Find and Add All wav & label files to *.CSV)[https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L130]
+   - (Timing: Calculate running time)[https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L174] 
+   - ()[]
+   - ()[] 
+   - ()[]
+   - ()[] 
+   - ()[]
+   - ()[] 
+   - ()[]
+   - ()[] 
+   - ()[]
+   - ()[] 
+   - ()[]
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
