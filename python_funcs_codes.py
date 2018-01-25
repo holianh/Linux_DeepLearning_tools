@@ -3,6 +3,37 @@ Nguyen Tuan Anh, 2018-01-19
 usful python functions
 --------------------------
 '''
+########################################################################
+# Extract N end lines from files  --------------------------------------
+########################################################################
+
+def LastNlines(NLs=15,LineContainKey="Key to Fine"):
+    #lss=glob.glob(clayPath+"*.txt")
+    #newestFileindir = max(lss, key=os.path.getctime)
+    newestFileindir ="/Path/to/file.txt"
+    #print(newestFileindir)
+    f = open(newestFileindir, 'rb'); strData = f.read().decode('utf8', 'ignore')
+    
+    data=strData.split('\n')
+    Ndata=len(data)
+    print('Ndata=',Ndata)
+    Lines=[]
+    NumberLine=0
+    flag=True
+    while flag:
+        if NumberLine==NLs:
+            return Lines
+        if(data[Ndata-1].find(LineContainKey)>0):
+            Lines.append(data[Ndata-1])
+            NumberLine+=1
+        if(Ndata>1):
+            Ndata=Ndata-1
+        else:
+            return Lines
+#Liness=LastNlines() 
+#for s in Liness:print(s)
+#exit()
+    
 
 ########################################################################
 # Plot history and accuray to PDF --------------------------------------
