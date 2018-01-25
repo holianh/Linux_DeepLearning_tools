@@ -35,7 +35,7 @@ Useful linux command
    - Timing: Calculate running time, [view](python_funcs_codes.py#L174) 
    - Post (upload) file/string to PHP webpage, [view](python_funcs_codes.py#L195)
    - Run a system Ubuntu command, [view](python_funcs_codes.py#L223) 
-   - []()
+   - Substring: Copy contends from txt file, add string of time, add ... [view](python_funcs_codes.py#L229)
    - []() 
    - []()
    - []() 
