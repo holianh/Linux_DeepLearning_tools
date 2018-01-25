@@ -4,9 +4,8 @@ usful python functions
 --------------------------
 '''
 ########################################################################
-# Extract N end lines from files  --------------------------------------
+# Extract N end lines contain "Key to find" from files  ----------------
 ########################################################################
-
 def LastNlines(NLs=15,LineContainKey="Key to Fine"):
     #lss=glob.glob(clayPath+"*.txt")
     #newestFileindir = max(lss, key=os.path.getctime)
@@ -36,9 +35,8 @@ def LastNlines(NLs=15,LineContainKey="Key to Fine"):
     
 
 ########################################################################
-# Plot history and accuray to PDF --------------------------------------
+# Plot history and accuray when training with Keras to PDF -------------
 ########################################################################
-
 import matplotlib                                    ###############
 matplotlib.use('agg')
 import matplotlib.pyplot as plt 
@@ -112,7 +110,7 @@ def hist(history,
 # exit()
 
 ########################################################################
-# dirs / files --------------------------------------------------
+# Save data to json file -----------------------------------------------
 ########################################################################
 FnSave='test.txt'
 import io, json
@@ -128,7 +126,10 @@ with io.open(FnSave, 'w', encoding='utf8') as outfile:
 #print(data_loaded['DataPath'])
 ########################################################################
 
-
+########################################################################
+# Files_2csv_inDir -----------------------------------------------------
+# Find and Add All wav & label files to *.CSV
+########################################################################
 import os
 from random import shuffle
 Wav_path='/home/tact/AudioDBs/All_DataBase/'#
@@ -171,6 +172,7 @@ def Files_2csv_inDir(path, wav_ext, lbl_ext):
 '''
 ########################################################################
 # Timing ------------ ------------------- ------------------- ---------
+# Calculate running time 
 ########################################################################
 
 import timeit
