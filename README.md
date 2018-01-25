@@ -33,7 +33,7 @@ Useful linux command
    - Save data to json file, [view](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L113) 
    - Files_2csv_inDir: Find and Add All wav & label files to *.CSV, [view](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L130)
    - Timing: Calculate running time, [view](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L174) 
-   - []()
+   - Post (upload) file/string to PHP webpage, [view](python_funcs_codes.py#L195)
    - []() 
    - []()
    - []() 
