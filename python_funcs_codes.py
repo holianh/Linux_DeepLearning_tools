@@ -190,6 +190,10 @@ stop = timeit.default_timer()
 total_time=stop-start # in seconds
 tRan=format_seconds_to_hhmmss(math.trunc(total_time))
 tWait=format_seconds_to_hhmmss(math.trunc(((Max_samples-k)*total_time)/k))
+now = datetime.datetime.now()
+    cnt+=1
+    if cnt%10==0:
+        print (now.year,'-', now.month,'-', now.day,'   ', now.hour,':', now.minute,':', now.second)
 
 ########################################################################
 # post (upload) file/string to PHP webpage
