@@ -2,10 +2,10 @@
 These are some useful tools to use with Linux (focus on Ubuntu) when working with Deep Learning.
 
 # Linux system:
-  - htop: to view in %CPU uses by threads, %RAM: kill thread, filter, search,...
-  - ncdu: to view files/folders size over local or ssh
-  - find file/folder in Linux: find -type f -name "*libcudnn.so*", [more](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L14)
-  - rm -fdr <dir_name>: Remove a dir with contents, [more](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L2)
+  - __htop__: to view in %CPU uses by threads, %RAM: kill thread, filter, search,...
+  - __ncdu__: to view files/folders size over local or ssh
+  - __find -type f -name "*libcudnn.so*"__ : find file/folder in Linux, [more](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L14)
+  - __rm -fdr <dir_name>__: Remove a dir with contents, [more](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L2)
 # Check Envs for Deep Learning:
   - nvidia-smi
   - nvcc -V
