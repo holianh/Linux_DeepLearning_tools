@@ -225,6 +225,50 @@ def Upload2Server():
 def runCMD(sudopass,cmd):
     os.system('echo '+sudopass+' | sudo -S '+cmd)
 
+########################################################################
+# Substring: Copy contends from txt file, add string of time, add 
+# substring from 1st '\n' to 3nd '\n' add
+# text from run system command line then
+# write al to text file.
+##########################################################################    
+''' 
+string input:
+PING bing.com (13.107.21.200) 56(84) bytes of data.\n
+64 bytes from 13.107.21.200: icmp_seq=1 ttl=108 time=12.1 ms\n
+64 bytes from 13.107.21.200: icmp_seq=2 ttl=108 time=11.9 ms\n
+64 bytes from 13.107.21.200: icmp_seq=3 ttl=108 time=13.4 ms\n\n
+
+--- bing.com ping statistics ---\n
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms\n
+rtt min/avg/max/mdev = 11.964/12.509/13.465/0.689 ms\n
+
+Copy from first '\n' to third '\n', result:
+string output:
+64 bytes from 13.107.21.200: icmp_seq=2 ttl=108 time=12.0 ms\n
+64 bytes from 13.107.21.200: icmp_seq=3 ttl=108 time=12.3 ms
+Some extra: 
+tenmay='/path/to/file/to/add.txt'
+''' 
+def MinutelyAction_mm():
+    fntxt=open(tenmay,'w')  
+    fntxt.write('May:'+tenmay+'\n')
+    fntxt.write(("%s"%datetime.datetime.now()).split('.')[0])
+    S = os.popen("ping bing.com -c 3").read();
+    vt1=-1
+    vt2=-1
+    pos=0
+    k=0
+    for s in S:
+        k+=1
+        if s=="\n":pos+=1
+        if pos==1: vt1=k+1
+        if pos==3: vt2=k
+    S=S[vt1:vt2]        
+    fntxt.write(S+'\n')
+    Stmp = os.popen("nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics").read();
+    fntxt.write(Stmp+'\n\n')
+    fntxt.close() 
+
 
 
 
