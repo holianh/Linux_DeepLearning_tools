@@ -9,12 +9,12 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
     - find -typy d -name "\*ASR\*" : find all *dir* name include ASR
     - find -type f -name "*libcudart*"   : find all files libcudart.so.* in current folder
     - find -type f -name "*libcudnn.so*"   : find all files libcudnn.so.*
-  - [rm -fdr <dir_name>: Remove a dir with contents](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L2)
+  - rm -fdr <dir_name>: Remove a dir with contents, [more](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L2)
 # Check Envs for Deep Learning:
   - nvidia-smi
   - nvcc -V
   - find -type f -name "*libcudnn.so*"
-  - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics [more](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L6)
+  - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics, [more](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/ubuntu_commands.sh#L6)
 
   # Install Deeplearning Libraries:
   - PYTHON - AUTO GENERATE REQUIREMENTS.TXT:
@@ -28,11 +28,11 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
   - 
   
   # Python functions List:
-   - [def LastNlines\(NLs=15,LineContainKey="Key to Fine"\)](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L7)
-   - [ Plot history and accuray when training with Keras to PDF](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L38)
-   - [Save data to json file](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L113) 
-   - [Files_2csv_inDir: Find and Add All wav & label files to *.CSV](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L130)
-   - [Timing: Calculate running time](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L174) 
+   - def LastNlines\(NLs=15,LineContainKey="Key to Fine"\), [view](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L7)
+   -  Plot history and accuray when training with Keras to PDF, [view](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L38)
+   - Save data to json file, [view](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L113) 
+   - Files_2csv_inDir: Find and Add All wav & label files to *.CSV, [view](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L130)
+   - Timing: Calculate running time, [view](https://github.com/holianh/Linux_DeepLearning_tools/blob/master/python_funcs_codes.py#L174) 
    - []()
    - []() 
    - []()
