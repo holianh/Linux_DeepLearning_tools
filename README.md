@@ -39,7 +39,10 @@ Useful linux command
    - []()
    - []() 
    
-   
+   # Keras funcs list:
+   this is all useful Keras functions, can be directly use
+   - Keras: save model + weight to files, [here](Keras_funcs.py#L2)
+   - Keras: load model + weight from files to numpy array, [here](Keras_funcs.py#L17)
    
    
    
