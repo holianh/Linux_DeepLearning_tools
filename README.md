@@ -16,8 +16,10 @@ Useful linux command
 
   # Install Deeplearning Libraries:
   - PYTHON - AUTO GENERATE REQUIREMENTS.TXT:
+  
     Method 1:
       * pip freeze > requirements.txt   
+      
     Method 2:
       * pip install pipreqs
       * pipreqs /path/to/project
