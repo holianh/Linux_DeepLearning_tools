@@ -124,6 +124,8 @@ with io.open(FnSave, 'w', encoding='utf8') as outfile:
 #uses:
 #with open(FnSave) as data_file:data_loaded = json.load(data_file)
 #print(data_loaded['DataPath'])
+#import pprint
+#pprint.pprint(data_loaded)
 ########################################################################
 
 ########################################################################
