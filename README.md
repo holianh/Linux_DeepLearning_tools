@@ -19,7 +19,7 @@ Useful linux command
   - __rm -fdr <dir_name>__: Remove a dir with contents, [more](ubuntu_commands.sh#L2)
   - __sudo lshw -class disk -short__ : List Physical Hardisk in Ubuntu, [view](ubuntu_commands.sh#L21)
 # 3. Check Envs for Deep Learning
-  - nvidia-smi
+  - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
   - nvcc -V
   - find -type f -name "*libcudnn.so*"
   - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics, [more](ubuntu_commands.sh#L6)
