@@ -39,7 +39,7 @@ Useful linux command
    - Post (upload) file/string to PHP webpage, [view](python_funcs_codes.py#L195)
    - Run a system Ubuntu command, [view](python_funcs_codes.py#L223) 
    - Substring: Copy contends from txt file, add string of time, add ... [view](python_funcs_codes.py#L229)
-   - []() 
+   - Move, Copy, delete file from Python, [view](python_funcs_codes.py#L281) 
    - []()
 
    
