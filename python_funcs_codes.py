@@ -277,7 +277,20 @@ import datetime
 now = datetime.datetime.now()
 print (now.year,'-', now.month,'-', now.day,'   ', now.hour,':', now.minute,':', now.second)
 
-
+########################################################################
+# Copy, delete file from Python
+##########################################################################    
+fileNeedCopy=''
+fileNeedDelete=''
+if not os.path.exists(dest_dir):os.makedirs(dest_dir)
+    shutil.copy2(fileNeedCopy, dest_dir)
+    
+if os.path.exists(fileNeedDelete):
+    try:
+        os.remove(fileNeedDelete)
+    except PermissionError as exc:
+        os.chmod(fileNeedDelete, stat.S_IWUSR)
+        os.remove(fileNeedDelete)
 
 
 
