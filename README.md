@@ -40,7 +40,7 @@ Useful linux command
    - Run a system Ubuntu command, [view](python_funcs_codes.py#L223) 
    - Substring: Copy contends from txt file, add string of time, add ... [view](python_funcs_codes.py#L229)
    - Move, Copy, delete file from Python, [view](python_funcs_codes.py#L281) 
-   - []()
+   - Delay, sleep in python, [view](python_funcs_codes.py#L298)
 
    
    # 6. Keras funcs list
