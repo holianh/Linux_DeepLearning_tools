@@ -294,8 +294,11 @@ def MoveFile2Folder(fileNeed2move,dest_dir):
             os.remove(fileNeed2move)
 
 
-
-
+########################################################################
+# Delay, sleep in python
+##########################################################################    
+import time
+time.sleep(60) # in second
 
 
 
