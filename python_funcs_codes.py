@@ -278,20 +278,20 @@ now = datetime.datetime.now()
 print (now.year,'-', now.month,'-', now.day,'   ', now.hour,':', now.minute,':', now.second)
 
 ########################################################################
-# Copy, delete file from Python
+# Move, Copy, delete file from Python
 ##########################################################################    
-fileNeedCopy=''
-fileNeedDelete=''
-if not os.path.exists(dest_dir):os.makedirs(dest_dir)
-    shutil.copy2(fileNeedCopy, dest_dir)
+import shutil
+import os
+def MoveFile2Folder(fileNeed2move,dest_dir):
+    if not os.path.exists(dest_dir):os.makedirs(dest_dir)
+    shutil.copy2(fileNeed2move, dest_dir)
     
-if os.path.exists(fileNeedDelete):
-    try:
-        os.remove(fileNeedDelete)
-    except PermissionError as exc:
-        os.chmod(fileNeedDelete, stat.S_IWUSR)
-        os.remove(fileNeedDelete)
-
+    if os.path.exists(fileNeed2move):
+        try:
+            os.remove(fileNeed2move)
+        except PermissionError as exc:
+            os.chmod(fileNeed2move, stat.S_IWUSR)
+            os.remove(fileNeed2move)
 
 
 
