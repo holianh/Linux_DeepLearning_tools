@@ -41,6 +41,7 @@ Useful linux command
    - Substring: Copy contends from txt file, add string of time, add ... [view](python_funcs_codes.py#L229)
    - Move, Copy, delete file from Python, [view](python_funcs_codes.py#L281) 
    - Delay, sleep in python, [view](python_funcs_codes.py#L298)
+   - Pass arguments to program, call commandline args, [view](python_funcs_codes.py#L304)
 
    
    # 6. Keras funcs list
