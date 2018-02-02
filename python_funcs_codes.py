@@ -310,8 +310,8 @@ for arg in sys.argv[1:]:
     val=arg.split('=')[1]
     print(nam,':',val)
     if(nam=='Client_ID'):        Client_ID     =val
-    elif (nam=='Nbatch_size'):   Nbatch_size   =val
-    elif (nam=='Nepochs'):       Nepochs       =val
+    elif (nam=='Nbatch_size'):   Nbatch_size   =int(float(val)) #int
+    elif (nam=='Nepochs'):       Nepochs       =int(float(val)) #int
     elif (nam=='path2_npyData'): path2_npyData =val
     elif (nam=='noGPU'):         os.environ["CUDA_VISIBLE_DEVICES"]=val
     else:
@@ -322,6 +322,7 @@ for arg in sys.argv[1:]:
         print('------------------------------------------------------------------')
   #except:
   #  print("err:",arg)
+
 
 
 
