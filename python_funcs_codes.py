@@ -300,6 +300,28 @@ def MoveFile2Folder(fileNeed2move,dest_dir):
 import time
 time.sleep(60) # in second
 
+########################################################################
+# Pass arguments to program, call commandline args
+##########################################################################    
+import sys;
+for arg in sys.argv[1:]:  
+  #try:
+    nam=arg.split('=')[0]
+    val=arg.split('=')[1]
+    print(nam,':',val)
+    if(nam=='Client_ID'):        Client_ID     =val
+    elif (nam=='Nbatch_size'):   Nbatch_size   =val
+    elif (nam=='Nepochs'):       Nepochs       =val
+    elif (nam=='path2_npyData'): path2_npyData =val
+    elif (nam=='noGPU'):         os.environ["CUDA_VISIBLE_DEVICES"]=val
+    else:
+        print('')
+        print("Can't recognize name of parameter:",arg)
+        print("Calling examples:")
+        print("python Client_train_GPU.py 'Client_ID=1080ti-3' noGPU=3 'path2_npyData=/path/to/npy/feature/file.npy' [Nepochs=32] [Nbatch_size=64]")
+        print('------------------------------------------------------------------')
+  #except:
+  #  print("err:",arg)
 
 
 
