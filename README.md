@@ -42,6 +42,7 @@ Useful linux command
    - Move, Copy, delete file from Python, [view](python_funcs_codes.py#L281) 
    - Delay, sleep in python, [view](python_funcs_codes.py#L298)
    - Pass arguments to program, call commandline args, [view](python_funcs_codes.py#L304)
+   - Load json with multiple json lines, [view](python_funcs_codes.py#L327)
 
    
    # 6. Keras funcs list
