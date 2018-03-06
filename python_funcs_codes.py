@@ -323,8 +323,19 @@ for arg in sys.argv[1:]:
   #except:
   #  print("err:",arg)
 
+###########################################################
+# Load json with multiple json lines
+###########################################################
+def _read_data_json(file_name):
+    with open(file_name, 'r') as fid:
+        return [json.loads(l) for l in fid]
 
-
+# use: 
+# data_jsons = paths of json files, in each json files can have lines json format
+data = []
+for dj in data_jsons:
+    data.extend(_read_data_json(dj))
+data = sorted(data, key=lambda x : x['duration'])
 
 
 
