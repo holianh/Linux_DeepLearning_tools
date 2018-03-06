@@ -331,7 +331,12 @@ def _read_data_json(file_name):
         return [json.loads(l) for l in fid]
 
 # use: 
-# data_jsons = paths of json files, in each json files can have lines json format
+# data_jsons = ['olivia_train.json',...]paths of json files, in each json files can have lines json format
+olivia_train.json:
+{"duration": 0.7894784580498866, "text": "olivia", "key": "data/olivia_train/1429.wav"}
+{"duration": 1.1145578231292517, "text": "olivia", "key": "data/olivia_train/1430.wav"}
+{"duration": 1.253877551020408, "text": "olivia", "key": "data/olivia_train/1431.wav"}
+
 data = []
 for dj in data_jsons:
     data.extend(_read_data_json(dj))
