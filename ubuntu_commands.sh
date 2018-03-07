@@ -39,8 +39,17 @@ PYTHON - AUTO GENERATE REQUIREMENTS.TXT:
       * pipreqs /path/to/project
     (to install: pip install -r requirements.txt)      
 
-
-
+##############################################################
+Anaconda GUI in ubuntu
+##############################################################
+- Install anaconda for ubuntu
+- do this:
+    step 1 : $ conda install -c anaconda anaconda-navigator​
+    step 2 : $ anaconda-navigator
+- Or do this:
+    $ source ~/anaconda3/bin/activate root
+    $ anaconda-navigator
+source: https://stackoverflow.com/questions/43030871/anaconda-navigator-ubuntu16-04
 
 
 
