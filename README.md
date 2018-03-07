@@ -23,7 +23,7 @@ Useful linux command
   - nvcc -V
   - find -type f -name "*libcudnn.so*"
   - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics, [more](ubuntu_commands.sh#L6)
-
+  - Anaconda GUI in ubuntu [view](ubuntu_commands.sh#L43)
   # 4. Install Deeplearning Libraries
   - pipreqs /path/to/project: PYTHON - AUTO GENERATE REQUIREMENTS.TXT, [more](ubuntu_commands.sh#L33)
   - pip install python-levenshtein
