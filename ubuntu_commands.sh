@@ -51,6 +51,40 @@ Anaconda GUI in ubuntu
     $ anaconda-navigator
 source: https://stackoverflow.com/questions/43030871/anaconda-navigator-ubuntu16-04
 
+##############################################################
+Login to jupyter server from local machine
+##############################################################
+server side:
+jupyter notebook --no-browser --port=[XXXX]
+eg:
+input: 1233 is the unique port number
+__ jupyter notebook --no-browser --port=1233 __
+
+results if successful:
+[I 15:17:34.760 NotebookApp] Serving notebooks from local directory: /home/tact/AudioDBs
+[I 15:17:34.760 NotebookApp] 0 active kernels
+[I 15:17:34.760 NotebookApp] The Jupyter Notebook is running at:
+[I 15:17:34.760 NotebookApp] http://localhost:1233/?token=cecfec85f6c1cb65de4ae9f9feb84ee2318f497d095e40d7
+[I 15:17:34.760 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 15:17:34.760 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:1233/?token=cecfec85f6c1cb65de4ae9f9feb84ee2318f497d095e40d7
+ -------------------------
+ Client side:
+ ssh -f [USER]@[SERVER] -L [YYYY]:localhost:[XXXX] -N
+ 
+eg:
+__ ssh -f tact@192.168.0.6 -L 2344:localhost:1233 -N __
+tact@192.168.0.6's password: 
+
+from browser:
+http://localhost:2344
+
+copy token above, paste into login input text then press *login*
+ 
+
 
 
 
