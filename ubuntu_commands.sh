@@ -54,7 +54,14 @@ source: https://stackoverflow.com/questions/43030871/anaconda-navigator-ubuntu16
 ##############################################################
 Login to jupyter server from local machine
 ##############################################################
-server side:
+server side:#TODO
+if want to run forever, run TMUX first
+1. activate Anaconda:
+TMUX
+conda info --envs
+source activate P3
+
+2. Active jupyter:
 jupyter notebook --no-browser --port=[XXXX]
 eg:
 input: 1233 is the unique port number
@@ -72,14 +79,14 @@ results if successful:
     to login with a token:
         http://localhost:1233/?token=cecfec85f6c1cb65de4ae9f9feb84ee2318f497d095e40d7
  -------------------------
- Client side:
+ 3. Client side:
  ssh -f [USER]@[SERVER] -L [YYYY]:localhost:[XXXX] -N
  
 eg:
 __ ssh -f tact@192.168.0.6 -L 2344:localhost:1233 -N __
 tact@192.168.0.6's password: 
 
-from browser:
+4. Access from local browser:
 http://localhost:2344
 
 copy token above, paste into login input text then press *login*
