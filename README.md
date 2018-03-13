@@ -50,9 +50,9 @@ Useful linux command
    
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
-   - Keras: save model + weight to files, [here](Keras_funcs.py#L2)
-   - Keras: load model + weight from files to numpy array, [here](Keras_funcs.py#L17)
-   
+   - Keras: __save model + weight__ to files, [here](Keras_funcs.py#L2)
+   - Keras: __load model + weight__ from files to numpy array, [here](Keras_funcs.py#L17)
+   - __Tensorboard__: local and remote , [here](Keras_funcs.py#L107)
    
    
    
