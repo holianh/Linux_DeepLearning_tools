@@ -103,7 +103,20 @@ sshfs tact@192.168.0.6:/home/tact/AudioDBs/Olivia/logs ~/kr/logs
     ref:https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server
 
 
+##############################################################
+Tensorboard: local and remote 
+##############################################################
+from keras.callbacks import TensorBoard
+tensorboard = TensorBoard(log_dir='./logs', histogram_freq=0,
+                          write_graph=True, write_images=False)
 
+h=model.fit(x=[ mfcc_vec, np.ones(Max_samples)*maxlen_AllMfcc,    word_vec, char_length ],
+            y=np.ones(Max_samples),
+            validation_split=0.2,
+            batch_size=10,
+            epochs=30,
+            callbacks=[tensorboard]
+          )
 
 
 
