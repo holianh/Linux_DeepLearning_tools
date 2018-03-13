@@ -117,7 +117,8 @@ h=model.fit(x=[ mfcc_vec, np.ones(Max_samples)*maxlen_AllMfcc,    word_vec, char
             epochs=30,
             callbacks=[tensorboard]
           )
-
+          
+Tensorboard remote: ref: https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server
 
 
 
