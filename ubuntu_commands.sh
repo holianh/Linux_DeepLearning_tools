@@ -94,6 +94,13 @@ copy token above, paste into login input text then press *login*
 
 
 
+##############################################################
+Linux system: share folder / mount a remote dir to local
+##############################################################
+sshfs user@host:/home/user/project/summary_logs ~/summary_logs
+VD:
+sshfs tact@192.168.0.6:/home/tact/AudioDBs/Olivia ~/kr/logs
+    ref:https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server
 
 
 
