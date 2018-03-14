@@ -103,6 +103,34 @@ sshfs tact@192.168.0.6:/home/tact/AudioDBs/Olivia/logs ~/kr/logs
     ref:https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server
 
 
+##############################################################
+Linux system: Startup a program in ubuntu manualy
+##############################################################
+Copy/delete the application's .desktop file to/from ~/.config/autostart/
+.desktop file usually located at /usr/share/applications but you can create a custom if you want.
+
+-------------------------------------------------------
+example: file: ~/.config/autostart/minergate.desktop
+[Desktop Entry]
+Type=Application
+Hidden=false
+Exec=/opt/minergate/minergate --auto
+Name=Minergate
+Terminal=false
+-------------------------------------------------------
+to run any command before login as root add it to: /etc/rc.local
+to run any command after  login as user add it to: ~/.bash_profile, contrary to ~/.bashrc
+
+
+
+
+
+
+
+
+
+
+
 
 
 
