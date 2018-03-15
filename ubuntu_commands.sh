@@ -123,8 +123,19 @@ to run any command after  login as user add it to: ~/.bash_profile, contrary to 
 
 
 
-
-
+##############################################################
+Linux system: Access root ssh from ssh
+##############################################################
+nano /etc/ssh/sshd_config 
+change to like this:
+    # Authentication:
+    LoginGraceTime 120
+    #PermitRootLogin prohibit-password
+    PermitRootLogin yes
+    StrictModes yes
+saved!    
+root@u1080:~# service ssh restart
+root@u1080:~# service sshd restart
 
 
 
