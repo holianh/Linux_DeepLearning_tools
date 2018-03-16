@@ -343,5 +343,74 @@ for dj in data_jsons:
 data = sorted(data, key=lambda x : x['duration'])
 
 
+###########################################################
+# Make model run in Multiple GPUs
+###########################################################
+#input: model: model already create before using, like this:
+with tf.device('/device:CPU:0'):
+    mfcc_input=np.load(fileDB); #print(mfcc_input.shape[1],mfcc_input.shape[2]);exit()
+    input_tensor=Input(shape=(mfcc_input.shape[1],mfcc_input.shape[2]));
+    x=Conv1D(kernel_size=1,filters=192,padding="same")(input_tensor);
+    x=BatchNormalization(axis=-1)(x);
+    x=Activation("tanh")(x);
+    # -----------------------------------------------------------------------------------
+    def res_block(x,size,rate,dim=192):
+        x_tanh=Conv1D(kernel_size=size,filters=dim,dilation_rate=rate,padding="same")(x);
+        x_tanh=BatchNormalization(axis=-1)(x_tanh);
+        x_tanh=Activation("tanh")(x_tanh);
+        x_sigmoid=Conv1D(kernel_size=size,filters=dim,dilation_rate=rate,padding="same")(x);
+        x_sigmoid=BatchNormalization(axis=-1)(x_sigmoid);
+        x_sigmoid=Activation("sigmoid")(x_sigmoid);
+        out=merge([x_tanh,x_sigmoid],mode="mul");
+        out=Conv1D(kernel_size=1,filters=dim,padding="same")(out);
+        out=BatchNormalization(axis=-1)(out);
+        out=Activation("tanh")(out);
+        x=merge([x,out],mode="sum");
+        return x,out;
+    # -----------------------------------------------------------------------------------
+    skip=[];
+    for i in np.arange(0,1):#3
+        for r in [1,2]:#,4,8,16
+            x,s=res_block(x,size=7,rate=r);
+            skip.append(s);
+    skip_tensor=merge([s for s in skip],mode="sum");
+    # -----------------------------------------------------------------------------------
+    logit=Conv1D(kernel_size=1,filters=192,padding="same")(skip_tensor);
+    logit=BatchNormalization(axis=-1)(logit);
+    logit=Activation("tanh")(logit);
+    logit=Conv1D(kernel_size=1,filters=len(char_index)+1,padding="same",activation="softmax")(logit);
+    base_model=Model(inputs=input_tensor,outputs=logit);
+    # -----------------------------------------------------------------------------------
+logit_length_input =Input(shape=(1,));
+y_true_input       =Input(shape=(maxlen_char,));
+y_true_length_input=Input(shape=(1,));
+loss_out=Lambda(ctc_lambda_function,output_shape=(1,),name="ctc")([y_true_input,logit,logit_length_input,y_true_length_input])
+model=Model(inputs=[input_tensor,logit_length_input,y_true_input,y_true_length_input],outputs=loss_out);
+# -----------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------
+gpus=4
+print("Using %i GPUs" %gpus)
+from keras.utils.multi_gpu_utils import  multi_gpu_model 
+model = multi_gpu_model(model, gpus=gpus)
+#How to parallel_model from normal:
+# 1: install update keras to newest: (should do in other envs in conda)
+# 2: copy folder: ~/anaconda3/envs/kr/lib/python3.5/site-packages/keras/utils    to current using keras folder:
+#                 ~/anaconda3/envs/P3/lib/python3.5/site-packages/keras/utils    (change name of old folder before paste here)
+# -----------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------
+model.compile(loss={'ctc': lambda y_true, y_pred: y_pred},optimizer="adam",metrics=['accuracy']);
 
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
