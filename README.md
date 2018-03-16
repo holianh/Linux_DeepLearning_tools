@@ -54,7 +54,7 @@ Useful linux command
    - Keras: __save model + weight__ to files, [here](Keras_funcs.py#L2)
    - Keras: __load model + weight__ from files to numpy array, [here](Keras_funcs.py#L17)
    - __Tensorboard__: local and remote , [here](Keras_funcs.py#L42)
-   
+   - __Make model run in Multiple GPUs__, [From define input](python_funcs_codes.py#L347), [to parallel model in multiple GPUs](python_funcs_codes.py#L391)
    
    
    
