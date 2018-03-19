@@ -21,7 +21,7 @@ Useful linux command
   - __Login to jupyter server from local machine__ , [view](ubuntu_commands.sh#L55)
   - __Linux system: share folder / mount a remote dir to local__ , [view](ubuntu_commands.sh#L98)
   - __Startup a program in ubuntu manualy__ , [view](ubuntu_commands.sh#L107)
-  
+  - Linux system: install code editor __geany__, better than gedit: code folding, show indent guide, show space,...  , [view](ubuntu_commands.sh#L142)
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
   - nvcc -V
