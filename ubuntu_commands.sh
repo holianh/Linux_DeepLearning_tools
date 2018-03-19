@@ -138,8 +138,11 @@ root@u1080:~# service ssh restart
 root@u1080:~# service sshd restart
 
 
+##############################################################
+Linux system: install code editor geany, better than gedit: code folding, show indent guide, show space,...
+##############################################################
 
-
+sudo apt-get install geany
 
 
 
