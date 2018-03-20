@@ -29,6 +29,7 @@ Useful linux command
   - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics, [more](ubuntu_commands.sh#L6)
   - Anaconda GUI in ubuntu [view](ubuntu_commands.sh#L43)
   # 4. Install Deeplearning Libraries
+  - **Install all librarys** needing for Deeplearning with Keras for Speech: , [View](Install_python_libs.py#L1)
   - pipreqs /path/to/project: PYTHON - AUTO GENERATE REQUIREMENTS.TXT, [more](ubuntu_commands.sh#L33)
   - pip install python-levenshtein
   - 
