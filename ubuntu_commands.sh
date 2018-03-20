@@ -152,12 +152,18 @@ Open INSTALL file to read it, instructions to install in there:
   $ make deploy                                                              
 
 Other method:
-sudo apt-get install geany
-sudo apt-get install geany-plugins
+   $ sudo apt-get install geany
+   $ sudo apt-get install geany-plugins
 or build from source from: https://www.geany.org/Download/Releases
-./configure
-make
-make install
+   $ ./configure
+   $ make
+   $ make install
+
+if already install, we do like this:
+    $ su root
+    $ which geany       ## /usr/local/bin/geany
+    $ mv geany geany0   # rename old file
+    $ cp   /home/ubu/src/src_geany-1.33/usr/bin/geany    /usr/local/bin # change version
 
 
 
