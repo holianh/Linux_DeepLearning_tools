@@ -141,8 +141,23 @@ root@u1080:~# service sshd restart
 ##############################################################
 Linux system: install code editor geany, better than gedit: code folding, show indent guide, show space,...
 ##############################################################
+download this:
+to get hightlight words when double-click!
+https://sourceforge.net/projects/geanyhighlightselectedword/files/latest/download
+Open INSTALL file to read it, instructions to install in there:
+  $ cd ~/SourcesOfGeanyHighlightSelectedWordPlugin                           
+  $ bash installThesePackagesFirst.sh                                        
+  $ bash buildGeanyFromSources.sh   ### Open this file, change version to latest version before run.                                         
+  $ make all                                                                 
+  $ make deploy                                                              
 
+Other method:
 sudo apt-get install geany
+sudo apt-get install geany-plugins
+or build from source from: https://www.geany.org/Download/Releases
+./configure
+make
+make install
 
 
 
