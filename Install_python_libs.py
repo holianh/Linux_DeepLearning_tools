@@ -86,7 +86,14 @@ Uninstall PyCharm:
   $ sudo apt-get remove pycharm
   $ sudo add-apt-repository --remove ppa:mystic-mirage/pycharm
 
-
+######################################################################
+Normal Install Software
+######################################################################
+    
+1.Install java, Oracle java if possible.
+2.Download and extract the version from the PyCharm site
+3.Extract the file, run pycharm.sh from the bin folder
+4.Optional, go to menu Tools > Create Desktop Entry to add it to your system menus.
 
 
 
