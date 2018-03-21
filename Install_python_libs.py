@@ -75,8 +75,16 @@ Install PyCharm:
   $ sudo apt-get install pycharm-community  # community version
   $ sudo apt-get install pycharm            # professional version
 
-
-
+  
+  
+######################################################################
+unInstall/Remove Software
+######################################################################
+Uninstall PyCharm:
+  $ sudo snap remove pycharm-community
+  $ sudo apt-get remove pycharm-community
+  $ sudo apt-get remove pycharm
+  $ sudo add-apt-repository --remove ppa:mystic-mirage/pycharm
 
 
 
