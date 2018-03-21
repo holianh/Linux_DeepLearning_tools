@@ -52,7 +52,28 @@ conda install scikit-learn
 
 
 
+######################################################################
+Installing Software via umake
+######################################################################
 
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt-get update
+sudo apt-get install ubuntu-make
+
+$ umake ide pycharm                 # community version
+$ umake ide pycharm-professional    # professional version
+>>> umake -r ide pycharm              # To remove PyCharm installed via umake, use the command below:
+
+
+######################################################################
+Installing Software using PPA
+######################################################################
+Install PyCharm:
+  sudo add-apt-repository ppa:mystic-mirage/pycharm
+  sudo apt-get update
+   
+  $ sudo apt-get install pycharm-community  # community version
+  $ sudo apt-get install pycharm            # professional version
 
 
 
