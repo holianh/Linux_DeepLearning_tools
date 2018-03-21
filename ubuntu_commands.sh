@@ -166,6 +166,26 @@ if already install, we do like this:
     $ cp   /home/ubu/src/src_geany-1.33/usr/bin/geany    /usr/local/bin # change version
 
 
+##############################################################
+Tmux: 
+##############################################################
+Attact window:
+  $ tmux at -t 0
+
+Scroll screen:
+  $ set -g mouse on        #For tmux version 2.1 and up
+  ctr_b, PgUp  or ctr_b,[
+
+
+
+
+
+
+
+
+
+
+
 
 
 
