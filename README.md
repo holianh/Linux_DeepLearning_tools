@@ -48,7 +48,7 @@ Useful linux command
    - Delay, sleep in python, [view](python_funcs_codes.py#L298)
    - Pass arguments to program, call commandline args, [view](python_funcs_codes.py#L304)
    - Load json with multiple json lines, [view](python_funcs_codes.py#L327)
-
+   - Python: Print json file out to screen:  [view](python_funcs_codes.py#L406)
    
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
