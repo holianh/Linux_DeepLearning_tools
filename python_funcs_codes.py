@@ -402,8 +402,19 @@ model.compile(loss={'ctc': lambda y_true, y_pred: y_pred},optimizer="adam",metri
 
 
 
+###########################################################
+# Python: Print json file out to screen:
+###########################################################
 
-
+print()
+print('########################################################################################################')
+print('Start...')
+pproject_info='info/project_info.txt'
+with open(pproject_info) as data_file:data_loaded = json.load(data_file)
+import pprint as pp
+pp.pprint (data_loaded)
+# ~ for item in data_loaded:print ("{0:<25s} {1}".format(item, data_loaded[item]))
+print()
 
 
 
