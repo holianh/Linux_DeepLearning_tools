@@ -55,6 +55,8 @@ conda install scikit-learn
 ######################################################################
 Installing Software via umake
 ######################################################################
+sudo apt install sox
+sudo apt install rubberband-cli
 
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
 sudo apt-get update
