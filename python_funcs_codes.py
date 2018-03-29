@@ -417,7 +417,54 @@ pp.pprint (data_loaded)
 print()
 
 
+###########################################################
+# Python: Many date time, unique file names  
+###########################################################
 
+from time import gmtime, strftime
+stime=strftime("%Y-%m-%d %H:%M:%S", gmtime())
+print('1, ', stime)
+
+from datetime import datetime
+stime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+print('2, ', stime)
+
+from datetime import datetime
+stime=str(datetime.now())
+stime1=str(datetime.now())
+print('3.1, ', stime)
+print('3.2, ',stime1)
+
+fname=str(datetime.now())
+replace_from=[' ',':','.']
+replace_to  =['_','-','_']
+for a,b in zip(replace_from,replace_to):
+    fname=fname.replace(a,b)
+print('3.3, ',fname)
+
+import time
+stime=time.strftime("%F_%T ")
+print('4, ', stime)
+
+import time
+stime=time.strftime("%F_%H%M%S%T")
+print('5, ', stime)
+
+from time import strftime
+stime=strftime("%m/%d/%Y %H:%M")
+print('6, ', stime)
+#01/09/2015 13:11
+
+from datetime import datetime
+dt = datetime.now()
+dt1 = datetime.now()
+print('7.1, ', dt.microsecond)
+print('7.2, ', dt1.microsecond)
+
+import random
+print(random.random()) #0.9683211074152415
+uniqName=str(random.random()).replace('.','')#008985790613102929
+uniqName
 
 
 
