@@ -255,8 +255,7 @@ def MinutelyAction_mm():
     fntxt.write('May:'+tenmay+'\n')
     fntxt.write(("%s"%datetime.datetime.now()).split('.')[0])
     S = os.popen("ping bing.com -c 3").read();
-    vt1=-1
-    vt2=-1
+    vt1=-1;    vt2=-1
     pos=0
     k=0
     for s in S:
