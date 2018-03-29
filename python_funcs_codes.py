@@ -226,7 +226,6 @@ def Upload2Server():
 ##########################################################################    
 def runCMD(sudopass,cmd):
     os.system('echo '+sudopass+' | sudo -S '+cmd)
-
 ########################################################################
 # Substring: Copy contends from txt file, add string of time, add 
 # substring from 1st '\n' to 3nd '\n' add
