@@ -177,12 +177,26 @@ Scroll screen:
   ctr_b, PgUp  or ctr_b,[
 
 
+##############################################################
+Ubuntu SSH without password: How to automate SSH login with password?
+##############################################################
+# ssh-keygen
+# ssh-copy-id ubuntu@10.1.58.20
+# ssh    'ubuntu@10.1.58.20'
+# ssh -Y 'ubuntu@10.1.58.20'  
+# -Y: lai moi dau ra sang may local, vd: chay firfox tren terminal ssh nhung no lai hien thi tren local
 
+ServerAdd='tact@10.1.58.23' # 1080ti
+ssh-keygen
+ssh-copy-id $ServerAdd
+ssh -Y $ServerAdd
 
+ServerAdd='ubuntu@10.1.58.20' # titanXP
 
+https://askubuntu.com/questions/46930/how-can-i-set-up-password-less-ssh-login
 
-
-
+copy file in ubuntu: use ssh:
+scp .ssh/id_rsa1080.pub tact@10.1.58.23:/home/tact/.ssh
 
 
 
