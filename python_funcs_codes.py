@@ -464,8 +464,12 @@ print(random.random()) #0.9683211074152415
 uniqName=str(random.random()).replace('.','')#008985790613102929
 uniqName
 
-
-
+###########################################################
+# Python: Padding a vector/matrix enlarge/make bigger
+###########################################################
+#             ( (Tren, duoi), (trai,phai) )
+mfcc_vec=np.pad(mfcc,((0,Max_len_MFCC-len(mfcc)),(0,0)), mode='constant', constant_values=0)
+print(mfcc_vec.shape)
 
 
 
