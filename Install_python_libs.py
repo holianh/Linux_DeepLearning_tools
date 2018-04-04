@@ -55,51 +55,12 @@ conda install scikit-learn
 ######################################################################
 Installing Software via umake
 ######################################################################
+sudo apt-get update
 sudo apt install sox
 sudo apt install rubberband-cli
-
-sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
-sudo apt-get update
-sudo apt-get install ubuntu-make
-
-$ umake ide pycharm                 # community version
-$ umake ide pycharm-professional    # professional version
->>> umake -r ide pycharm              # To remove PyCharm installed via umake, use the command below:
-
-
-######################################################################
-Installing Software using PPA
-######################################################################
-Install PyCharm:
-  sudo add-apt-repository ppa:mystic-mirage/pycharm
-  sudo apt-get update
-   
-  $ sudo apt-get install pycharm-community  # community version
-  $ sudo apt-get install pycharm            # professional version
-
-  
-  
-######################################################################
-unInstall/Remove Software
-######################################################################
-Uninstall PyCharm:
-  $ sudo snap remove pycharm-community
-  $ sudo apt-get remove pycharm-community
-  $ sudo apt-get remove pycharm
-  $ sudo add-apt-repository --remove ppa:mystic-mirage/pycharm
-
-######################################################################
-Normal Install Software
-######################################################################
-    
-1.Install java, Oracle java if possible.
-2.Download and extract the version from the PyCharm site
-3.Extract the file, run pycharm.sh from the bin folder
-4.Optional, go to menu Tools > Create Desktop Entry to add it to your system menus.
-
-
-
-
+sudo apt-get install sshfs
+sudo apt-get install ncdu
+sudo apt-get install htop
 
 
 
