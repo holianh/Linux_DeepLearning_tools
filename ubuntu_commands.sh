@@ -199,7 +199,25 @@ copy file in ubuntu: use ssh:
 scp .ssh/id_rsa1080.pub tact@10.1.58.23:/home/tact/.ssh
 
 
+##############################################################
+Ubuntu: Run ipython notebook with browser from local to server ubuntu:
+##############################################################
+Server side:
+ipython notebook --no-browser --ip=* --port=8889
 
+#-------------------------------------------------------------------------------------------------
+results:
+(P3)tact@u1080:~$ ipython notebook --no-browser --ip=* --port=8889
+[TerminalIPythonApp] WARNING | Subcommand `ipython notebook` is deprecated and will be removed in future versions.
+...........
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8893/?token=ce8e4ff801099d2ec0745dcdcc81007164983f79bf626a53
+#-------------------------------------------------------------------------------------------------
+
+Local side: 
+http://10.1.58.23:8893
+#-------------------------------------------------------------------------------------------------
 
 
 
