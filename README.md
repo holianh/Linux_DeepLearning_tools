@@ -27,7 +27,11 @@ Useful linux command
   - nvcc -V
   - find -type f -name "*libcudnn.so*"
   - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics, [more](ubuntu_commands.sh#L6)
-  - Anaconda GUI in ubuntu [view](ubuntu_commands.sh#L43)
+  - Anaconda GUI in ubuntu: *anaconda-navigator* [view more](ubuntu_commands.sh#L43)
+  - Ubuntu: Run ipython notebook with browser from local to server ubuntu:  [more](ubuntu_commands.sh#L203)
+    *ipython notebook --no-browser --ip=* --port=8889*
+  
+  
   # 4. Install Deeplearning Libraries
   - **Install all librarys** needing for Deeplearning with Keras for Speech: , [View](Install_python_libs.py#L1)
   - pipreqs /path/to/project: PYTHON - AUTO GENERATE REQUIREMENTS.TXT, [more](ubuntu_commands.sh#L33)
