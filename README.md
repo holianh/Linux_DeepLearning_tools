@@ -28,8 +28,8 @@ Useful linux command
   - find -type f -name "*libcudnn.so*"
   - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics, [more](ubuntu_commands.sh#L6)
   - Anaconda GUI in ubuntu: *anaconda-navigator* [view more](ubuntu_commands.sh#L43)
-  - Ubuntu: Run ipython notebook with browser from local to server ubuntu:  [more](ubuntu_commands.sh#L203)
-    *ipython notebook --no-browser --ip=* --port=8889*
+  - Ubuntu: Run ipython notebook with browser from on server: *ipython notebook --no-browser --ip=\* --port=8889* :[more](ubuntu_commands.sh#L203)
+     
   
   
   # 4. Install Deeplearning Libraries
