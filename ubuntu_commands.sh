@@ -220,5 +220,37 @@ http://10.1.58.23:8893
 #-------------------------------------------------------------------------------------------------
 
 
+##############################################################
+ipython: ipython notebook width 100%
+##############################################################
+ref: https://gist.github.com/paulochf/f6c9ed0b39f85dd85270
+
+from IPython.display import display, HTML
+
+display(HTML(data="""
+<style>
+    div#notebook-container    { width: 95%; }
+    div#menubar-container     { width: 65%; }
+    div#maintoolbar-container { width: 99%; }
+</style>
+"""))
+#-----------------------------------------------------------
+nano ~/.jupyter/custom/custom.css
+paste this:
+
+.container {
+    width: 99% !important;
+}   
+div.cell.selected {
+    border-left-width: 1px !important;	
+}
+div.output_scroll {
+    resize: vertical !important;
+}
+#-----------------------------------------------------------
+nano ~/.ipython/profile_default/static/custom/custom.css
+paste this into:
+    .container { width:100% !important; }
+
 
 
