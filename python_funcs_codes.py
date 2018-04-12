@@ -177,7 +177,7 @@ def Files_2csv_inDir(path, wav_ext, lbl_ext):
 # Calculate running time 
 ########################################################################
 
-import timeit
+import timeit,math
 start = timeit.default_timer()  # Start counting time
 #--------------- --------------- --------------- ---------------
 def format_seconds_to_hhmmss(seconds):
@@ -187,11 +187,13 @@ def format_seconds_to_hhmmss(seconds):
     seconds %= 60
     return "%02i:%02i:%02i" % (hours, minutes, seconds)
 #--------------- --------------- --------------- ---------------
+
  # Stop counting time, make a time string to print out to screen
 stop = timeit.default_timer()
 total_time=stop-start # in seconds
 tRan=format_seconds_to_hhmmss(math.trunc(total_time))
-tWait=format_seconds_to_hhmmss(math.trunc(((Max_samples-k)*total_time)/k))
+print(tRan)
+#tWait=format_seconds_to_hhmmss(math.trunc(((Max_samples-k)*total_time)/k))
 
 ########################################################################
 # post (upload) file/string to PHP webpage
