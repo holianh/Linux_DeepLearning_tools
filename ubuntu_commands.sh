@@ -253,4 +253,31 @@ paste this into:
     .container { width:100% !important; }
 
 
+##############################################################
+Ubuntu: Create bootable install OS disk (ubuntu/window/...system):
+##############################################################
+1. unplug USB:
+    ls /dev/sd*
+    
+/dev/sda   /dev/sda2  /dev/sdb   /dev/sdb2  /dev/sdc1  
+/dev/sda1  /dev/sda5  /dev/sdb1  /dev/sdc   
+
+2. Plug USB into ubuntu machine:
+    ls /dev/sd*
+    /dev/sda   /dev/sda2  /dev/sdb   /dev/sdb2  /dev/sdc1  /dev/sdd1 <------
+    /dev/sda1  /dev/sda5  /dev/sdb1  /dev/sdc   /dev/sdd    <------
+    
+2.1. see different disk:
+    /dev/sdd /dev/sdd1
+
+3. Navigate to the location of your source ISO
+4.  Run dd command to copy files from ISO to disk
+    sudo  dd   if=ubuntu-17.10.1-desktop-amd64.iso    of=/dev/sdd    status=progress
+    
+    output:
+    1432+1 records in
+    1432+1 records out
+    1502576640 bytes (1.5 GB, 1.4 GiB) copied, 0.567973 s, 2.6 GB/s
+
+http://www.linuxandubuntu.com/home/how-to-burn-iso-image-to-dvd-and-usb-using-dd
 
