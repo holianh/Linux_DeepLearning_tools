@@ -22,7 +22,8 @@ Useful linux command
   - __Linux system: share folder / mount a remote dir to local__ , [view](ubuntu_commands.sh#L98)
   - __Startup a program in ubuntu manualy__ , [view](ubuntu_commands.sh#L107)
   - Linux system: install code editor __geany__, better than gedit: code folding, show indent guide, show space,...  , [view](ubuntu_commands.sh#L142)
-  - Ubuntu: Create bootable install OS disk (ubuntu/window/...system): [view](ubuntu_commands.sh#257)
+  - Ubuntu: Install Sublime Text in linux: [view](ubuntu_commands.sh#L287)
+  - Ubuntu: Create bootable install OS disk (ubuntu/window/...system): [view](ubuntu_commands.sh#L257)
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
