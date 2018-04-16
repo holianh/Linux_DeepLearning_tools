@@ -281,3 +281,15 @@ Ubuntu: Create bootable install OS disk (ubuntu/window/...system):
 
 http://www.linuxandubuntu.com/home/how-to-burn-iso-image-to-dvd-and-usb-using-dd
 
+
+
+##############################################################
+Ubuntu: Install Sublime in linux:
+##############################################################
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update 
+sudo apt-get install sublime-text-installer
+    Lisense key: try in here: tested and successful!
+    http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/
+
