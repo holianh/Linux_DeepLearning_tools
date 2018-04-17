@@ -494,5 +494,43 @@ def ChangeSpeed(infile, tempo, outfile='ChangeSpeed'):
 
 
 ###########################################################
-: 
+Python: Compress folders at current folder to tar.gz
 ###########################################################
+import os
+import os.path 
+import shutil
+import datetime as dt
+for fi in os.listdir('./'):
+    if os.path.isdir(fi):
+        print (fi)
+        print (dt.datetime.now())
+        os.system('tar -zcpf {} {}'.format(fi+'.tar.gz', fi))
+        print('Xong ',fi)
+        shutil.rmtree(fi)
+        print (dt.datetime.now())
+        #exit()
+
+        
+
+        
+        
+        
+        
+        
+        
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
