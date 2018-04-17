@@ -466,6 +466,9 @@ print(random.random()) #0.9683211074152415
 uniqName=str(random.random()).replace('.','')#008985790613102929
 uniqName
 
+
+
+
 ###########################################################
 # Python: Padding a vector/matrix enlarge/make bigger
 ###########################################################
@@ -474,5 +477,16 @@ mfcc_vec=np.pad(mfcc,((0,Max_len_MFCC-len(mfcc)),(0,0)), mode='constant', consta
 print(mfcc_vec.shape)
 
 
-
-
+###########################################################
+# Python: Run ubuntu command without display with subprocess.Popen
+###########################################################
+def ChangeSpeed(infile, tempo, outfile='ChangeSpeed'):
+    import subprocess
+    cmd='ffmpeg -i "{}" -filter:a  "atempo={}" "{}" -y'.format(infile,tempo,outfile)
+    
+    p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    #p = subprocess.Popen(cmd,stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate() 
+    p_status = p.wait()
+    
+    return output
