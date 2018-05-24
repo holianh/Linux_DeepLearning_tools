@@ -24,6 +24,7 @@ Useful linux command
   - Linux system: install code editor __geany__, better than gedit: code folding, show indent guide, show space,...  , [view](ubuntu_commands.sh#L142)
   - Ubuntu: Install Sublime Text in linux: [view](ubuntu_commands.sh#L287)
   - Ubuntu: Create bootable install OS disk (ubuntu/window/...system): [view](ubuntu_commands.sh#L257)
+  - Install VNCserver in ubuntu: [good link](https://ubuntuwiki.com/2017/07/how-to-install-vnc-on-ubuntu-17-04/)
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
