@@ -1,13 +1,38 @@
 
 ########################################################
 echo "Install APP"
-sudo apt-get install openssh-server
-sudo apt-get install htop
-sudo apt-get install ncdu
-sudo apt-get install geany -y
-sudo apt-get install geany-plugins -y
-sudo apt-get install tmux -y
+ 
+echo "apt-get htop ..."   & sudo apt-get install htop
+echo "apt-get ncdu ..."   & sudo apt-get install ncdu
+echo "apt-get geany ..."  & sudo apt-get install geany -y
+echo "geany-plugins ..."  & sudo apt-get install geany-plugins -y
+echo "tmux ..."           & sudo apt-get install tmux -y
 
+sudo add-apt-repository ppa:mc3man/trusty-media
+echo "apt-get update ..." & sudo apt-get update
+echo "dist-upgrade   ..." & sudo apt-get dist-upgrade
+echo "install ffmpeg ..." & sudo apt-get install  -y ffmpeg
+echo "install tree   ..." & sudo apt-get install  -y tree
+echo "openssh-client ..." & sudo apt-get install  -y openssh-client
+echo "openssh-server ..." & sudo apt-get install  -y openssh-server
+echo "install sshpass..." & sudo apt-get install  -y sshpass
+echo "install samba  ..." & sudo apt-get install  -y samba
+echo "install vsftpd ftp" & sudo apt-get install  -y vsftpd ftp
+echo "ibus-sunpinyin ..." & sudo apt-get install  -y ibus-sunpinyin
+echo "exfat-fuse     ..." & sudo apt-get install  -y exfat-fuse exfat-utils
+echo "ttf-mscorefonts..." & sudo apt-get install  -y ttf-mscorefonts-installer
+echo "inst lm-sensors..." & sudo apt-get install  -y lm-sensors
+echo "install psensor..." & sudo apt-get install  -y psensor
+echo "install vnc4ser..." & sudo apt-get install  -y vnc4server
+echo "ubuntu-desktop ..." & sudo apt-get install  -y --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+echo "gnome-pane     ..." & sudo apt-get install  -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+echo "install ffmpeg ..." & sudo apt-get install  -y gnome-core xfce4 firefox nano -y --force-yes
+
+echo "libav-tools    ..." & sudo apt-get install  -y libav-tools
+echo "build-essentia ..." & sudo apt-get install  -y build-essential git libatlas-base-dev libopencv-dev
+echo "libblas-dev    ..." & sudo apt-get install  -y libblas-dev liblapack-dev
+echo "nvidia-cuda-toolkit ..." & sudo apt-get install  -y nvidia-cuda-toolkit
+#sudo apt-get install  -y wine
 ########################################################
 echo "Config login root user"
 sudo sed -i 's/prohibit-password/yes/' /etc/ssh/sshd_config
@@ -24,6 +49,17 @@ apt update && apt install xfce4 xfce4-goodies tightvncserver
 vncserver
 vncserver -kill :1
 vncserver -kill :2
+########################################################
+########################################################
+# END AUTO RUN
+########################################################
+
+#MANUAL.......
+
+
+
+
+
 nano ~/.vnc/xstartup
     # Delete exists content, paste this:
     #-----------------------------------
