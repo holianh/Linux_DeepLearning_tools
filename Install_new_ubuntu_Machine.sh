@@ -59,7 +59,10 @@ systemctl start vncserver@1
 ## https://ubuntuwiki.com/2017/07/how-to-install-vnc-on-ubuntu-17-04/
 ########################################################
 
-
+# may khach:
+ssh-keygen
+ssh-copy-id      u@10.1.53.13
+ssh              u@10.1.58.20
 
 
 
