@@ -102,7 +102,7 @@ VD: sshfs tact@192.168.0.6:/home/tact/AudioDBs/Olivia/logs ~/kr/logs
     ref:https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server
     
 sshfs ubuntu@ubun:/home/4T/ubuntu  /home/ubuntu/DBs
-
+Share Folder: select folder then share as WINDOWS, then run: "chmod 777 -R <folder name>" to give All permission to all users
 ##############################################################
 Linux system: Startup a program in ubuntu manualy
 ##############################################################
