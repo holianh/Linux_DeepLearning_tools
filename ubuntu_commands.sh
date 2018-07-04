@@ -293,3 +293,25 @@ sudo apt-get install sublime-text-installer
     Lisense key: try in here: tested and successful!
     http://appnee.com/sublime-text-3-universal-license-keys-collection-for-win-mac-linux/
 
+
+##############################################################
+Install Samba and Share file from linux to windows
+##############################################################
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install samba samba-common system-config-samba python-glade2 -y
+sudo apt install samba samba-common-bin
+sudo systemctl start smbd
+sudo systemctl start nmbd
+sudo apt install system-config-samba
+#If you get the following error:
+#could not open configuration file `/etc/libuser.conf': No such file or directory
+sudo touch /etc/libuser.conf
+------
+sudo adduser username
+sudo smbpasswd -a username
+----
+sudo systemctl restart smbd nmbd
+# Huonf dan rat chuan, hay, tested tren Ubuntu 18.04
+# https://www.linuxbabe.com/ubuntu/system-config-samba-ubuntu-16-04
+
+
