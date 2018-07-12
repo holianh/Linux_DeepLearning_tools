@@ -62,6 +62,7 @@ Useful linux command
    - Python: Padding a vector/matrix enlarge/make bigger  [view](python_funcs_codes.py#L468) 
    - Python: Run ubuntu command without display with subprocess.Popen, [view](python_funcs_codes.py#L481) 
    - Python: Compress folders at current folder to tar.gz   [view](python_funcs_codes.py#L497) 
+   - Padding list 2D:  [view](python_funcs_codes.py#L515) 
    
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
