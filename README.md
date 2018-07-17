@@ -26,6 +26,7 @@ Useful linux command
   - Ubuntu: Create bootable install OS disk (ubuntu/window/...system): [view](ubuntu_commands.sh#L257)
   - Install VNCserver in ubuntu: [good link](https://ubuntuwiki.com/2017/07/how-to-install-vnc-on-ubuntu-17-04/)
   - Install Samba and Share file from linux to windows [Xem](ubuntu_commands.sh#L298)
+  - Run Specific CUDA on GPU: __CUDA_VISIBLE_DEVICES=2,3 python code.py__
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
