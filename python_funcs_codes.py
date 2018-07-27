@@ -536,7 +536,17 @@ def PaddingList2D(SS):
     return SS
 SS=PaddingList2D(SS)
 pp(SS)
-        
+---------------------------------------------------
+a = [[1, 2, 3], 
+     [4, 5], 
+     [6, 7, 8, 9]]
+import numpy as np
+
+b = np.zeros([len(a),len(max(a,key = lambda x: len(x)))])
+for i,j in enumerate(a):
+    b[i][0:len(j)] = j
+a
+b        
         
         
         
