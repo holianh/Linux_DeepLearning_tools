@@ -458,7 +458,14 @@ model.save_weights(Client_weigh_json);print("Saved model + weight to disk");# se
 save_model(model,Client_filepath_LastModel,overwrite=True)
 print(dt.datetime.now())
 
+#######################################################################
+Keras python jupyter notebook: Print/display model structure
+#######################################################################
+# from keras.utils import plot_model
+# plot_model(vqa_model, to_file='model.png')
+from IPython.display import SVG
+from keras.utils.vis_utils import model_to_dot
 
-
+SVG(model_to_dot(vqa_model,show_shapes=True).create(prog='dot', format='svg'))
     
 
