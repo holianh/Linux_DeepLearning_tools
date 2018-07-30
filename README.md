@@ -72,8 +72,7 @@ Useful linux command
    - __Tensorboard__: local and remote , [here](Keras_funcs.py#L42)
    - __Make model run in Multiple GPUs__, [From define input](python_funcs_codes.py#L347), [to parallel model in multiple GPUs](python_funcs_codes.py#L391)
    - Keras: parallel GPUs Model training V2:  [here](Keras_funcs.py#L61)
-   
-   
+   - Plot, display model in jupyter notebook: [here](Keras_funcs.py#L462)  
    
   # 7. WEB Services
   - Build a front end web application: Send data without reload page [Youtube](https://goo.gl/4jNWzF)
