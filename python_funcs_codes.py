@@ -551,8 +551,13 @@ b
         
         
 .
-
-
+###########################################################
+Python: Convert list of 2D array to 3D array:
+###########################################################
+MFs=np.zeros((len(MFCCs),Max_len_MFCC,20),dtype='float')
+for k in range(len(MFCCs)):
+    MFs[k]=MFCCs[k]
+MFs.shape  
 
 
 
