@@ -315,3 +315,15 @@ sudo systemctl restart smbd nmbd
 # https://www.linuxbabe.com/ubuntu/system-config-samba-ubuntu-16-04
 
 
+##############################################################
+How to install pytorch in Anaconda with conda or pip?
+##############################################################
+conda create -n pytorch_env python=3.5
+source activate pytorch_env
+conda install -c soumith pytorch
+python
+> import torch
+
+#https://stackoverflow.com/questions/49918479/how-to-install-pytorch-in-anaconda-with-conda-or-pip
+
+
