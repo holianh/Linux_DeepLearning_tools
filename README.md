@@ -64,6 +64,7 @@ Useful linux command
    - Python: Run ubuntu command without display with subprocess.Popen, [view](python_funcs_codes.py#L481) 
    - Python: Compress folders at current folder to tar.gz   [view](python_funcs_codes.py#L497) 
    - Padding list 2D:  [view](python_funcs_codes.py#L515) 
+   - Convert list of 2D array to 3D array [view](python_funcs_codes.py#L555 ) 
    
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
