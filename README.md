@@ -42,7 +42,7 @@ Useful linux command
   - **Install all librarys** needing for Deeplearning with Keras for Speech: , [View](Install_python_libs.py#L1)
   - pipreqs /path/to/project: PYTHON - AUTO GENERATE REQUIREMENTS.TXT, [more](ubuntu_commands.sh#L33)
   - pip install python-levenshtein
-  - 
+  - How to install pytorch in Anaconda with conda or pip?  [View](ubuntu_commands.sh#L319)
   
   # 5. Python functions List
    - def LastNlines\(NLs=15,LineContainKey="Key to Fine"\), [view](python_funcs_codes.py#L7)
