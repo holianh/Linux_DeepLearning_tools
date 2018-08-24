@@ -74,7 +74,7 @@ Useful linux command
    - __Make model run in Multiple GPUs__, [From define input](python_funcs_codes.py#L347), [to parallel model in multiple GPUs](python_funcs_codes.py#L391)
    - Keras: parallel GPUs Model training V2:  [here](Keras_funcs.py#L61)
    - Plot, display model in jupyter notebook: [here](Keras_funcs.py#L462)  
-   
+   - tensorboard <enter>: locate tensorboard/program.py | xargs sed -i -e "s/logdir', ''/logdir', os.getcwd()/g"
   # 7. WEB Services
   - Build a front end web application: Send data without reload page [Youtube](https://goo.gl/4jNWzF)
    
