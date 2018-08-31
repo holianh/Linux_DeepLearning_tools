@@ -420,51 +420,51 @@ print()
 ###########################################################
 # Python: Many date time, unique file names  
 ###########################################################
+# giờ thật hiện tại là 11:05:20
+from datetime import datetime
+stime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+print('1, ', stime) #1,  2018-08-31 11:05:20
 
 from time import gmtime, strftime
 stime=strftime("%Y-%m-%d %H:%M:%S", gmtime())
-print('1, ', stime)
-
-from datetime import datetime
-stime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-print('2, ', stime)
+print('2, ', stime) # 2,  2018-08-31 03:05:20
 
 from datetime import datetime
 stime=str(datetime.now())
 stime1=str(datetime.now())
-print('3.1, ', stime)
-print('3.2, ',stime1)
+print('3.1, ', stime)#3.1,  2018-08-31 11:05:20.884790
+print('3.2, ',stime1)#3.2,  2018-08-31 11:05:20.884790
 
 fname=str(datetime.now())
 replace_from=[' ',':','.']
 replace_to  =['_','-','_']
 for a,b in zip(replace_from,replace_to):
     fname=fname.replace(a,b)
-print('3.3, ',fname)
+print('3.3, ',fname)#3.3,  2018-08-31_11-05-20_884790
 
 import time
 stime=time.strftime("%F_%T ")
-print('4, ', stime)
+print('4, ', stime)#4,  2018-08-31_11:05:20 
 
 import time
 stime=time.strftime("%F_%H%M%S%T")
-print('5, ', stime)
+print('5, ', stime)#5,  2018-08-31_11052011:05:20
 
 from time import strftime
 stime=strftime("%m/%d/%Y %H:%M")
-print('6, ', stime)
-#01/09/2015 13:11
+print('6, ', stime)#6,  08/31/2018 11:05
+ 
 
 from datetime import datetime
 dt = datetime.now()
 dt1 = datetime.now()
-print('7.1, ', dt.microsecond)
-print('7.2, ', dt1.microsecond)
+print('7.1, ', dt.microsecond)#7.1,  885290
+print('7.2, ', dt1.microsecond)#7.2,  885290
 
 import random
-print(random.random()) #0.9683211074152415
-uniqName=str(random.random()).replace('.','')#008985790613102929
-uniqName
+print(random.random()) #0.8495695896891915
+uniqName=str(random.random()).replace('.','') 
+uniqName #08495695896891915
 
 
 
