@@ -421,6 +421,10 @@ print()
 # Python: Many date time, unique file names  
 ###########################################################
 # giờ thật hiện tại là 11:05:20
+from time import strftime
+stime=strftime("%H:%M:%S")
+print('2, ', stime) # 2,  2018-08-31 11:05:20
+
 from datetime import datetime
 stime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 print('1, ', stime) #1,  2018-08-31 11:05:20
@@ -454,7 +458,6 @@ from time import strftime
 stime=strftime("%m/%d/%Y %H:%M")
 print('6, ', stime)#6,  08/31/2018 11:05
  
-
 from datetime import datetime
 dt = datetime.now()
 dt1 = datetime.now()
@@ -465,9 +468,6 @@ import random
 print(random.random()) #0.8495695896891915
 uniqName=str(random.random()).replace('.','') 
 uniqName #08495695896891915
-
-
-
 
 ###########################################################
 # Python: Padding a vector/matrix enlarge/make bigger
