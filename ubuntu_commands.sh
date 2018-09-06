@@ -327,3 +327,18 @@ python
 #https://stackoverflow.com/questions/49918479/how-to-install-pytorch-in-anaconda-with-conda-or-pip
 
 
+
+##############################################################
+Anaconda Jupyter Notebook: Change startup folder of notebook:
+##############################################################
+Use the jupyter notebook config file:
+
+Open cmd (or Anaconda Prompt) and run jupyter notebook --generate-config.
+
+This writes a file to C:\Users\username\.jupyter\jupyter_notebook_config.
+
+Search for the following line: #c.NotebookApp.notebook_dir = ''
+
+Replace by c.NotebookApp.notebook_dir = '/the/path/to/home/folder/'
+
+Make sure you use forward slashes in your path and use /home/user/ instead of ~/ for your home directory,
