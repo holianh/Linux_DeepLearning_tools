@@ -342,3 +342,23 @@ Search for the following line: #c.NotebookApp.notebook_dir = ''
 Replace by c.NotebookApp.notebook_dir = '/the/path/to/home/folder/'
 
 Make sure you use forward slashes in your path and use /home/user/ instead of ~/ for your home directory,
+https://stackoverflow.com/questions/35254852/how-to-change-the-jupyter-start-up-folder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
