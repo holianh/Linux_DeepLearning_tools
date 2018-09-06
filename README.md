@@ -36,7 +36,7 @@ Useful linux command
   - Anaconda GUI in ubuntu: *anaconda-navigator* [view more](ubuntu_commands.sh#L43)
   - Ubuntu: Run ipython notebook with browser from on server: *ipython notebook --no-browser --ip=\* --port=8889* :[more](ubuntu_commands.sh#L203)
   - ipython: ipython notebook width 100%   , [more](ubuntu_commands.sh#L224)
-  
+  - Anaconda ipython Jupyter Notebook: Change startup folder of notebook: [view](ubuntu_commands.sh#L332)
   
   # 4. Install Deeplearning Libraries
   - **Install all librarys** needing for Deeplearning with Keras for Speech: , [View](Install_python_libs.py#L1)
