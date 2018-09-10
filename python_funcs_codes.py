@@ -561,9 +561,55 @@ MFs.shape
 
 
 
+###########################################################
+Python: paralell CPUs, tính toán song song
+###########################################################
 
+from multiprocessing import Pool
+from time import sleep
+from sys import exit
 
+def slowly_square(i):
+    sleep(1)
+    return i*i
 
+def go():
+    pool = Pool(8)
+    try:
+        results = pool.map_async(slowly_square, range(40)).get(9999999)
+        for value in results:
+            print(value)
+        
+    except KeyboardInterrupt:
+        pool.terminate()
+        print "You cancelled the program!"
+        sys.exit(1)
+    print('Finished!')
+if __name__ == "__main__":
+    go()
+# --------------------------------------------------------------------
+if not exists(pSave_test_+'.npz'):
+    starttime=strftime("%H:%M:%S")
+    Nfiles,files=List_count_file(pPTest)
+    files=natsorted(files)
+    print('len(files)=',len(files))
+    args=[[file,cnt,Nfiles] for cnt,file in enumerate(files)]
+    pool = Pool(16)
+    try:
+        data = pool.map_async(processtest, args).get(9999999) #       data.sort(key=lambda tup: tup[1])  # sorts in place
+        X = [data[i][0] for i in range(len(data))]
+        X = np.asarray(X)
+        fname = [data[i][1] for i in range(len(data))]
+        labels = [data[i][2] for i in range(len(data))]
+        np.savez(pSave_test_, X=X, fname=fname,labels=labels)
+    except KeyboardInterrupt:                ##### doan nay de bam Ctr_C khi muon dung ctrinh, ket hop voi try/except trong processtest
+        print ('parent received control-c')
+        pool.terminate()
+    pool.terminate()
+    #--------------------------------------    
+    print('Done!')
+# --------------------------------------------------------------------
+    
 
 
 
