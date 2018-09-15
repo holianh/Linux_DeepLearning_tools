@@ -615,13 +615,19 @@ if not exists(pSave_test_+'.npz'):
 Github markdown: auto make table of content:
 ###########################################################
 # Input: ss : copy all content of Github markdown
-s='{} [{}](#{})  '
+s='{} [{}]({}#{})  '
 mark=['-','*','+','-']
+Link2otherPage= '' #'README.md?'
+
 for line in ss.split('\n'):
+#     line='# Đại học'
     L=line.strip()
+    L1=L
     if L[:1]=='#':
         link=line.lower().replace('#','').replace(':','').replace('?','').replace(',','')
         link=link.strip().replace(' ','-')
+        if L1.replace('#','')[:1]=='Đ':
+            L1='Đ'
         start=''
         n=0
         for ch in L:
@@ -631,8 +637,11 @@ for line in ss.split('\n'):
         start+=mark[n-1]
         name=line.replace('#','') 
         name=name.strip()
-        print(s.format(start,name, link) )
-print('---')  
+        if link[0]=='đ':
+            link='Đ'+link[1:]
+        print(s.format(start,name,Link2otherPage, link) )
+#     break
+print('---')        
 
 
 
