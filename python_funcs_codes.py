@@ -611,8 +611,28 @@ if not exists(pSave_test_+'.npz'):
 # --------------------------------------------------------------------
     
 
-
-
+###########################################################
+Github markdown: auto make table of content:
+###########################################################
+# Input: ss : copy all content of Github markdown
+s='{} [{}](#{})  '
+mark=['-','*','+','-']
+for line in ss.split('\n'):
+    L=line.strip()
+    if L[:1]=='#':
+        link=line.lower().replace('#','').replace(':','').replace('?','').replace(',','')
+        link=link.strip().replace(' ','-')
+        start=''
+        n=0
+        for ch in L:
+            if n==0:n=1;continue;
+            if ch=='#':n+=1;start=start+' '*3;
+            if ch!='#':break
+        start+=mark[n-1]
+        name=line.replace('#','') 
+        name=name.strip()
+        print(s.format(start,name, link) )
+print('---')  
 
 
 
