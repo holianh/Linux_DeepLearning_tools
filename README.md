@@ -67,6 +67,7 @@ Useful linux command
    - Padding list 2D:  [view](python_funcs_codes.py#L515) 
    - Convert list of 2D array to 3D array [view](python_funcs_codes.py#L555 ) 
    - Python: paralell CPUs, tính toán song song: pool.map_async()... [view](python_funcs_codes.py#L565 ) 
+   - Python Notebook parallel CPUs:[view](python_funcs_codes.py#L650 ) 
    - Github markdown: auto make table of content: [view](python_funcs_codes.py#L615 ) 
    
    # 6. Keras funcs list
