@@ -645,4 +645,22 @@ print('---')
 
 
 
-        
+
+###########################################################
+Python Notebook parallel CPUs:
+###########################################################
+with open('util.py','w') as ff:
+    ff.write('def binh_phuong(x):return x ** 2')
+
+import multiprocessing as mp
+import util
+import numpy as np
+
+# a = [1, 2, 3, 4, 5]
+a = np.random.rand(2000,3000)
+pool = mp.Pool(mp.cpu_count())
+r = pool.map(util.binh_phuong, a)
+print(len(r))
+
+
+
