@@ -343,9 +343,9 @@ Replace by c.NotebookApp.notebook_dir = '/the/path/to/home/folder/'
 
 Make sure you use forward slashes in your path and use /home/user/ instead of ~/ for your home directory,
 https://stackoverflow.com/questions/35254852/how-to-change-the-jupyter-start-up-folder
-
-
-
+ex:
+File: C:\Users\ta\.jupyter\jupyter_notebook_config.py
+Line: 214: c.NotebookApp.notebook_dir = 'j:/2018'
 
 ##############################################################
 Anaconda Jupyter Notebook: Run Remote Notebook on server from local:
