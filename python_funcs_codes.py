@@ -662,5 +662,18 @@ pool = mp.Pool(mp.cpu_count())
 r = pool.map(util.binh_phuong, a)
 print(len(r))
 
-
+###########################################################
+Python Notebook run sudo command:
+###########################################################
+# Not sudo: os.popen('ls -la -h').read()
+# With sudo:----------------------------------------
+#!echo 123|sudo -S ls -ls -h
+#---------------------------------------------------
+import pexpect                          # here you issue the command with "sudo"
+child = pexpect.spawn('sudo ls -la -h') # it will prompt something like: "[sudo] password for < generic_user >:" # you "expect" to receive a string having "password"
+s=child.expect('password')              # if it's found, send the password
+s=child.sendline('123')                 # read the output:
+outp=str(child.read()).replace('\\r','').split('\\n')
+for s in outp[1:-1]:
+    print(s)
 
