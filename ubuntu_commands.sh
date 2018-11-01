@@ -365,8 +365,17 @@ http://(ubu or 127.0.0.1):1234/?token=113fbcd684007d6a72f8839c94637951d613b136a3
 - Enjoy!
 
 
-
-
+##############################################################
+Chạy trong Notebook, lấy thông tin của main, cpu
+##############################################################
+# !pip install torchvision
+# !apt-get install lshw
+# !lshw 
+#----------------------------------------------
+!cat /sys/devices/virtual/dmi/id/board_vendor 
+!cat /sys/devices/virtual/dmi/id/board_name
+!lspci
+!lscpu
 
 
 
