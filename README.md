@@ -70,6 +70,7 @@ Useful linux command
    - Python: paralell CPUs, tính toán song song: pool.map_async()... [view](python_funcs_codes.py#L565 ) 
    - Python Notebook parallel CPUs:[view](python_funcs_codes.py#L650 ) 
    - Github markdown: auto make table of content: [view](python_funcs_codes.py#L615 ) 
+   - Python Notebook run sudo command: [view](python_funcs_codes.py#L666 ) 
    
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
