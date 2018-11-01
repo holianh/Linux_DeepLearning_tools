@@ -10,6 +10,7 @@ This is all Header in this file:
 
 # 1. Linux DeepLearning tools
 These are some useful tools to use with Linux (focus on Ubuntu) when working with Deep Learning.
+  - Chạy trong Notebook, lấy thông tin của main, cpu, [more](ubuntu_commands.sh#L369)
 
 # 2. Linux system
 Useful linux command
