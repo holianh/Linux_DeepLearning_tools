@@ -26,3 +26,4 @@ def levenshtein(s, t):
 #            print(s[i],v0)
         return v1[len(t)]
 levenshtein('tuan anh','truong thanh')    
+
