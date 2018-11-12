@@ -54,9 +54,10 @@ h=model.fit(x=[ mfcc_vec, np.ones(Max_samples)*maxlen_AllMfcc,    word_vec, char
           )
           
 Tensorboard remote: ref: https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server
-
-            
-
+Remote: tensorboard --logdir=. --host=0.0.0.0 --port=6006
+Local (win/ubuntu): http://10.1.53.1:6006   (http://<IP server>:<port> 
+https://stackoverflow.com/questions/37987839/how-can-i-run-tensorboard-on-a-remote-server
+                                             
 ##############################################################
 Keras: parallel GPUs Model training
 ##############################################################
