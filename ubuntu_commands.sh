@@ -380,8 +380,35 @@ Chạy trong Notebook, lấy thông tin của main, cpu
 
 
 
+##############################################################
+Add New sudo User ubuntu:
+##############################################################
+    sudo adduser u
+    sudo adduser u sudo
+    usermod -aG sudo u
+    su - u
 
 
+##############################################################
+Change language in ssh of ubuntu to english
+##############################################################
+
+    sudoedit /etc/default/locale
+
+    LANG="en_US"
+    LANGUAGE="en_US:en"
+    https://askubuntu.com/questions/133318/how-do-i-change-the-language-via-a-terminal    
+or: 
+    export LC_ALL=C
+    https://askubuntu.com/questions/264283/switch-command-output-language-from-native-language-to-english
+
+##############################################################
+TensorBoard server client:
+##############################################################
+    Server:
+        tensorboard --logdir=. --host=0.0.0.0 --port=6006
+    Local: 
+        http://10.1.53.1:6006
 
 
 
