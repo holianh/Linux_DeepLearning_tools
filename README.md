@@ -30,6 +30,7 @@ Useful linux command
   - Run Specific CUDA on GPU: __CUDA_VISIBLE_DEVICES=2,3 python code.py__ (or *export CUDA_VISIBLE_DEVICES=0,1* )
   - Add New sudo User ubuntu: [Xem](ubuntu_commands.sh#L384)
   - Change language in ssh of ubuntu to english: [Xem](ubuntu_commands.sh#L393)
+  - TensorBoard server client: : [Xem](ubuntu_commands.sh#L406)
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
