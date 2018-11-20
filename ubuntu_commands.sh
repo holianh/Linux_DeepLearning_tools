@@ -411,6 +411,25 @@ TensorBoard server client:
         http://10.1.53.1:6006
 
 
+##############################################################
+Python: install Pythable
+##############################################################
+
+def RunSudoCMD(cmd):
+    import pexpect                          # here you issue the command with "sudo"
+    child = pexpect.spawn(cmd) # it will prompt something like: "[sudo] password for < generic_user >:" # you "expect" to receive a string having "password"
+    s=child.expect('password')              # if it's found, send the password
+    s=child.sendline('123')                 # read the output:
+    outp=str(child.read()).replace('\\r','').split('\\n')
+    for s in outp[1:-1]:
+        print(s)
+
+# RunSudoCMD('sudo apt-get install libhdf5-serial-dev -y')
+# !conda install -c anaconda c-blosc -y
+# !pip install tables
+
+
+
 
 
 
