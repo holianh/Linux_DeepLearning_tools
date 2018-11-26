@@ -10,6 +10,12 @@ This is all Header in this file:
 
 # 1. Linux DeepLearning tools
 These are some useful tools to use with Linux (focus on Ubuntu) when working with Deep Learning.
+  - 1. Install Ubuntu 18.04
+    2. Install Nvidia-Driver: nvidia-smi
+    3. Install cuda 9.0     : nvcc -V
+    4. Install cudnn        
+    5. Install Anaconda
+    
   - Chạy trong Notebook, lấy thông tin của main, cpu, [more](ubuntu_commands.sh#L369)
 
 # 2. Linux system
