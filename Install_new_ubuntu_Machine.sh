@@ -1,9 +1,19 @@
 #List youtube: https://goo.gl/7VKgdw
 
 # Install NVIDIA Driver & CUDA 9.0/9.2 & CUDNN must be successull first.
+sudo echo "Install for ubuntu"
 
-
-
+install=0
+if [ $install == 1 ]; then #1
+  # Install  CUDNN: copy file cudnn to this dir.
+  tar -xzvf cudnn-9.0-linux-x64-v7.1.tgz
+  #Copy the following files into the CUDA Toolkit directory.
+  sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+  sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+  sudo chmod a+r /usr/local/cuda/include/cudnn.h    /usr/local/cuda/lib64/libcudnn*
+  #ref: http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
+  #successful!
+fi
 
 sudo add-apt-repository ppa:peek-developers/stable 
 sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
