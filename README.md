@@ -9,7 +9,7 @@ This is all Header in this file:
 
 
 # 1. Linux DeepLearning tools
-These are some useful tools to use with Linux (focus on Ubuntu) when working with Deep Learning.
+These are some useful tools to use with Linux (focus on Ubuntu) when working with Deep Learning. [Tham khảo:](https://peshmerge.io/how-to-install-cuda-9-0-on-with-cudnn-7-1-4-on-ubuntu-18-04/)
   - 1. Install Ubuntu 18.04
     2. Install Nvidia-Driver: nvidia-smi
     3. Install cuda 9.0     : nvcc -V
