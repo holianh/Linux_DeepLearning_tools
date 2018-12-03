@@ -37,6 +37,7 @@ Useful linux command
   - Add New sudo User ubuntu (add user): [Xem](ubuntu_commands.sh#L384)
   - Change language in ssh of ubuntu to english: [Xem](ubuntu_commands.sh#L393)
   - TensorBoard server client:(server): tensorboard --logdir=. --host=0.0.0.0 --port=6006 ;(Local): http://ip:6006 [Xem](ubuntu_commands.sh#L406)
+  - Install Vivaldi, import/export pass: [xem](Ubuntu_System.md#install-vivaldi)
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
