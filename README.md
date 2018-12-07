@@ -38,6 +38,7 @@ Useful linux command
   - Change language in ssh of ubuntu to english: [Xem](ubuntu_commands.sh#L393)
   - TensorBoard server client:(server): tensorboard --logdir=. --host=0.0.0.0 --port=6006 ;(Local): http://ip:6006 [Xem](ubuntu_commands.sh#L406)
   - Install Vivaldi, import/export pass: [xem](Ubuntu_System.md#install-vivaldi)
+  - Install flash player ubuntu success \[mothod1\]: (view here)[https://www.wikihow.com/Install-Flash-Player-on-Ubuntu]
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
