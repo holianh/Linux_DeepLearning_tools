@@ -355,6 +355,7 @@ Anaconda Jupyter Notebook: Run Remote Notebook on server from local:
     conda info --envs
     source activate tf
   ipython notebook --no-browser --ip=* --port=1234
+  ipython notebook --no-browser --ip=0.0.0.0 --port=1234  
 (port can be change)
 result:
 http://(ubu or 127.0.0.1):1234/?token=113fbcd684007d6a72f8839c94637951d613b136a39b040c
@@ -363,7 +364,6 @@ http://(ubu or 127.0.0.1):1234/?token=113fbcd684007d6a72f8839c94637951d613b136a3
 - copy that address, paste to local browser
 - change IP address to real IP: http://10.1.53.1:1234/?token=113fbcd684007d6a72f8839c94637951d613b136a39b040c
 - Enjoy!
-
 
 ##############################################################
 Chạy trong Notebook, lấy thông tin của main, cpu
