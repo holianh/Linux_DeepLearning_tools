@@ -421,9 +421,9 @@ print()
 # Python: Many date time, unique file names  
 ###########################################################
 # giờ thật hiện tại là 11:05:20
-from time import strftime
-stime=strftime("%H:%M:%S")
-print('2, ', stime) # 2,  2018-08-31 11:05:20
+from datetime import datetime
+stime=datetime.now().strftime('%Y-%m-%d__%H-%M-%S') #print(stime) #2018-08-31__11-05-20
+
 
 from datetime import datetime
 stime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
