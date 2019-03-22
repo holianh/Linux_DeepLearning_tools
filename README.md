@@ -39,6 +39,7 @@ Useful linux command
   - TensorBoard server client:(server): tensorboard --logdir=. --host=0.0.0.0 --port=6006 ;(Local): http://ip:6006 [Xem](ubuntu_commands.sh#L406)
   - Install Vivaldi, import/export pass: [xem](Ubuntu_System.md#install-vivaldi)
   - Install flash player ubuntu success \[mothod1\]: (view here)[https://www.wikihow.com/Install-Flash-Player-on-Ubuntu]
+  - FFMPEG Chia clip ra thành nhiều phần bằng nhau: [Xem](ubuntu_commands.sh#L432-L437)
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
