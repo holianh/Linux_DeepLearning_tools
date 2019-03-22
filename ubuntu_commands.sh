@@ -428,6 +428,21 @@ def RunSudoCMD(cmd):
 # !conda install -c anaconda c-blosc -y
 # !pip install tables
 
+##############################################################
+ubuntu: FFMPEG Chia clip ra thành nhiều phần bằng nhau:
+##############################################################
+
+ffmpeg -i input.avi -c copy -map 0 -segment_time 00:10:00 -f segment -reset_timestamps 1 Output_%03d.avi
+
+
+
+
+
+
+
+
+
+
 
 
 
