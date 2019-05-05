@@ -203,11 +203,11 @@ scp .ssh/id_rsa1080.pub tact@10.1.58.23:/home/tact/.ssh
 Ubuntu: Run ipython notebook with browser from local to server ubuntu:
 ##############################################################
 Server side:
-ipython notebook --no-browser --ip=* --port=8889
-
+jupyter notebook --no-browser --ip=0.0.0.0 --port=8889
+jupyter notebook --no-browser --ip=0.0.0.0 --port=1234
 #-------------------------------------------------------------------------------------------------
 results:
-(P3)tact@u1080:~$ ipython notebook --no-browser --ip=* --port=8889
+(P3)tact@u1080:~$ ipython notebook --no-browser --ip=0.0.0.0 --port=8889
 [TerminalIPythonApp] WARNING | Subcommand `ipython notebook` is deprecated and will be removed in future versions.
 ...........
     Copy/paste this URL into your browser when you connect for the first time,
