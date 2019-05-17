@@ -470,3 +470,63 @@ from keras.utils.vis_utils import model_to_dot
 SVG(model_to_dot(vqa_model,show_shapes=True).create(prog='dot', format='svg'))
     
 
+                                             
+#######################################################################
+Keras python jupyter notebook: Live plot Loss accuracy when training 
+#######################################################################
+%matplotlib inline
+from matplotlib import pyplot as plt
+from IPython.display import clear_output
+from datetime import datetime
+class PlotLosses(keras.callbacks.Callback):
+    def on_train_begin(self, logs={}):
+        self.i = 0
+        self.x = []
+        self.losses = []
+        self.val_losses = []
+        
+        self.fig = plt.figure()
+        self.acc=[]
+        self.val_acc=[]
+        self.logs = []
+
+    def on_epoch_end(self, epoch, logs={}):        
+        self.logs.append(logs)
+        self.x.append(self.i)
+        self.losses.append(logs.get('loss'))
+        self.val_losses.append(logs.get('val_loss'))
+        self.acc.append(logs.get('sparse_categorical_accuracy'))
+        self.val_acc.append(logs.get('val_sparse_categorical_accuracy'))
+        self.i += 1
+        
+        clear_output(wait=True)
+        fig=plt.figure(figsize=(10,8))
+        plt.subplot(2, 1, 1)
+        plt.plot(self.x, self.losses, label="loss")
+        plt.plot(self.x, self.val_losses, label="val_loss")
+        plt.legend(loc='best')
+        plt.ylabel('Loss')
+        plt.grid(True)
+        
+        plt.subplot(2, 1, 2)
+        plt.plot(self.x, self.acc, label="acc")
+        plt.plot(self.x, self.val_acc, label="val_acc")
+
+        plt.title(' acc results')
+        plt.legend(loc='best')
+        plt.xlabel('epoch')
+        plt.ylabel('Acc')
+        plt.grid(True)
+        plt.tight_layout()
+        plt.show();
+        
+plot_losses = PlotLosses()
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
