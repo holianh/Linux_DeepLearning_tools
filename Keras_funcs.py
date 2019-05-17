@@ -499,24 +499,23 @@ class PlotLosses(keras.callbacks.Callback):
         self.val_acc.append(logs.get('val_sparse_categorical_accuracy'))
         self.i += 1
         
-        clear_output(wait=True)
-        fig=plt.figure(figsize=(10,8))
-        plt.subplot(2, 1, 1)
-        plt.plot(self.x, self.losses, label="loss")
-        plt.plot(self.x, self.val_losses, label="val_loss")
-        plt.legend(loc='best')
-        plt.ylabel('Loss')
-        plt.grid(True)
+        if (self.i%10==0):clear_output(wait=True)
         
-        plt.subplot(2, 1, 2)
-        plt.plot(self.x, self.acc, label="acc")
-        plt.plot(self.x, self.val_acc, label="val_acc")
-
-        plt.title(' acc results')
-        plt.legend(loc='best')
-        plt.xlabel('epoch')
-        plt.ylabel('Acc')
-        plt.grid(True)
+        f, (ax1, ax2) = plt.subplots(1, 2, figsize=(11,2)) #sharey=True,
+#         f.suptitle('Sharing Y axis')
+        ax1.plot(self.x, self.losses, label="loss")
+        ax1.plot(self.x, self.val_losses, label="val_loss")
+#         ax1.set_xlabel('Epochs')
+#         ax1.set_ylabel('Loss')
+        ax1.grid(True)
+        ax1.legend(loc='center right')
+        
+        ax2.plot(self.x, self.acc, label="acc")
+        ax2.plot(self.x, self.val_acc, label="val_acc")
+#         ax2.set_ylabel('Acc')
+#         ax2.set_xlabel('Epochs')
+        ax2.grid(True)
+        ax2.legend(loc='center right')#'best')
         plt.tight_layout()
         plt.show();
         
