@@ -94,6 +94,8 @@ Useful linux command
    - Keras: parallel GPUs Model training V2:  [here](Keras_funcs.py#L61)
    - Plot, display model in jupyter notebook: [here](Keras_funcs.py#L462)  
    - tensorboard <enter>: locate tensorboard/program.py | xargs sed -i -e "s/logdir', ''/logdir', os.getcwd()/g"
+   - Keras python jupyter notebook: Live plot Loss accuracy when training : [here](Keras_funcs.py#L475)
+  
   # 7. WEB Services
   - Build a front end web application: Send data without reload page [Youtube](https://goo.gl/4jNWzF)
   - Edit ipython Notebook html scroll field: div class="..." => div class="..." style="overflow-y: scroll; height:400px;"
