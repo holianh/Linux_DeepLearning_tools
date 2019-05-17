@@ -485,7 +485,7 @@ class PlotLosses(keras.callbacks.Callback):
         self.losses = []
         self.val_losses = []
         
-        self.fig = plt.figure()
+        #self.fig = plt.figure()
         self.acc=[]
         self.val_acc=[]
         self.logs = []
