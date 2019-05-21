@@ -437,8 +437,14 @@ ffmpeg -i input.avi -c copy -map 0 -segment_time 00:10:00 -f segment -reset_time
 https://unix.stackexchange.com/a/212518
 
 
+##############################################################
+ubuntu: nén và giải nén: zip/ tar/ compress... 25M
+##############################################################
 
-
+Nén và giải nén thư mục tên  Data_BienSo/  => db_plate_vn.tar.gzaa, db_plate_vn.tar.gzab,... tối đa 25M để upleen GitHub
+# Nén và giải nén 25M/file
+!tar czf - Data_BienSo/ | split --bytes=25MB - db_plate_vn.tar.gz
+#cat db_plate_vn.tar.gz* | tar xzf -
 
 
 
