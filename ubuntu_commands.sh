@@ -448,8 +448,82 @@ Nén và giải nén thư mục tên  Data_BienSo/  => db_plate_vn.tar.gzaa, db_
 
 
 
+##############################################################
+ubuntu/windows: tìm tên thiết bị webcam/camera (chọn cho dễ) 
+##############################################################
 
+if 10==RunCase:
+    def GetVideo_Devices_info():
+        #https://stackoverflow.com/questions/7551546/getting-friendly-device-names-in-python
+        import subprocess
+        cmd="/sbin/udevadm info --export-db | grep video" 
 
+        result=os.popen(cmd).read()
+        result=result.split('\n')
+        
+        Dev=[]
+        Nam=[]
+        for s in result:
+            if s.startswith(('P: /devices/pci','S: v4l/by-id/usb')):
+                if s.startswith('P: /devices/pci'):
+                    Dev.append(int(s[-1]))
+                if s.startswith('S: v4l/by-id/usb'):
+                    s=s.replace("S: v4l/by-id/usb-" ,"")
+                    s=s.replace("-video-index0" ,"")
+                    Nam.append(s)
+                
+        rst=[]
+        for D,N in zip(Dev,Nam):
+            rst.append([D,N])
+        return rst
+    def GetWebCaminfo_win():
+        import wmi
+        import re    
+        k=0
+        DVlist=[]
+        c = wmi.WMI()
+        wql = "Select * From Win32_USBControllerDevice"
+        for item in c.query(wql):
+            # q = item.Dependent.Caption
+            # if re.findall("Webcam",q):
+                # print(q)
+            q = item.Dependent
+            if re.findall("Webcam",q.Caption):
+                #print(q.Caption +":"+q.DeviceID[31:38])
+                DVlist.append([k,q.Caption +":"+q.DeviceID[31:38]])
+                k+=1;
+        return DVlist
+       
+    
+    def get_platform():
+        platforms = {
+            'linux1' : 'Linux',
+            'linux2' : 'Linux',
+            'darwin' : 'OS X',
+            'win32' : 'Windows',
+            'linux' : 'linux'
+        }
+        if sys.platform not in platforms:
+            return sys.platform
+        
+        return platforms[sys.platform]
+    
+    
+    hdh=get_platform()
+    kq=[]
+    print(hdh)
+    if hdh=="linux":
+        kq=GetVideo_Devices_info()
+        pp(kq)
+    if hdh=="Windows":
+        kq=GetWebCaminfo_win()
+        pp(kq)
+    with open("Webcam_ID.txt",'w') as ff:
+        ff.write("CAM ID =>Img ID:\tCam Name\n")
+        for k, [ID, Name] in enumerate(kq):
+            ff.write("\t{}=>\t{}   :\t{}\n".format(ID,k,Name))
+        
+  
 
 
 
