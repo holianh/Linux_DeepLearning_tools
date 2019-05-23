@@ -40,7 +40,8 @@ Useful linux command
   - Install Vivaldi, import/export pass: [xem](Ubuntu_System.md#install-vivaldi)
   - Install flash player ubuntu success \[mothod1\]: (view here)[https://www.wikihow.com/Install-Flash-Player-on-Ubuntu]
   - FFMPEG Chia clip ra thành nhiều phần bằng nhau: [Xem](ubuntu_commands.sh#L432-L437)
-  - Ubuntu nén, giải nén, compress tar, zip folder: (ubuntu_commands.sh#L441)
+  - Ubuntu nén, giải nén, compress tar, zip folder: [Xem](ubuntu_commands.sh#L441)
+  - Ubuntu/windows tìm tên thiết bị camera/webcam: [/sbin/udevadm info --export-db | grep video](ubuntu_commands.sh#L452-L527)
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
