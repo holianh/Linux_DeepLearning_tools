@@ -42,6 +42,7 @@ Useful linux command
   - FFMPEG Chia clip ra thành nhiều phần bằng nhau: [Xem](ubuntu_commands.sh#L432-L437)
   - Ubuntu nén, giải nén, compress tar, zip folder: [Xem](ubuntu_commands.sh#L441)
   - Ubuntu/windows tìm tên thiết bị camera/webcam: [/sbin/udevadm info --export-db | grep video](ubuntu_commands.sh#L452-L527)
+  - ubuntu remove readonly files/folders permissions [sudo chmod 777 -R *](ubuntu_commands.sh#L527-L530)
   
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
