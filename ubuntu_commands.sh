@@ -524,8 +524,10 @@ if 10==RunCase:
             ff.write("\t{}=>\t{}   :\t{}\n".format(ID,k,Name))
         
   
-
-
+##############################################################
+ubuntu remove readonly files/folders permissions
+##############################################################
+sudo chmod 777 -R *
 
 
 
