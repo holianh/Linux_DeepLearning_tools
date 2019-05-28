@@ -50,7 +50,7 @@ Useful linux command
   - find -type f -name "*libcudnn.so*"
   - nvidia-smi --format=csv,noheader --query-gpu=index,name,temperature.gpu,fan.speed,pstate,power.draw,clocks.current.graphics, [more](ubuntu_commands.sh#L6)
   - Anaconda GUI in ubuntu: *anaconda-navigator* [view more](ubuntu_commands.sh#L43)
-  - Ubuntu: Run ipython notebook with browser from on server: *ipython notebook --no-browser --ip=\* --port=8889* :[more](ubuntu_commands.sh#L203)
+  - Ubuntu: Run ipython notebook with browser from on server: *ipython notebook --no-browser --ip=0.0.0.0 --port=8889* :[more](ubuntu_commands.sh#L203)
   - ipython: ipython notebook width 100%   , [more](ubuntu_commands.sh#L224)
   - Anaconda ipython Jupyter Notebook: Change startup folder of notebook: [view](ubuntu_commands.sh#L332)
   - Anaconda Jupyter Notebook: Run Remote Notebook on server from local: [view](ubuntu_commands.sh#L351)
