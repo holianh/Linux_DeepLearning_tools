@@ -520,9 +520,12 @@ class PlotLosses(keras.callbacks.Callback):
         plt.show();
         
 plot_losses = PlotLosses()
-                                             
-                                             
-                                             
+
+=======================================================
+Keras check GPU exists                                 
+=======================================================                                             
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())                                             
                                              
                                              
                                              
