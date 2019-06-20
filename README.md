@@ -87,6 +87,7 @@ Useful linux command
    - Github markdown: auto make table of content: [view](python_funcs_codes.py#L615 ) 
    - Python Notebook run sudo command: [view](python_funcs_codes.py#L666 ) 
    - Python: install Pythable, [view](ubuntu_commands.sh#L414-L432)
+   - python Ramdom shuffle/choice list: random.shuffle(x)  [view](Keras_funcs.py#L532-L570)
    
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
