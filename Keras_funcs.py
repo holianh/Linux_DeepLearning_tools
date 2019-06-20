@@ -528,6 +528,64 @@ from tensorflow.python.client import device_lib
 print(device_lib.list_local_devices())                                             
                                              
                                              
+=======================================================
+python Ramdom shuffle/choice list
+=======================================================                                             
+x = [1, 2, 3, 4, 3, 4]
+import random
+random.shuffle(x) 
+x
+                                             
+Tham khao tai day:                                             
+https://docs.python.org/2/library/random.html
+                                             
+random.seed(a=None)                                             
+random.randrange(stop)
+random.randrange(start, stop[, step])                                             
+random.randint(a, b)
+                                             
+random.sample([1, 2, 3, 4, 5],  3)  # Choose 3 elements => [4, 1, 5]
+                                             
+                                             
+How to randomly select an item from a list?
+    import random
+    foo = ['a', 'b', 'c', 'd', 'e']
+    print(random.choice(foo))       
+    #------------------------------------                                             
+    import random
+    foo = ['battery', 'correct', 'horse', 'staple']
+    secure_random = random.SystemRandom()
+    print(secure_random.choice(foo))
+    #------------------------------------                                             
+    import secrets
+    foo = ['a', 'b', 'c', 'd', 'e']
+    print(secrets.choice(foo))                                         
+    #------------------------------------                                             
+    import random
+    items = ['here', 'are', 'some', 'strings', 'of', 'which', 'we', 'will', 'select', 'one']
+    rand_item = items[random.randrange(len(items))]
+    #------------------------------------                                             
+    #------------------------------------                                             
+    #------------------------------------                                             
+    #------------------------------------                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
                                              
                                              
                                              
