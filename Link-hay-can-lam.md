@@ -10,7 +10,7 @@ This examples shows how you can use TensorFlow Lite to run a 20 kilobyte neural 
 [StatQuest](https://www.youtube.com/user/joshstarmer/playlists)
 
 ## dataschool.io
-ROC curves and Area Under the Curve explained (video)](https://www.dataschool.io/roc-curves-and-auc-explained/)
+ROC curves and Area Under the Curve explained [video](https://www.dataschool.io/roc-curves-and-auc-explained/)
 
 
 
