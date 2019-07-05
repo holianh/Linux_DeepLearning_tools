@@ -7,7 +7,8 @@ This is all Header in this file:
 5. Python functions List, [view](#5-python-functions-list)
 6. Keras funcs list, [view](#6-keras-funcs-list)
 
-# (Link hay cần làm )[Link-hay-can-lam.md]
+# Link hay cần làm
+(Link hay cần làm )[Link-hay-can-lam.md]
 
 # 1. Linux DeepLearning tools
 These are some useful tools to use with Linux (focus on Ubuntu) when working with Deep Learning. [Tham khảo:](https://peshmerge.io/how-to-install-cuda-9-0-on-with-cudnn-7-1-4-on-ubuntu-18-04/)
