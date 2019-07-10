@@ -5,7 +5,7 @@ $$\sum_{n=1}^{10}n^2$$
 <img src="https://latex.codecogs.com/svg.latex?x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
 
 
-<div style="width: 100%; height: 300px; background-color: Blue; float: left">
+<div style="width: 100%; height: 100px; background-color: Blue; float: left">
   
   ```python
 import cv2 as cv
