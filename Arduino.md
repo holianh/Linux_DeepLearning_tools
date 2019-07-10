@@ -8,6 +8,24 @@
 Dùng thư viện Adafruit_GFX và MCUFRIEND_kbv
 Quan trọng: Trong Setup: `tft.begin(0x9341);` quên cái init tft này thì không chạy.
 
+```cpp
+#define LCD_CS A3 // Chip Select goes to Analog 3
+#define LCD_CD A2 // Command/Data goes to Analog 2
+#define LCD_WR A1 // LCD Write goes to Analog 1
+#define LCD_RD A0 // LCD Read goes to Analog 0
+#define LCD_RESET A4 // Can alternately just connect to Arduino's reset pin
+
+#include "Adafruit_GFX.h"// Hardware-specific library
+#include <MCUFRIEND_kbv.h>
+MCUFRIEND_kbv tft;
+
+void setup(void) {
+  tft.begin(0x9341);
+  tft.setCursor(0, 10);
+  tft.println(" GRG Subway In-Out System");
+  ...
+}
+```
 
 <details>
 <summary>Full code, các thư viện download trên mạng mặc định là dc.</summary>
