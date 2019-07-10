@@ -1,3 +1,6 @@
+$y = x^2 \hbox{ when $x > 2$}$
+
+
 - [Display](#Display)
   - [TFT 2.4" China](#tft-24-china--arduino-due)
 
