@@ -7,8 +7,12 @@
 ## TFT 2.4" China & Arduino DUE
 Dùng thư viện Adafruit_GFX và MCUFRIEND_kbv
 Quan trọng: Trong Setup: `tft.begin(0x9341);` quên cái init tft này thì không chạy.
-Full code, thư viện download trên mạng mặc định là dc.
 
+
+<details>
+<summary>Full code, các thư viện download trên mạng mặc định là dc.</summary>
+  
+<p>
 
 ```cpp
 #define LCD_CS A3 // Chip Select goes to Analog 3
@@ -184,6 +188,8 @@ void serialEvent() {
 }
 ```
 
+</p>
+</details>  
 
 
 
