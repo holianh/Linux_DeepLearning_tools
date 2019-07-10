@@ -1,4 +1,4 @@
-<img src="https://latex.codecogs.com/svg.latex?y = x^2 \hbox{ when $x > 2$}" />
+<img src="https://latex.codecogs.com/svg.latex?y=x^2\hbox{when&space;$x>2$}" />
 
 
 - [Display](#Display)
