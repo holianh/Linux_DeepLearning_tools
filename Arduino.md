@@ -2,6 +2,8 @@
 
 <img src="https://latex.codecogs.com/svg.latex?x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
 
+<img src="https://latex.codecogs.com/svg.latex?x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+
 - [Display](#Display)
   - [TFT 2.4" China](#tft-24-china--arduino-due)
 
