@@ -1,5 +1,5 @@
 - [Display](#Display)
-- [TFT 2.4" China](#tft-24-china--arduino-due)
+  - [TFT 2.4" China](#tft-24-china--arduino-due)
 
 
 
