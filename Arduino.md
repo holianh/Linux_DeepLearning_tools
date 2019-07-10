@@ -1,5 +1,10 @@
+- [Display](#Display)
+- TFT 2.4" China](#tft-24-china)
+
+
+
 # Display
-## TFT 2.4" China
+## TFT 2.4" China & Arduino DUE
 Dùng thư viện Adafruit_GFX và MCUFRIEND_kbv
 Quan trọng: Trong Setup: `tft.begin(0x9341);` quên cái init tft này thì không chạy.
 Full code, thư viện download trên mạng mặc định là dc.
