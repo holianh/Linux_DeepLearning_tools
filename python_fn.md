@@ -13,6 +13,8 @@
 # Date time 
 ## Get time of file to make filename
 
+Result: '2019-07-14---12-35-40'
+
 ```python
 import time,os
 def getTimeofFile(fn):
