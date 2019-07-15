@@ -26,8 +26,9 @@ def getTimeofFile(fn):
        '07':'07','08':'08','09':'09','10':'10','11':'11','12':'12'}
     fTime=time.ctime(os.path.getmtime(fn))
     fTime=re.sub(' +', ' ',fTime)#    print(fTime)
-    tof=fTime.split(' ')#    print(tof)
-    t="_{}-{}-{}---{}".format(tof[4],m[tof[1]],tof[2],tof[3].replace(':','-'))
+    tof=fTime.split(' ')#;    print(tof)
+    hms=tof[3].split(':')
+    t="_{}-{}-{:>02}---{:>02}-{:>02}-{:>02}".format(tof[4],m[tof[1]],tof[2],hms[0],hms[1],hms[2])
     return t
 # fn='/home/u/darknet/data/yolov3-tiny-videos.weights'
 # ss=getTimeofFile(fn)
