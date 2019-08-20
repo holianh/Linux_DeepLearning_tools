@@ -60,7 +60,7 @@ Useful linux command
   
   # 4. Install Deeplearning Libraries
   - **Install all librarys** needing for Deeplearning with Keras for Speech: , [View](Install_python_libs.py#L1)
-  - pipreqs /path/to/project: PYTHON - AUTO GENERATE REQUIREMENTS.TXT, [more](ubuntu_commands.sh#L33)
+  - PYTHON - AUTO GENERATE REQUIREMENTS.TXT: __pipreqs .__  (pipreqs /path/to/project): [more](ubuntu_commands.sh#L33)
   - pip install python-levenshtein
   - How to install pytorch in Anaconda with conda or pip?  [View](ubuntu_commands.sh#L319)
   
