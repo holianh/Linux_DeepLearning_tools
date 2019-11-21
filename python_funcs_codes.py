@@ -677,3 +677,44 @@ outp=str(child.read()).replace('\\r','').split('\\n')
 for s in outp[1:-1]:
     print(s)
 
+    
+    
+    
+    
+    
+###########################################################
+Python Read Images then Padding:
+###########################################################
+dirUL='/media/u/2T/2019/keras-yolo3/DBs_images/imgs_baohiem_Rotated_arrows/up/UL'
+#-----------------------
+fisUL=glob.glob(dirUL+'/*.png')
+def getVL(p,Mlen=None):
+    img=cv2.imread(p)
+    # Resize image to Height=25:----
+    H = 25.0 
+    height, width, depth = img.shape
+    if H!=height:
+        imgScale = H/height
+        newX,newY = img.shape[1]*imgScale, img.shape[0]*imgScale
+        img = cv2.resize(img,(int(newX),int(newY)))
+    #----
+    vl = np.average(img,axis=2).flatten()
+    return vl
+#-----------------------
+UL=[]
+for k,fn in enumerate(fisUL): UL.append(getVL(fn))
+#-----------------------
+maxUL=max([len(r) for r in UL])
+maxA=max(maxUL)#,maxUR,maxDL,maxDR,maxOT) =>8888
+
+def PaddingList2D(SS):
+    b = np.zeros([len(SS),8888])
+    for i,j in enumerate(SS):
+        b[i][0:len(j)] = j
+    return b
+
+UL1=PaddingList2D(UL)
+#-----------------------
+
+
+
