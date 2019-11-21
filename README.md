@@ -92,6 +92,7 @@ Useful linux command
    - Python: install Pythable, [view](ubuntu_commands.sh#L414-L432)
    - python Ramdom shuffle/choice list: random.shuffle(x)  [view](Keras_funcs.py#L532-L570)
    - [Get time of file to make filename](python_fn.md#get-time-of-file-to-make-filename)
+   - Python Read image to list of array then Padding [View](python_funcs_codes.py#L686-L717)
    
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
