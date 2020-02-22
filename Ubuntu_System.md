@@ -87,6 +87,7 @@ bunzip2 {.bz2-file}
 unzip {.zip file}
 	unzip file.zip
 	unzip data.zip resume.doc
+!unzip -o thch30_train_dev_test.zip -d /. | pv -l >/dev/null
 
 tar -zxvf {.tgz-file}
 tar -jxvf {.tbz2-file}
