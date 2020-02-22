@@ -25,3 +25,14 @@ def fn_copy_data_thchs30():
 if __name__ == '__main__':
     print("run taLibs_copy_THCH30.py file")
     fn_copy_data_thchs30()
+'''
+How to use?
+
+import os
+os.system('rm -rf taLibs_copy_THCH30.*')  
+!wget -q https://github.com/holianh/Linux_DeepLearning_tools/raw/master/taLibs_copy_THCH30.py  
+!ls -la -h taLibs*
+import taLibs_copy_THCH30 as datathch30
+# datathch30.fn_copy_data_thchs30()
+
+'''
