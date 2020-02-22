@@ -136,4 +136,8 @@ cp bigfile newfile & progress -mp $!
                     29.9% (24.2 MiB / 16 MiB)
 
 ```
+## copy file from web silent:
 
+```
+!wget -q https://github.com/holianh/Linux_DeepLearning_tools/raw/master/taLibs_copy_THCH30.py
+```
