@@ -47,6 +47,8 @@ Useful linux command
   - Ubuntu/windows tìm tên thiết bị camera/webcam: [/sbin/udevadm info --export-db | grep video](ubuntu_commands.sh#L452-L527)
   - ubuntu remove readonly files/folders permissions [sudo chmod 777 -R *](ubuntu_commands.sh#L527-L530)
   - Tạo phím tắt/shortcut cho "Open terminal here" [xem](Ubuntu_System.md#t%E1%BA%A1o-ph%C3%ADm-t%E1%BA%AFt-cho-open-terminal-here)
+  - Ubuntu compress, zip, unzip files with progress: [xem](Ubuntu_System.md#ubuntu-compress-zip-unzip-files-with-progress)
+  - Copy file in Ubuntu with progress:   [xem](Ubuntu_System.md#copy-file-in-ubuntu-with-progress)
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
   - nvcc -V
