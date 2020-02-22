@@ -11,7 +11,9 @@ def fn_copy_data_thchs30():
     if not os.path.exists("/content/data_thchs30"):
         # !cp "/content/drive/My Drive/Deeplearning/thch30_train_dev_test.zip"  "thch30_train_dev_test.zip" 
         print("Copy thch30_train_dev_test.zip to colab:")
-        os.system('rsync --info=progress2 "/content/drive/My Drive/Deeplearning/thch30_train_dev_test.zip"  "./thch30_train_dev_test.zip" ')
+        fnsrc="/content/drive/My Drive/Deeplearning/thch30_train_dev_test.zip"
+        os.system('rsync --info=progress2 "{}"  "./thch30_train_dev_test.zip" '.format(fnsrc))
+        
         print('finshed copy!\Unzip...:')
         #!unzip -qq thch30_train_dev_test.zip
         os.system('unzip -o thch30_train_dev_test.zip -d /. | pv -l >/dev/null')
