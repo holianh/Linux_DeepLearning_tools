@@ -17,9 +17,10 @@ def fn_copy_data_thchs30():
         print('finshed copy!\nUnzip...:')
         #!unzip -qq thch30_train_dev_test.zip
         os.system('unzip -o thch30_train_dev_test.zip -d /. | pv -l >/dev/null')
-        os.system('mv content/* .')
-        #os.system('rm -d content')
-        shutil.rmtree('content')         
+        if os.path.exists('content'):
+            os.system('mv content/* .')
+            #os.system('rm -d content')
+            shutil.rmtree('content')         
         os.remove('rm thch30_train_dev_test.zip')
         
 if __name__ == '__main__':
