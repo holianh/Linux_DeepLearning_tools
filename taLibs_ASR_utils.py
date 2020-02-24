@@ -66,3 +66,6 @@ def plotLoss(loss,thisModel_Name, bottom=0):
 # test_loss=am.ctc_model.evaluate(x=batch,steps=1)
 # print('Test_loss After Load weight=',test_loss)
 # print("="*60)
+def modulereload(modulename):
+    import importlib
+    importlib.reload(modulename)
