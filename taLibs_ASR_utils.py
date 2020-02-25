@@ -95,7 +95,8 @@ class ASRutil():
 # filename, headers = urllib.request.urlretrieve(url,filename=filename) 
 # import taLibs_ASR_utils
 # importlib.reload(taLibs_ASR_utils)
-# TA1=taLibs_ASR_utils
-# taSaveLoad1=TA1.ASRutil(thisModel_Name)
-# print(taSaveLoad1.SavingDir) 
-# taSaveLoad1.help()       
+
+# taSaveLoad=taLibs_ASR_utils.ASRutil(thisModel_Name)
+
+# print(taSaveLoad.SavingDir) 
+# taSaveLoad.help()    
