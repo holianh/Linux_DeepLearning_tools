@@ -25,7 +25,8 @@ def startCopy_models(source,dest):
     for file in glob.glob(os.path.join(source,"*.*")):
         shutil.copy2(file,dest)
 
-def load_model(self, filename='results/{}'.format(thisModel_Name) ):
+def load_model(self,  thisModel_Name):
+    filename='results/{}'.format(thisModel_Name)
     if Colab:
         if not exists (filename + '.model') :
             startCopy_models(dest = "results", source = SavingDir) 
@@ -34,7 +35,8 @@ def load_model(self, filename='results/{}'.format(thisModel_Name) ):
     if exists(filename + '.model.base'):self.model.load_weights(filename + '.model.base')
     if exists(filename + '.loss.npy'):  self.loss=np.load(filename + '.loss.npy')
 
-def save_model(self , filename='results/{}'.format(thisModel_Name) , comments='',loss=None, save_best_only=True):
+def save_model(self , thisModel_Name, comments='',loss=None, save_best_only=True):
+    filename='results/{}'.format(thisModel_Name)
     if save_best_only:
         if self.minloss < np.mean(loss[-10:]):
             return
