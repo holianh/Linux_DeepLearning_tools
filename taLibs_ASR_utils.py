@@ -16,7 +16,8 @@ class ASRutil():
         if exists('/content/sample_data/anscombe.json'):
             Colab=True
             self.SavingDir = "drive/My Drive/Deeplearning/ASR---results/{}_results".format(thisModel_Name)
-        if not exists('results'):os.makedirs('results')
+        if not exists('results/'):os.makedirs('results')
+        if not exists('data/'):   os.makedirs('data')
     def help(self):
         ss="""
         startCopy_models(source,dest): 
