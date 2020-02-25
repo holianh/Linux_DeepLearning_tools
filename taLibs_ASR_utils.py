@@ -9,13 +9,14 @@ except:
   os.system("pip install gpustat")
   import gpustat
 
-SavingDir = "results/{}_results".format(thisModel_Name)
-if exists('/content/sample_data/anscombe.json'):
-    Colab=True
-    SavingDir = "drive/My Drive/Deeplearning/ASR---results/{}_results".format(thisModel_Name)
+def __init__(thisModel_Name):
+    SavingDir = "results/{}_results".format(thisModel_Name)
+    if exists('/content/sample_data/anscombe.json'):
+        Colab=True
+        SavingDir = "drive/My Drive/Deeplearning/ASR---results/{}_results".format(thisModel_Name)
+
+    if not exists('results'):os.makedirs('results')
     
-if not exists('results'):os.makedirs('results')
-  
 def startCopy_models(source,dest):
     if source==dest: return
     if not exists(dest): os.makedirs(dest)
