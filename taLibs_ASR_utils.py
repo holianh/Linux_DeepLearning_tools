@@ -83,14 +83,19 @@ class ASRutil():
         if save:plt.savefig('results/{}.svg'.format(thisModel_Name))
         plt.show()
 
+# use:-------------------------------------------------------------
 # import urllib.request  
 # import importlib
 
 # url="https://github.com/holianh/Linux_DeepLearning_tools/raw/master/taLibs_ASR_utils.py"
+
 # filename=url.split('/')[-1]
+# print(filename)
 # # os.remove(filename)
-# # filename, headers = urllib.request.urlretrieve(url,filename=filename) 
-# # import taLibs_ASR_utils as clASRutil
-# # importlib.reload(clASRutil)
-# taSaveLoad=clASRutil.ASRutil(thisModel_Name)
-# print(taSaveLoad.SavingDir)        
+# filename, headers = urllib.request.urlretrieve(url,filename=filename) 
+# import taLibs_ASR_utils
+# importlib.reload(taLibs_ASR_utils)
+# TA1=taLibs_ASR_utils
+# taSaveLoad1=TA1.ASRutil(thisModel_Name)
+# print(taSaveLoad1.SavingDir) 
+# taSaveLoad1.help()       
