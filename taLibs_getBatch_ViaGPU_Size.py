@@ -25,3 +25,23 @@ B={ 6 :16,
     16:64,
     24:128}
 batch_size=taLibs_getBatch_ViaGPU_Size(B) 
+
+##  insert into cell in jupyter: -----------------------------------------------------------------
+# url="https://github.com/holianh/Linux_DeepLearning_tools/raw/master/taLibs_getBatch_ViaGPU_Size.py"
+# import urllib.request  
+# filename, headers = urllib.request.urlretrieve(url,filename=url.split('/')[-1]) 
+
+# import importlib
+# import taLibs_getBatch_ViaGPU_Size as getBatch
+# importlib.reload(getBatch)
+
+# # GPU Size: Batch Size
+# B={ 6 :16,
+#     8 :24,
+#     11:32,
+#     12:40,
+#     15:48,
+#     16:64,
+#     24:128}
+# batch_size=getBatch.taLibs_getBatch_ViaGPU_Size(B)
+# batch_size
