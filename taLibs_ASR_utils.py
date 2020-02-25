@@ -26,6 +26,7 @@ class ASRutil():
         save_model(myModel, comments='',loss=None, save_best_only=True): 
               Save model to 'results' then copy to gdrive
         """
+        print(ss)
 
     def startCopy_models(self,source,dest):
         """Remove all files in dest, copy files from source to dest"""
