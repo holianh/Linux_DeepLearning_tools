@@ -33,5 +33,6 @@ img2 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 TA_Imshow_imgs([img1,img2],Title="Anh goc, Anh da muc xam",)
 #========================================================
 ```
-
+kết quả:
+![](images/hotgirl.png)
 
