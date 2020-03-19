@@ -87,7 +87,7 @@ from bokeh.io import output_notebook, show, push_notebook
 import cv2
 import time
 output_notebook()
-def displayVideo(vidPath='output.avi'):
+def displayVideo(vidPath='output.avi',Tsleep=0.3):
     cap = cv2.VideoCapture(vidPath)
     ret, frame = cap.read()
     frame=cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA) # because Bokeh expects a RGBA image
@@ -104,7 +104,7 @@ def displayVideo(vidPath='output.avi'):
         myImage.data_source.data['image']=[frame]
         push_notebook()
         ret, frame = cap.read()
-        time.sleep(0.005)
+        time.sleep(Tsleep)
 #displayVideo()
 
 ###############################################################################################################
