@@ -273,8 +273,26 @@ def Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
     print('Done')
 
 
+sss="""
+#Check video label OK or not:
+pFolder='D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_DBs/VID-20200315-WA0004_gt/'
+checkLabeledFolder(pFolder)
+displayVideo()
 
 
+# =========CONVERT DARKLABEL TO YOLO:====== CHANGE HERE: =====================================
+pImgsDirOut = 'D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_DBs'
+pVidFolader = 'D:/tact/2020/eKYC_nhan_dang_van_tay/Dataset/Anh_Da_Den/'
+vid_ext     = '.mp4'
+LBLs={'F':0}
+# =============== CHANGE HERE: ===============================================================
+Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
+    pImgsDirOut = pImgsDirOut,
+    pVidFolader = pVidFolader,
+    vid_ext     = vid_ext,
+    LBLs=LBLs)
+"""
+print(sss)
 
 
 
