@@ -256,9 +256,9 @@ vid_ext     = '.mp4'
 LBLs={'F':0}
 # =============== CHANGE HERE: ===============================================================
 def Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
-    pImgsDirOut = 'D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_DBs'
-    pVidFolader = 'D:/tact/2020/eKYC_nhan_dang_van_tay/Dataset/Anh_Da_Den/'
-    vid_ext     = '.mp4'
+    pImgsDirOut = 'D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_DBs',
+    pVidFolader = 'D:/tact/2020/eKYC_nhan_dang_van_tay/Dataset/Anh_Da_Den/',
+    vid_ext     = '.mp4',
     LBLs={'F':0}):
     # Get video src list:
     fis=GetList(pVidFolader)for k, vidfn in enumerate(fis):
