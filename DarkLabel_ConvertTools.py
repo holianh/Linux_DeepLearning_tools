@@ -62,7 +62,7 @@ def checkLabeledFolder(pFolder='D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_D
                       videoOutp='output.avi'):
     fis=GetList(pFolder)
     fis.sort()
-    h,w=get_img_shapehw(fnimg)
+    h,w=get_img_shapehw(fis[0])
 
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
     out = cv2.VideoWriter(videoOutp,fourcc, 20.0, (w,h)) #(640,480))
