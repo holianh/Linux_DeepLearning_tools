@@ -261,7 +261,8 @@ def Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
     vid_ext     = '.mp4',
     LBLs={'F':0}):
     # Get video src list:
-    fis=GetList(pVidFolader)for k, vidfn in enumerate(fis):
+    fis=GetList(pVidFolader)
+    for k, vidfn in enumerate(fis):
         print("Process:{}/{} =========================".format(k,len(fis)))
         ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format( 
             pImgsDirOut  =pImgsDirOut,
