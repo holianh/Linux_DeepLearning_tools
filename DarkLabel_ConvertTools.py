@@ -292,7 +292,7 @@ def Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
 pImgsDirOut = 'Video_DBs/'
 pVidFolader = '/content/drive/My Drive/AiSolutions/Project_eKYC_Finger_Print_Recognition/Data_Training/Video_ChuanHoa/'
 vid_ext     = '.avi'
-LBLs={'F':0}
+LBLs={'F':0,0:0,'null':0}
 # =============== CHANGE HERE: ===============================================================
 Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
     pImgsDirOut = pImgsDirOut,
@@ -309,16 +309,17 @@ displayVideo()
 
 
 # =========CONVERT DARKLABEL TO YOLO:====== CHANGE HERE: =====================================
-pImgsDirOut = 'D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_DBs'
-pVidFolader = 'D:/tact/2020/eKYC_nhan_dang_van_tay/Dataset/Anh_Da_Den/'
-vid_ext     = '.mp4'
-LBLs={'F':0}
+pImgsDirOut = 'Video_DBs/'
+pVidFolader = '/content/drive/My Drive/AiSolutions/Project_eKYC_Finger_Print_Recognition/Data_Training/Video_ChuanHoa/'
+vid_ext     = '.avi'
+LBLs={'F':0,0:0,'null':0}
 # =============== CHANGE HERE: ===============================================================
 Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
     pImgsDirOut = pImgsDirOut,
     pVidFolader = pVidFolader,
     vid_ext     = vid_ext,
     LBLs=LBLs)
+
 """
 print(sss)
 
