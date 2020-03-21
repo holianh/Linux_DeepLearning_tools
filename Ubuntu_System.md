@@ -110,6 +110,13 @@ sudo apt-get install pv
 pv my_big_file > backup/my_big_file
 ```
 Dùng rsync:
+Copy nhiều file trong thư mục của gdrive sang local có hiện progress:
+```bash
+%cd /content
+src='/content/drive/My Drive/AiSolutions/Project_eKYC_Finger_Print_Recognition/Yolo_backup/darknet'
+!rsync -ah --info=progress2 "{src}" .
+%cd darknet 
+```
 
 ```
 $ rsync -ah --progress source-file destination-file
