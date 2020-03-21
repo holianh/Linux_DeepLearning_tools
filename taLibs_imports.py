@@ -29,10 +29,13 @@ import skimage.filters
 
 
 sss="""
+!wget -O taLibs_imports.py  https://github.com/holianh/Linux_DeepLearning_tools/raw/master/taLibs_imports.py
 !wget -O DarkLabel_ConvertTools.py  https://github.com/holianh/Linux_DeepLearning_tools/raw/master/DarkLabel_ConvertTools.py
 
 clear_output()
+exec(open('taLibs_imports.py').read())
 exec(open('DarkLabel_ConvertTools.py').read())
+
 """
 print(sss)
 
