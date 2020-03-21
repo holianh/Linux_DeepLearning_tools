@@ -326,14 +326,29 @@ import matplotlib.pyplot as plt
 from matplotlib import animation, rc
 from IPython.display import HTML
 import os,glob
+import random
 
 def TAimread(fis,i, withLabel=True):
-    fn=fis[int(i*nF/NFrames)]
+    nframe=int(i*nF/NFrames)
+    fn=fis[nframe]
     img=cv2.imread(fn)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     if withLabel:
         Class,box=getbox(fn)
         img=draw_boxes(img,[box],img.shape,ret_save2file=True)
+
+        font                   = cv2.FONT_HERSHEY_SIMPLEX
+        TopLeftCornerOfText = (10,50)
+        fontScale              = 1
+        fontColor              = (255,255,255)
+        lineType               = 2
+
+        cv2.putText(img,'%d:%d/%d'%(i,nframe,len(fis)), 
+            TopLeftCornerOfText, 
+            font, 
+            fontScale,
+            fontColor,
+            lineType)
     return img
 ####### CHANGE THIS: #################################
 pImageFolder='/content/Video_DBs/Long_00_gt' 
@@ -343,6 +358,7 @@ img_ext='.jpg'
 
 fis=glob.glob(pImageFolder+'/*'+img_ext)
 fis.sort()
+# random.shuffle(fis)
 nF=len(fis)
 
 x_values = np.linspace(0, nF, NFrames)
