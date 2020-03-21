@@ -5,7 +5,7 @@ import tensorflow as tf
 import cv2
 import matplotlib.pyplot as plt
 
-%matplotlib inline
+#%matplotlib inline
 import shutil
 import numpy as np
 
