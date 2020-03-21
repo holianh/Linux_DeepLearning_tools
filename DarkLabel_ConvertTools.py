@@ -138,6 +138,8 @@ def is_number(s):
         return s
 
 def get_img_shape(fnimg):
+    if not exists(fnimg):
+        print('File not exists:',fnimg)
     img = cv2.imread(fnimg,0)
     height, width = img.shape[:2]
     return height, width
@@ -178,8 +180,12 @@ def ExtractVideo(pImgsDirOut  ='D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_D
     success,image = vidcap.read()
     count = 0
     if pImgsDirOut[-1]!='/':pImgsDirOut+='/'
+    if not exists(pImgsDirOut):
+        os.makedirs(pImgsDirOut)
     vidName= basename(video_path)         
     fnID=vidName.split('.')[0]+'_gt'
+    if not exists(pImgsDirOut+fnID):
+        os.makedirs(pImgsDirOut+fnID)
     print('Begin convert video2imgs:',video_path)
     while success:
         fnimg= (pImgsDirOut+fnID+'/'+ fnID+'_{:07d}.jpg'.format(count))
@@ -195,7 +201,13 @@ def ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
     LBLs={'F':0} # Label in txt
     ):
 
- 
+    if not exists(video_path):
+        print("Not Exists video:",video_path)
+        return
+    if not exists(DarkLabel_txt):
+        print("Not Exists Labels gt:",DarkLabel_txt)
+        return
+    
     if pImgsDirOut[-1]!='/':pImgsDirOut+='/'
     lblName= basename(video_path)         
     fnID=lblName.split('.')[0]+'_gt'
@@ -225,6 +237,9 @@ def ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
     height, width=get_img_shape(fnimg)
     sizehw=[height, width]
     cnt=0
+    if not exists(DarkLabel_txt):
+        print('File Not Exists:',DarkLabel_txt)
+        return
     with open(DarkLabel_txt) as ff:
         lines=ff.readlines()
         for line in lines:
@@ -261,7 +276,8 @@ def Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
     vid_ext     = '.mp4',
     LBLs={'F':0}):
     # Get video src list:
-    fis=GetList(pVidFolader)
+    fis=GetList(pVidFolader,vid_ext)
+    print('len(fis)=',len(fis))
     for k, vidfn in enumerate(fis):
         print("Process:{}/{} =========================".format(k,len(fis)))
         ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format( 
@@ -271,6 +287,18 @@ def Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
             LBLs=LBLs # Label in txt
             )
     print('Done')
+
+# =========CONVERT DARKLABEL TO YOLO:====== CHANGE HERE: =====================================
+pImgsDirOut = 'Video_DBs/'
+pVidFolader = '/content/drive/My Drive/AiSolutions/Project_eKYC_Finger_Print_Recognition/Data_Training/Video_ChuanHoa/'
+vid_ext     = '.avi'
+LBLs={'F':0}
+# =============== CHANGE HERE: ===============================================================
+Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
+    pImgsDirOut = pImgsDirOut,
+    pVidFolader = pVidFolader,
+    vid_ext     = vid_ext,
+    LBLs=LBLs)
 
 
 sss="""
