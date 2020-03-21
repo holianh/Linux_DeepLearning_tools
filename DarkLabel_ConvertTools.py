@@ -302,11 +302,10 @@ Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
 
 
 sss="""
-#Check video label OK or not:
+#Check video label OK or not: Save to Video ==================================================
 pFolder='D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_DBs/VID-20200315-WA0004_gt/'
-checkLabeledFolder(pFolder)
-displayVideo()
-
+checkLabeledFolder(pFolder='/content/Video_DBs/HieuNQ_09_gt', videoOutp='output.avi')
+#displayVideo() #local only, colab cant run
 
 # =========CONVERT DARKLABEL TO YOLO:====== CHANGE HERE: =====================================
 pImgsDirOut = 'Video_DBs/'
@@ -319,7 +318,48 @@ Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
     pVidFolader = pVidFolader,
     vid_ext     = vid_ext,
     LBLs=LBLs)
+  
+#Display Image+Box:==========================================================================
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import animation, rc
+from IPython.display import HTML
+import os,glob
 
+def TAimread(fis,i, withLabel=True):
+    fn=fis[int(i*nF/NFrames)]
+    img=cv2.imread(fn)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    if withLabel:
+        Class,box=getbox(fn)
+        img=draw_boxes(img,[box],img.shape,ret_save2file=True)
+    return img
+####### CHANGE THIS: #################################
+pImageFolder='/content/Video_DBs/Long_00_gt' 
+NFrames=10   # Number of Images to display
+img_ext='.jpg'
+######################################################
+
+fis=glob.glob(pImageFolder+'/*'+img_ext)
+fis.sort()
+nF=len(fis)
+
+x_values = np.linspace(0, nF, NFrames)
+plt.figure(figsize=(12,8))
+fig, ax = plt.subplots()
+plt.close()
+img=TAimread(fis,0)
+im = ax.imshow(img) #, animated=True)
+def animate(i):
+    img=TAimread(fis,i)
+    im.set_array(img)
+    return (line2,im,)
+
+anim = animation.FuncAnimation(fig, animate, init_func=None,frames=NFrames, interval=100, blit=True)
+# Note: below is the part which makes it work on Colab
+rc('animation', html='jshtml')
+anim
 """
 print(sss)
 
