@@ -302,24 +302,6 @@ Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
 
 
 sss="""
-#Check video label OK or not: Save to Video ==================================================
-pFolder='D:/tact/2020/eKYC_nhan_dang_van_tay/Code/Video_DBs/VID-20200315-WA0004_gt/'
-checkLabeledFolder(pFolder='/content/Video_DBs/HieuNQ_09_gt', videoOutp='output.avi')
-#displayVideo() #local only, colab cant run
-
-# =========CONVERT DARKLABEL TO YOLO:====== CHANGE HERE: =====================================
-pImgsDirOut = 'Video_DBs/'
-pVidFolader = '/content/drive/My Drive/AiSolutions/Project_eKYC_Finger_Print_Recognition/Data_Training/Video_ChuanHoa/'
-vid_ext     = '.avi'
-LBLs={'F':0,0:0,'null':0}
-# =============== CHANGE HERE: ===============================================================
-Folder_ConvertLabel_from_Frame_n_x1y1x2y2lbl__to_YOLO_format(
-    pImgsDirOut = pImgsDirOut,
-    pVidFolader = pVidFolader,
-    vid_ext     = vid_ext,
-    LBLs=LBLs)
-  
-#Display Image+Box:==========================================================================
 %matplotlib inline
 import numpy as np
 import matplotlib.pyplot as plt
@@ -343,12 +325,7 @@ def TAimread(fis,i, withLabel=True):
         fontColor              = (255,255,255)
         lineType               = 2
 
-        cv2.putText(img,'%d:%d/%d'%(i,nframe,len(fis)), 
-            TopLeftCornerOfText, 
-            font, 
-            fontScale,
-            fontColor,
-            lineType)
+        cv2.putText(img,'%d:%d/%d'%(i,nframe,len(fis)), TopLeftCornerOfText, font, fontScale, fontColor, lineType)
     return img
 ####### CHANGE THIS: #################################
 pImageFolder='/content/Video_DBs/Long_00_gt' 
