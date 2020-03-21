@@ -4,16 +4,17 @@ from google.colab.patches import cv2_imshow
 import tensorflow as tf
 import cv2
 import matplotlib.pyplot as plt
+
 %matplotlib inline
 import shutil
 import numpy as np
-import matplotlib.pyplot as plt
+
 from matplotlib import animation, rc
 from IPython.display import HTML
 import os,glob
 import random
 
-# from PIL import Image
+from PIL import Image
 # img = Image.open('image.png').convert('LA')
 # img.save('greyscale.png')
 
@@ -25,6 +26,7 @@ import sys
 import numpy as np
 import skimage.io
 import skimage.filters
+
 
 
 
