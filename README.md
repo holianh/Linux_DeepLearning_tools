@@ -49,6 +49,7 @@ Useful linux command
   - Tạo phím tắt/shortcut cho "Open terminal here" [xem](Ubuntu_System.md#t%E1%BA%A1o-ph%C3%ADm-t%E1%BA%AFt-cho-open-terminal-here)
   - Ubuntu compress, zip, unzip files with progress: [xem](Ubuntu_System.md#ubuntu-compress-zip-unzip-files-with-progress)
   - Copy file in Ubuntu with progress:   [xem](Ubuntu_System.md#copy-file-in-ubuntu-with-progress)
+  - folder size: !du -hs "dir/path/"
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
   - nvcc -V
