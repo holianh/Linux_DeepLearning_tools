@@ -117,10 +117,12 @@ exec(open('taLibs_imports.py').read())
    - Plot, display model in jupyter notebook: [here](Keras_funcs.py#L462)  
    - tensorboard <enter>: locate tensorboard/program.py | xargs sed -i -e "s/logdir', ''/logdir', os.getcwd()/g"
    - Keras python jupyter notebook: Live plot Loss accuracy when training : [here](Keras_funcs.py#L475)
-   - Keras check GPU exists: from tensorflow.python.client import device_lib;print(device_lib.list_local_devices())        
+   - Keras check GPU exists: from tensorflow.python.client import device_lib;print(device_lib.list_local_devices())   
+  
   # 7. WEB Services
   - Build a front end web application: Send data without reload page [Youtube](https://goo.gl/4jNWzF)
   - Edit ipython Notebook html scroll field: div class="..." => div class="..." style="overflow-y: scroll; height:400px;"
+  - Server-Client Flask on Window: [full code](https://github.com/holianh/Flask_on_Window)
    
    
    # 7. Ứng dụng khác
