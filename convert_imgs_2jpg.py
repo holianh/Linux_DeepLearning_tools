@@ -7,12 +7,10 @@ import sys
 import os
 from os.path import join,exists,dirname,basename
 from tqdm import tqdm
-#####################################################################################
 path_new       = '/home/u/2020/Palm/Dataset'
 path_originals = '/home/u/2020/Palm/Data'
 
-outpQuality=90
-#####################################################################################
+outpQuality=100
 
 if not path_new[-1:]=='/':          path_new+='/'
 if not path_originals[-1:]=='/':    path_originals+='/'
@@ -46,14 +44,10 @@ def compress_image(image, infile):
         image.save(outp, quality=outpQuality)
 
 
-def processImage():
-    listing=[]
-    for D,_,F in os.walk(path_originals):
-        for fn in F:
-            if fn[-4:].upper() in ['JPEG','.GIF','.PNG','.BMP','.JPG']:
-                listing.append(join(D,fn))
-                
-    for infile in tqdm(listing):        
+def processImage(listing):
+    print('All files=',len(listing))            
+    for k in tqdm(range(len(listing))):
+        infile=listing[k]
         img = Image.open(infile)
         if img.format == "JPEG":
             image = img.convert('RGB')
@@ -80,7 +74,13 @@ def processImage():
             compress_image(image, infile)
             img.close()
         else:
-            pass
+            print('No process:',infile)
         #exit()
 
-processImage()
+listing0=[]
+for D,_,F in os.walk(path_originals):
+    for fn in F:
+        if fn[-4:].upper() in ['JPEG','.GIF','.PNG','.BMP','.JPG']:
+            listing0.append(join(D,fn))
+listing=listing0[:10]
+processImage(listing)
