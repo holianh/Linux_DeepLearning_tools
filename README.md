@@ -18,7 +18,7 @@ These are some useful tools to use with Linux (focus on Ubuntu) when working wit
     3. Install cuda 9.0     : nvcc -V
     4. Install cudnn        
     5. Install Anaconda
-    
+    6. install keras can run GPU: conda install tensorflow-gpu=1.12.0 cudatoolkit=9.0 -y (only need to install driver 390)
   - Chạy trong Notebook, lấy thông tin của main, cpu, [more](ubuntu_commands.sh#L369)
 
 # 2. Linux system
