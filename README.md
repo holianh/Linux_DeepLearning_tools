@@ -125,5 +125,7 @@ exec(open('taLibs_imports.py').read())
   - Server-Client Flask on Window: [full code](https://github.com/holianh/Flask_on_Window)
    
    
-   # 7. Ứng dụng khác
+   # 8. Ứng dụng khác
    - Get link Fshare full speed:  [http://fullcrack.vn/get-link-fshare/](http://fullcrack.vn/get-link-fshare/) và [https://tools.nhacm.com/](https://tools.nhacm.com/)
+   # 9. Tools
+   - Convert all imgs to jpg [code](convert_imgs_2jpg.py)
