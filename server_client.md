@@ -92,7 +92,6 @@ if __name__ == "__main__":
     print(" Loading Keras model and Flask starting server...\nplease wait until server has fully started")
     # load_model()
     app.run()
-ight("(ta1072.npy_1080ti-3).model.json","(ta1072.npy_1080ti-3).w.json")
 
 ```
 
