@@ -123,6 +123,7 @@ exec(open('taLibs_imports.py').read())
   - Build a front end web application: Send data without reload page [Youtube](https://goo.gl/4jNWzF)
   - Edit ipython Notebook html scroll field: div class="..." => div class="..." style="overflow-y: scroll; height:400px;"
   - Server-Client Flask on Window: [full code](https://github.com/holianh/Flask_on_Window)
+  - Server - Client predict: [code](server_client.md)
    
    
    # 8. Ứng dụng khác
