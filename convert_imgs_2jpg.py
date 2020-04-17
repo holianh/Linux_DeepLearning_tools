@@ -82,5 +82,5 @@ for D,_,F in os.walk(path_originals):
     for fn in F:
         if fn[-4:].upper() in ['JPEG','.GIF','.PNG','.BMP','.JPG']:
             listing0.append(join(D,fn))
-listing=listing0[:10]
+listing=listing0 #[:10]
 processImage(listing)
