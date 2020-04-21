@@ -131,3 +131,6 @@ exec(open('taLibs_imports.py').read())
    - Get link Fshare full speed:  [http://fullcrack.vn/get-link-fshare/](http://fullcrack.vn/get-link-fshare/) và [https://tools.nhacm.com/](https://tools.nhacm.com/)
    # 9. Tools
    - Convert all imgs to jpg [code](convert_imgs_2jpg.py)
+   - List all filesize, dimension, duration,...[code](Files_list_size_duration.md#list-file-v%C3%A0-th%C6%B0-m%E1%BB%A5c-hi%E1%BB%83n-th%E1%BB%8B-size-duration-length-c%E1%BB%A7a-%E1%BA%A3nh-video-audio)
+   - 
+   - 
