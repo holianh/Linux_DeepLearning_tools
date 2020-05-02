@@ -6,7 +6,7 @@ P='/content/drive/My Drive'
 
 moviext =[".mp4",".avi",".mov",".flv",".wmv"]
 AudioExt=['.mp3','.wav']
-ImgExt  =['.jpg','.png','.bmp']
+ImgExt  =['.jpg','.png','.bmp','jpeg']
 
 import os
 # !pip install moviepy
