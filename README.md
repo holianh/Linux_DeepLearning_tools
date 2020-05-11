@@ -132,5 +132,5 @@ exec(open('taLibs_imports.py').read())
    # 9. Tools
    - Convert all imgs to jpg [code](convert_imgs_2jpg.py)
    - List all filesize, dimension, duration,...[code](Files_list_size_duration.md#list-file-v%C3%A0-th%C6%B0-m%E1%BB%A5c-hi%E1%BB%83n-th%E1%BB%8B-size-duration-length-c%E1%BB%A7a-%E1%BA%A3nh-video-audio)
-   - 
+   - google spreadsheet: gsheet: Nhập data vào ô B4:E4, tự động copy, sắp xếp xuống vùng bên dưới [code](gsheet_scripts.md#nh%E1%BA%ADp-data-v%C3%A0o-%C3%B4-b4e4-t%E1%BB%B1-%C4%91%E1%BB%99ng-copy-s%E1%BA%AFp-x%E1%BA%BFp-xu%E1%BB%91ng-v%C3%B9ng-b%C3%AAn-d%C6%B0%E1%BB%9Bi)
    - 
