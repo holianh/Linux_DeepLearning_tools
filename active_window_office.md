@@ -27,6 +27,14 @@ cscript slmgr.vbs /dti>C:\IID.txt
 start C:\IID.txt
 echo
 ```
+Khi nhận được mã CID, nhập theo cách sau:
+cái này ngay trong chỗ lấy CID nó có luôn, chỉ việc copy vào chạy
+
+```bash
+cscript.exe "%windir%\system32\slmgr.vbs" /atp <<<CID>>>
+cscript.exe "%windir%\system32\slmgr.vbs" /ato
+```
+
 
 ## Step 2B: Active Office Chạy lệnh sau:
 
