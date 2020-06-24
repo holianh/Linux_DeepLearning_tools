@@ -1,3 +1,6 @@
+# Update windows 10 lên bản mới nhất 
+Tải về bản update trên trang chủ tại đây: 
+[https://www.microsoft.com/en-gb/software-download/windows10](https://www.microsoft.com/en-gb/software-download/windows10)
 
 # Cách active window và office
 Get ConfirmationID (step3) transmission of Windows operating systems and Office versions for Windows / Office activation.
