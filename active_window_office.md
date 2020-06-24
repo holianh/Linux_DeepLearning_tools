@@ -1,3 +1,15 @@
+# 1. Kiểm tra phiên bản
+Muốn nâng cấp, chuyển đổi phiên bản, cần kiểm tra phiên bản hiện tại (chạy __winver__) và kiểm tra theo lệnh dưới đây.
+```bash
+ % Kiểm tra phiên bản hiện tại:
+ Dism /Online /Get-CurrentEdition
+ 
+ % Kiểm tra phiên bản có thể nâng cấp lên:
+ Dism /Online /Get-TargetEditions
+```
+Nếu phiên bản win10 2015 có thể nâng cấp lên win10 2020 theo cách bên dưới, để chuyển đổi loại win
+
+
 # Update windows 10 lên bản mới nhất 
 Tải về bản update trên trang chủ tại đây: 
 [https://www.microsoft.com/en-gb/software-download/windows10](https://www.microsoft.com/en-gb/software-download/windows10)
