@@ -71,3 +71,13 @@ echo
 ## Step 4: Nhập CID vào
 
 After obtaining the ConfirmationID (step3), select the version that matches the current version and click to get the CMD command then paste into CMD to complete activation of Windows / Office.
+
+# Check license
+
+```bash
+for %a in (4,5,6) do (if exist "%ProgramFiles%\Microsoft Office\Office1%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft Office\Office1%a")
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%a\ospp.vbs" (cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%a"))&cls
+cls
+cscript ospp.vbs /dstatus
+echo
+```
