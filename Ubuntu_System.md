@@ -124,6 +124,13 @@ sending incremental file list
 source-file
         621.22M  57%  283.86MB/s    0:00:01
 ```
+## Copy file bằng cách giả nén, rất nhanh:
+```python 
+src='/content/drive/Shared drives/TÀI LIỆU KÍN - MASTER 2020/TÀI LIỆU KÍN/01. KINH DOANH KHỞI NGHIỆP'
+dst='/content/drive/My Drive/Kho video bài giảng số 1 VietNam'
+!tar cf - "{src}" | pv | (cd "{dst}"; tar xf -)
+```
+
 
 You can copy a file to your media by entering
 ```
