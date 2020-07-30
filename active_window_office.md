@@ -1,5 +1,5 @@
 # 1. Kiểm tra phiên bản
-Muốn nâng cấp, chuyển đổi phiên bản, cần kiểm tra phiên bản hiện tại (chạy __winver__) và kiểm tra theo lệnh dưới đây.
+Muốn nâng cấp, chuyển đổi phiên bản, cần kiểm tra phiên bản hiện tại (chạy __winver__) và kiểm tra theo lệnh dưới đây. Chạy CMD quyền administrator rồi chạy các lệnh:
 ```bash
  % Kiểm tra phiên bản hiện tại:
  Dism /Online /Get-CurrentEdition
