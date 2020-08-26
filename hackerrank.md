@@ -1,5 +1,19 @@
 # giải bài tập trong Hackerrank.com phần Python
 
+## Find the Runner-Up Score!
+https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+```python
+if __name__ == '__main__':
+    n = int(input())
+    arr =list( map(int, input().split()))
+   
+    nmax,nsec = max(arr),-1000
+    for k in arr:
+        if (nsec<k)and k<nmax:
+            nsec=k
+    print(nsec) 
+```
+
 
 ## Word Order
 đề:
