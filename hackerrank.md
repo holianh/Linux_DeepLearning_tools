@@ -14,6 +14,24 @@ if __name__ == '__main__':
     print(nsec) 
 ```
 
+## Nested Lists
+https://www.hackerrank.com/challenges/nested-list/problem
+```python
+
+```
+
+## Nested Lists
+
+```python
+
+```
+
+## Nested Lists
+
+```python
+
+```
+
 
 ## Word Order
 đề:
