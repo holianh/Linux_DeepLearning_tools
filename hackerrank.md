@@ -12,6 +12,11 @@
 
 ```
 
+## 
+
+```python
+
+```
 
 ## 
 
@@ -19,37 +24,148 @@
 
 ```
 
-
-## 
-
+## Merge the Tools!
+https://www.hackerrank.com/challenges/merge-the-tools/problem
 ```python
+def merge_the_tools(string, k):
+    print("\n".join( [''.join([si for n, si in enumerate(string[i:i+k]) if si not in string[i:i+k][:n]] ) for i in range(0,len(string),k) ]))
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
+```
+
+## The Minion Game
+https://www.hackerrank.com/challenges/the-minion-game/problem
+```python
+def minion_game(string): 
+    vowel =['A','E','I','O','U']
+    S=0
+    K=0
+    for i in range(len(string)):
+        if string[i] in vowel:
+            K+= len(string)-i
+        else:
+            S+=len(string)-i
+    if S>K:
+        print("Stuart"+" "+ "%d" % S)
+    elif K>S:
+        print("Kevin"+" "+'%d' % K)
+    else:
+        print("Draw")
+    
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+```
+
+## Capitalize
+https://www.hackerrank.com/challenges/capitalize/problem
+```python
+import string 
+def solve(s):
+    s=''.join( (c.upper() if i == 0 or s[i-1] == ' ' else c) for i, c in enumerate(s) )
+    return s
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
 
 ```
 
 
-## 
-
+## Alphabet Rangoli
+https://www.hackerrank.com/challenges/alphabet-rangoli/problem
 ```python
+import string
+def print_rangoli(size):
+    alpha = string.ascii_lowercase
+    L = []
+    for i in range(n):
+        s = "-".join(alpha[i:n])
+        L.append((s[::-1]+s[1:]).center(4*n-3, "-"))
+    print('\n'.join(L[:0:-1]+L))
+```
+
+
+## String Formatting
+https://www.hackerrank.com/challenges/python-string-formatting/problem
+```python
+def print_formatted(n):
+    width = len("{0:b}".format(n))
+    for i in range(1,n+1):
+        print ("{0:{width}d} {0:{width}o} {0:{width}X} {0:{width}b}".format(i, width=width))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
+```
+
+
+## Designer Door Mat
+https://www.hackerrank.com/challenges/designer-door-mat/problem
+```python
+N, M = [int(k) for k in input().split()]
+for line in range(N//2): print( (".|."*(2*line+1)).center(M,'-'))
+print( "WELCOME".center(M,'-'))
+for line in range(N//2,0,-1): print( (".|."*(2*line-1)).center(M,'-'))
+
+#-------------------------
+n, m = map(int,input().split())
+pattern = [('.|.'*(2*i + 1)).center(m, '-') for i in range(n//2)]
+print('\n'.join(pattern + ['WELCOME'.center(m, '-')] + pattern[::-1]))
 
 ```
 
 
-## 
-
+## Text Wrap
+https://www.hackerrank.com/challenges/text-wrap/problem
 ```python
+import textwrap
 
+def wrap(string, max_width):
+    return '\n'.join(textwrap.wrap(string,max_width))
+
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
 ```
 
 
-## 
-
+## String Validators
+https://www.hackerrank.com/challenges/string-validators/problem
 ```python
-
+if __name__ == '__main__':
+    st = input()
+    kq=[0,0,0,0,0 ]
+    for s in st:
+        if s.isalnum(): kq[0]=1
+        if s.isalpha(): kq[1]=1
+        if s.isdigit(): kq[2]=1
+        if s.islower(): kq[3]=1
+        if s.isupper(): kq[4]=1
+    for k in kq:
+        print(bool(k))
+#---------------
+s = input()
+print(any(c.isalnum() for c in s))
+print(any(c.isalpha() for c in s))
+print(any(c.isdigit() for c in s))
+print(any(c.islower() for c in s))
+print(any(c.isupper() for c in s))
 ```
 
 
-## 
-
+## Find a string
+https://www.hackerrank.com/challenges/find-a-string/problem
 ```python
 line, target = [input() for _ in range(2)]
 score = 0
