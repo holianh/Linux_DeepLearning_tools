@@ -17,13 +17,35 @@ if __name__ == '__main__':
 ## Nested Lists
 https://www.hackerrank.com/challenges/nested-list/problem
 ```python
+if __name__ == '__main__':
+    AllStudents=[]
+    minGrade=None
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        oneStudent=[name,score]
+        AllStudents.append(oneStudent)
+        minGrade=score if minGrade==None else min(minGrade,score)
 
+    AllStudents=sorted(AllStudents, key=lambda x: x[0])
+
+    value=min([score for name, score in AllStudents if score>minGrade])
+    
+    for name,score in AllStudents:
+        if score==value:
+            print(name)
 ```
 
-## Nested Lists
-
+## List Comprehensions
+https://www.hackerrank.com/challenges/list-comprehensions/problem
 ```python
-
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    s=[[a,b,c] for a in range(x+1) for b in range(y+1) for c in range(z+1) if (a+b+c)!=n]
+    print(s)
 ```
 
 ## Nested Lists
