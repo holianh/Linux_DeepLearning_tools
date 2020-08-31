@@ -24,6 +24,148 @@
 
 ```
 
+## 
+
+```python
+
+```
+
+## 
+
+```python
+
+```
+
+## The Captain's Room
+https://www.hackerrank.com/challenges/py-the-captains-room/problem
+```python
+K=int(input())
+Rooms=sorted(list(map(int,input().split())))
+groups = [Rooms[x:x+K] for x in range(0, len(Rooms), K)]
+ 
+found=False
+for family in groups:
+    if len(set(family))>1:
+        print(family[0])
+        found=True
+        break
+if not found:
+    print(Rooms[-1])
+
+```
+Chúng tôi chỉ đơn giản tính toán sự khác biệt về tổng sẽ là bao nhiêu nếu có K phần tử của tất cả các nhóm. Chúng tôi sẽ còn lại k-1 * số phòng đội trưởng, chúng tôi chỉ cần chia cho k-1 để có câu trả lời.
+```python
+k,arr = int(input()),list(map(int, input().split()))
+myset = set(arr)
+print(((sum(myset)*k)-(sum(arr)))//(k-1))
+```
+
+
+## Set Mutations
+https://www.hackerrank.com/challenges/py-set-mutations/problem
+```python
+n=input()
+A=set(map(int,input().split()))
+
+m=int(input())
+for k in range(m):
+    cmd=input().split()[0]
+    B=set(map(int,input().split()))
+    eval(f'A.{cmd}(B)')
+print(sum(A))
+
+
+```
+
+## union
+
+```python
+n=input()
+A=set(map(int,input().split()))
+m=input()
+B=set(map(int,input().split()))
+print(len(B.union(A)))
+```
+
+## Set .discard(), .remove() & .pop()
+https://www.hackerrank.com/challenges/py-set-discard-remove-pop/problem
+```python
+n = int(input())
+s = set(map(int, input().split()))
+nCmd=int(input())
+for k in range(nCmd):
+    CMD=input().split()+['']
+    cmd, num=CMD[0], CMD[1]
+    eval(f's.{cmd}({num})')    
+print(sum(s))
+#-------------------------------
+n = int(input())
+s = set(map(int, input().split())) 
+for i in range(int(input())):
+    eval('s.{0}({1})'.format(*input().split()+['']))
+
+print(sum(s))
+```
+
+## Set .add()
+https://www.hackerrank.com/challenges/py-set-add/problem
+```python
+n=int(input())
+mySet=set()
+for k in range(n):
+    mySet.add(input())
+print(len(mySet))    
+```
+
+## Symmetric Difference
+https://www.hackerrank.com/challenges/symmetric-difference/problem
+
+```python
+nN = int(input())
+arrN = set(map(int, input().split()))
+
+nM = int(input())
+arrM = set(map(int, input().split()))
+
+diff = list(arrN.difference(arrM))
+diff +=list(arrM.difference(arrN))
+for k in sorted(list(diff)):
+    print(k)
+
+```
+
+## No Idea!
+https://www.hackerrank.com/challenges/no-idea/problem
+```python
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n,m = list(map(int, input().split()))
+arr = list(map(int, input().split()))
+A = set(map(int, input().split()))
+B = set(map(int, input().split()))
+
+Happy=0
+for arr1 in arr:
+    if arr1 in A: Happy+=1
+    if arr1 in B: Happy-=1
+print(Happy)
+
+```
+
+## Introduction to Sets
+https://www.hackerrank.com/challenges/py-introduction-to-sets/problem
+```python
+def average(array):
+    if len(array)==0:return None
+    myset=set(array)
+    return sum(myset)/len(myset)
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+```
+
 ## Merge the Tools!
 https://www.hackerrank.com/challenges/merge-the-tools/problem
 ```python
