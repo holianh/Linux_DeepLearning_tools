@@ -175,7 +175,7 @@ https://www.hackerrank.com/challenges/iterables-and-iterators/problem
 from itertools import combinations 
 
 N = int(input())
-S = raw_input().split(' ')
+S = input().split()
 K = int(input())
 
 num = 0
@@ -185,7 +185,7 @@ for c in combinations(S,K):
     All+=1
     num+='a' in c
     
-print float(num)/All
+print (float(num)/All)
 #------------------------------------------------------------
 from math import factorial as fact
 
