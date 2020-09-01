@@ -1,3 +1,27 @@
+# Vài điều cần biết khó tìm
+## Ký hiệu một và hai dấu *
+An asterisk * denotes iterable unpacking. Its operand must be an iterable. The iterable is expanded into a sequence of items, which are included in the new tuple, list, or set, at the site of the unpacking.
+
+A double asterisk ** denotes dictionary unpacking. Its operand must be a mapping. Each mapping item is added to the new dictionary. Later values replace values already set by earlier key/datum pairs and earlier dictionary unpackings.
+
+Tham khảo: [ở đây](https://docs.python.org/3/reference/expressions.html?highlight=list#expression-lists)
+
+Giải thích thêm:
+
+About the unpack operator * in \*product(a, b), please kindly refer to [Expression lists|Python Documentation](https://docs.python.org/3/reference/expressions.html?highlight=list#expression-lists) and it further refers to [PEP 448](https://www.python.org/dev/peps/pep-0448/) with clear examples. For dictionary, the unpacker operator is ** instead. Thanks for the great Python.
+
+Thử với [Python Online](https://repl.it/languages/python3)
+```python
+>>> print(*[1], *[2], 3)
+1 2 3
+>>> arr = [1, 2, 3]
+>>> print(*arr) # unpack arr --> print(1, 2, 3)
+
+>>> dict(**{'x': 1}, y=2, **{'z': 3})
+{'x': 1, 'y': 2, 'z': 3}
+```
+Tham khảo: [tại đây](https://www.hackerrank.com/challenges/itertools-product/forum)
+
 # giải bài tập trong Hackerrank.com phần Python
 
 # Math
@@ -25,30 +49,164 @@ print(f"{round(180*math.atan(ab/bc)/math.pi)}°")
 
 ## Triangle Quest 2
 https://www.hackerrank.com/challenges/triangle-quest-2/problem
-<span class="MathJax_SVG" id="MathJax-Element-6-Frame" style="border: 0px; direction: ltr; display: inline-block; float: none; font-family: inherit; font-stretch: inherit; font-variant: inherit; line-height: normal; margin: 0px; max-height: none; max-width: none; min-height: 0px; min-width: 0px; outline: 0px; overflow-wrap: normal; padding: 0px; vertical-align: baseline; white-space: nowrap; word-spacing: normal;"><svg focusable="false" height="3.176ex" role="img" style="vertical-align: -0.838ex;" viewBox="0 -1006.6 7822 1367.4" width="18.167ex" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="currentColor" stroke-width="0" stroke="currentColor" transform="matrix(1 0 0 -1 0 0)"><path d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z" stroke-width="1"></path><g transform="translate(389,0)"><path d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" stroke-width="1"></path><path d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" stroke-width="1" transform="translate(500,0)"></path><g transform="translate(1001,393)"><path d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" stroke-width="1" transform="scale(0.707)"></path></g></g><g transform="translate(1844,0)"><path d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z" stroke-width="1"></path></g><g transform="translate(2594,0)"><path d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z" stroke-width="1"></path></g><g transform="translate(3095,0)"><path d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z" stroke-width="1"></path></g><g transform="translate(3762,0)"><path d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z" stroke-width="1"></path></g><g transform="translate(4818,0)"><path d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" stroke-width="1"></path><path d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" stroke-width="1" transform="translate(500,0)"></path><path d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" stroke-width="1" transform="translate(1001,0)"></path><path d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" stroke-width="1" transform="translate(1501,0)"></path><path d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" stroke-width="1" transform="translate(2002,0)"></path><path d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" stroke-width="1" transform="translate(2502,0)"></path></g></g></svg></span>
-
+```
+10^1/9=1
+10^2/9=11
+10^3/9=111
+10^4/9=1111
+...
+và
+1*1=1
+11*11=121
+111*111=12321
+1111*1111=1234321
+...
+```
 ```python
 for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
     print ((10**i//9)**2)
 ```
 
-## 
+## Mod Divmod
+https://www.hackerrank.com/challenges/python-mod-divmod/problem
+```python
+a=int(input())
+b=int(input())
+print(f"{a//b}\n{a%b}\n{divmod(a,b)}")
+```
+
+## Power - Mod Power
+https://www.hackerrank.com/challenges/python-power-mod-power/problem
+```python
+a,b,m=[int(input()) for _ in range(3)]
+print("{}\n{}".format(pow(a,b),pow(a,b,m)))
+```
+
+## Integers Come In All Sizes
+https://www.hackerrank.com/challenges/python-integers-come-in-all-sizes/problem
+```python
+a,b,c,d=[int(input()) for _ in range(4)]
+print(a**b+c**d)
+```
+
+## Triangle Quest
+https://www.hackerrank.com/challenges/python-quest-1/problem
+```python
+for i in range(1,int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print(round(i*(10**i//9)))
+```
+
+# itertools
+
+## itertools.product()
+https://www.hackerrank.com/challenges/itertools-product/problem
+```python
+A=list(map(int,input().split()))
+B=list(map(int,input().split()))
+from itertools import product
+for a in list(product(A,B)): print("{} ".format(a), end='')
+#--------------------------------
+from itertools import product
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+print(*product(a, b))
+```
+
+## permutations
+https://www.hackerrank.com/challenges/itertools-permutations/problem
+```python
+s,t=input().split()
+from itertools import permutations
+s=sorted([''.join(list(a)) for a in list(permutations(s,int(t)))])
+for kq in s:print(kq)
+#------------------------------------
+from itertools import permutations
+s,n = input().split()
+print(*[''.join(i) for i in permutations(sorted(s),int(n))],sep='\n')
+```
+
+## itertools.combinations()
+https://www.hackerrank.com/challenges/itertools-combinations/problem
+```python
+s,T=input().split()
+from itertools import combinations
+ 
+s=[[''.join(list(a)) for a in list(combinations(sorted(s),int(t)))]
+for t in range(1,int(T)+1)]
+for kq in s:print(*kq,sep='\n')
+#---------------------------------------------
+from itertools import combinations
+a,b = input().split()
+print(*[''.join(j) for i in range(1,int(b)+1) for j in combinations(sorted(a),i)],sep='\n')
+#---------------------------------------------
+import itertools
+s = input().split()
+string, number = sorted(s[0]), int(s[1])
+for i in range(1, number + 1):
+    print(*list(map(''.join, itertools.combinations(string, i))), sep='\n')
+#----------------------------------------------------
+from itertools import *
+s,k = input().split()
+for l in range(1,int(k)+1):
+    for c in combinations (sorted(s),l):
+        print(''.join(c))
+```
+
+## itertools.combinations_with_replacement()
+https://www.hackerrank.com/challenges/itertools-combinations-with-replacement/problem
+```python
+s,t=input().split()
+from itertools import combinations_with_replacement
+s=sorted([''.join(list(a)) for a in list(combinations_with_replacement(sorted(s),int(t)))])
+for kq in s:print(kq)
+```
+##   Compress the String!
+https://www.hackerrank.com/challenges/compress-the-string/problem
+```python
+from itertools import groupby
+print(*[(len(list(g)), int(k)) for k, g in groupby(input())]) 
+# 'AAAABBBCCD' --> k:'A', g:'AAAA' => AAAA BBB CC D
+```
+
+##   Iterables and Iterators
+https://www.hackerrank.com/challenges/iterables-and-iterators/problem
+
+```python
+from math import factorial as fact
+
+n,aCount,k = int(input()), input().count('a'), int(input())
+
+combs = fact(n) // fact(n-k) if n>=k else 0
+without = fact(n-aCount) // fact((n-aCount)-k) if (n-aCount)>=k else 0
+
+print(1-(without / combs) if combs else 0)
+```
+##   
+
+```python
+
+```
+##   
+
+```python
+
+```
+##   
+
+```python
+
+```
+##   
+
+```python
+
+```
+##   
 
 ```python
 
 ```
 
-## 
-
-```python
-
-```
-
-## 
-
-```python
-
-```
 
 ## The Captain's Room
 https://www.hackerrank.com/challenges/py-the-captains-room/problem
