@@ -172,6 +172,21 @@ print(*[(len(list(g)), int(k)) for k, g in groupby(input())])
 https://www.hackerrank.com/challenges/iterables-and-iterators/problem
 
 ```python
+from itertools import combinations 
+
+N = int(input())
+S = raw_input().split(' ')
+K = int(input())
+
+num = 0
+All = 0
+
+for c in combinations(S,K):
+    All+=1
+    num+='a' in c
+    
+print float(num)/All
+#------------------------------------------------------------
 from math import factorial as fact
 
 n,aCount,k = int(input()), input().count('a'), int(input())
@@ -180,6 +195,7 @@ combs = fact(n) // fact(n-k) if n>=k else 0
 without = fact(n-aCount) // fact((n-aCount)-k) if (n-aCount)>=k else 0
 
 print(1-(without / combs) if combs else 0)
+
 ```
 ##   
 
