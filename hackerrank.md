@@ -1,3 +1,13 @@
+<form>
+    <input name="title" type="text" placeholder="Title?" />
+    <textarea name="content" data-provide="markdown" rows="10"></textarea>
+    <label class="checkbox">
+      <input name="publish" type="checkbox"> Publish
+    </label>
+    <hr/>
+    <button type="submit" class="btn">Submit</button>
+  </form> 
+  
 # Mục lục
 Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng việt, thì:
 ~~~
