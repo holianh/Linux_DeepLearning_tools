@@ -1,3 +1,68 @@
+# Mục lục
+Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng việt, thì:
+~~~
+ - Copy nguyên câu tiếng việt
+ - Chuyển dấu cách thành dấu gạch ngang (-)
+ - Xóa dấu chấm
+ - Chuyển hết về chữ thường
+ - Nếu có dấu gạch dưới, thì giữ nguyên dấu gạch dưới
+~~~
+# Table of contents
+
+- [Vài điều cần biết khó tìm](#vài-điều-cần-biết-khó-tìm)
+  - [Ký hiệu một và hai dấu *](#ký-hiệu-một-và-hai-dấu-)
+- [giải bài tập trong Hackerrank.com phần Python](#giải-bài-tập-trong-hackerrankcom-phần-python)
+- [Math](#math)
+  - [Polar Coordinates](#polar-coordinates)
+  - [Find Angle MBC](#find-angle-mbc)
+  - [Triangle Quest 2](#triangle-quest-2)
+  - [Mod Divmod](#mod-divmod)
+  - [Power - Mod Power](#power---mod-power)
+  - [Integers Come In All Sizes](#integers-come-in-all-sizes)
+  - [Triangle Quest](#triangle-quest)
+- [itertools](#itertools)
+  - [itertools.product()](#itertoolsproduct)
+  - [permutations](#permutations)
+  - [itertools.combinations()](#itertoolscombinations)
+  - [itertools.combinations_with_replacement()](#itertoolscombinations_with_replacement)
+                                                
+  - [Compress the String!](#compress-the-string)
+  - [Iterables and Iterators](#iterables-and-iterators)
+  - [](#)
+  - [](#)
+  - [](#)
+  - [](#)
+  - [](#)
+  - [The Captain's Room](#the-captains-room)
+  - [Set Mutations](#set-mutations)
+  - [union](#union)
+  - [Set .discard(), .remove() & .pop()](#set-discard-remove--pop)
+  - [Set .add()](#set-add)
+  - [Symmetric Difference](#symmetric-difference)
+  - [No Idea!](#no-idea)
+  - [Introduction to Sets](#introduction-to-sets)
+  - [Merge the Tools!](#merge-the-tools)
+  - [The Minion Game](#the-minion-game)
+  - [Capitalize](#capitalize)
+  - [Alphabet Rangoli](#alphabet-rangoli)
+  - [String Formatting](#string-formatting)
+  - [Designer Door Mat](#designer-door-mat)
+  - [Text Wrap](#text-wrap)
+  - [String Validators](#string-validators)
+  - [Find a string](#find-a-string)
+  - [sWAP cASE](#swap-case)
+  - [What's Your Name?](#whats-your-name)
+  - [Python If-Else](#python-if-else)
+  - [Tuples](#tuples)
+  - [Find the Runner-Up Score!](#find-the-runner-up-score)
+  - [Nested Lists](#nested-lists)
+  - [List Comprehensions](#list-comprehensions)
+  - [Finding the percentage](#finding-the-percentage)
+  - [Validating phone numbers](#validating-phone-numbers)
+  - [Validating and Parsing Email Addresses](#validating-and-parsing-email-addresses)
+  - [Word Order](#word-order)
+  
+  
 # Vài điều cần biết khó tìm
 ## Ký hiệu một và hai dấu *
 An asterisk * denotes iterable unpacking. Its operand must be an iterable. The iterable is expanded into a sequence of items, which are included in the new tuple, list, or set, at the site of the unpacking.
