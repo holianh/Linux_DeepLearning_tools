@@ -1,5 +1,3 @@
-
-
 # Mục lục
 Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng việt, thì:
 ~~~
@@ -9,7 +7,12 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
  - Chuyển hết về chữ thường
  - Nếu có dấu gạch dưới, thì giữ nguyên dấu gạch dưới
 ~~~
+
 # Table of contents
+
+<table>
+<tr>
+<td>
 
 - [Vài điều cần biết khó tìm](#vài-điều-cần-biết-khó-tìm)
   - [Ký hiệu một và hai dấu *](#ký-hiệu-một-và-hai-dấu-)
@@ -35,6 +38,11 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
   - [](#)
   - [](#)
   - [](#)
+
+
+</td>
+<td>
+
   - [The Captain's Room](#the-captains-room)
   - [Set Mutations](#set-mutations)
   - [union](#union)
@@ -63,6 +71,11 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
   - [Validating phone numbers](#validating-phone-numbers)
   - [Validating and Parsing Email Addresses](#validating-and-parsing-email-addresses)
   - [Word Order](#word-order)
+
+</td>
+</tr>
+</table
+
   
   
 # Vài điều cần biết khó tìm
