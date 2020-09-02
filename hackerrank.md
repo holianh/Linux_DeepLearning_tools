@@ -29,8 +29,7 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
   - [itertools.product()](#itertoolsproduct)
   - [permutations](#permutations)
   - [itertools.combinations()](#itertoolscombinations)
-  - [itertools.combinations_with_replacement()](#itertoolscombinations_with_replacement)
-                                                
+  - [itertools.combinations_with_replacement()](#itertoolscombinations_with_replacement)           
   - [Compress the String!](#compress-the-string)
   - [Iterables and Iterators](#iterables-and-iterators)
   - [](#)
@@ -42,7 +41,7 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
 
 </td>
 <td>
-
+ 
   - [The Captain's Room](#the-captains-room)
   - [Set Mutations](#set-mutations)
   - [union](#union)
