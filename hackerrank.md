@@ -47,12 +47,7 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
   - [Capitalize](#capitalize)
   - [The Minion Game](#the-minion-game)
   - [Merge the Tools!](#merge-the-tools)
-
-
-</td>
-<td>
- 
- - [Sets](#sets)
+- [Sets](#sets)
   - [Introduction to Sets](#introduction-to-sets)
   - [No Idea!](#no-idea)
   - [Symmetric Difference](#symmetric-difference)
@@ -66,6 +61,10 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
   - [The Captain's Room](#the-captains-room)
   - [Check Subset](#check-subset)
   - [Check Strict Superset](#check-strict-superset)
+
+</td>
+<td>
+ 
 - [Math](#math)
   - [Polar Coordinates](#polar-coordinates)
   - [Find Angle MBC](#find-angle-mbc)
