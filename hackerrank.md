@@ -986,44 +986,121 @@ print(totalMoney)
 ```
 
 ## Word Order
-đề:
+
 https://www.hackerrank.com/challenges/word-order/problem
 
-
 ```python
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-n = int(input())
-d={}
-q=[]
-for k in range(n):
-    key=input()
-    d[key]=d.get(key,0)+1
-    q.append(key)    
-
+from collections import Counter, OrderedDict
+class OrderedCounter(Counter, OrderedDict):
+    pass
+d = OrderedCounter(input() for _ in range(int(input())))
 print(len(d))
-inroi=[]
-for key in q:
-    if not key in inroi:
-        print(d[key], end=' ')
-        inroi+=[key]
-```
-
-## 
-
-```python
+print(*d.values())
 
 ```
 
-## 
-
 ```python
+from collections import OrderedDict
+words = OrderedDict()
 
+for _ in range(int(input())):
+    word = input()
+    words.setdefault(word, 0)
+    words[word] += 1
+   
+print(len(words))
+print(*words.values())
 ```
 
-## 
-
 ```python
+from collections import OrderedDict
+words = OrderedDict()
+for i in range(int(input())):
+    eachword = input().strip()
+    words[eachword] = words.get(eachword, 0) + 1
+print (len(words))
+print (*words.values())
+```
 
+
+## Collections.namedtuple()
+https://www.hackerrank.com/challenges/py-collections-namedtuple/problem
+```python
+from collections import namedtuple
+N=int(input())
+STT=[cnt for cnt, k in enumerate(input().split()) if k=="MARKS" ][0]
+marks=[ int(input().split()[STT]) for _ in range(N) ]
+print("{:.02f}".format(sum(marks)/len(marks)))
+```
+```python
+from collections import namedtuple
+
+N = int(input())
+fields = input().split()
+
+total = 0
+for i in range(N):
+    students = namedtuple('student',fields)
+    field1, field2, field3,field4 = input().split()
+    student = students(field1,field2,field3,field4)
+    total += int(student.MARKS)
+print('{:.2f}'.format(total/N))
+```
+```python
+from collections import namedtuple
+n = int(input())
+a = input()
+total = 0
+Student = namedtuple('Student', a)
+for _ in range(n):
+    student = Student(*input().split())
+    total += int(student.MARKS)
+print('{:.2f}'.format(total/n))
+```
+```python
+from collections import namedtuple
+n, nt = int(input()), namedtuple('Student', input().split())
+sl = [nt(*input().split()) for i in range(n)]
+print('%.2f' % (sum([int(student.MARKS) for student in sl])/n))
+```
+```python
+stu, marks = int(input()), input().split().index("MARKS")
+print ('%0.02f' % (sum([int(input().split()[marks]) for _ in range(stu)]) / float(stu)))
+```
+
+## collections.OrderedDict
+https://www.hackerrank.com/challenges/py-collections-ordereddict/problem
+```python
+from collections import OrderedDict
+N=int(input())
+d=OrderedDict()
+for k in range(N):
+    name, price = input().rsplit(' ',1)
+    d[name]=d.get(name,0)+int(price)
+for kv in d.items():
+    print(*kv)
+```
+```python
+from collections import OrderedDict
+d = OrderedDict()
+for _ in range(int(input())):
+    item, space, quantity = input().rpartition(' ')
+    d[item] = d.get(item, 0) + int(quantity)
+for item, quantity in d.items():
+    print(item, quantity)
+```
+
+## Collections.deque()
+https://www.hackerrank.com/challenges/py-collections-deque/problem
+```python
+from collections import deque
+d = deque() 
+for _ in range(int(input())):
+    cmd=input()
+    s=["d."+cmd.replace(' ','(')+")" if cmd.find(' ')>0 else "d."+cmd+"()"][0]
+    # print(s)
+    eval(s)
+print(*d)
 ```
 
 ## 
