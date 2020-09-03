@@ -14,25 +14,21 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
 <tr>
 <td>
 
-- [Vài điều cần biết khó tìm](#vài-điều-cần-biết-khó-tìm)
-  - [Ký hiệu một và hai dấu *](#ký-hiệu-một-và-hai-dấu-)
-- [giải bài tập trong Hackerrank.com phần Python](#giải-bài-tập-trong-hackerrankcom-phần-python)
-- [Math](#math)
-  - [Polar Coordinates](#polar-coordinates)
-  - [Find Angle MBC](#find-angle-mbc)
-  - [Triangle Quest 2](#triangle-quest-2)
-  - [Mod Divmod](#mod-divmod)
-  - [Power - Mod Power](#power---mod-power)
-  - [Integers Come In All Sizes](#integers-come-in-all-sizes)
-  - [Triangle Quest](#triangle-quest)
+# Table of contents
+
+- [Mục lục](#mc-lc)
+- [Table of contents](#table-of-contents)
+- [Vài điều cần biết khó tìm](#vi-iu-cn-bit-kh-tm)
+  - [Ký hiệu một và hai dấu *](#k-hiu-mt-v-hai-du-)
+- [giải bài tập trong Hackerrank.com phần Python](#gii-bi-tp-trong-hackerrankcom-phn-python)
 - [itertools](#itertools)
   - [itertools.product()](#itertoolsproduct)
   - [permutations](#permutations)
   - [itertools.combinations()](#itertoolscombinations)
-  - [itertools.combinations_with_replacement()](#itertoolscombinations_with_replacement)           
+  - [itertools.combinations_with_replacement()](#itertoolscombinationswithreplacement)
   - [Compress the String!](#compress-the-string)
   - [Iterables and Iterators](#iterables-and-iterators)
-  - [](#)
+  - [DefaultDict Tutorial](#defaultdict-tutorial)
   - [](#)
   - [](#)
   - [](#)
@@ -42,6 +38,14 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
 </td>
 <td>
  
+- [Math](#math)
+  - [Polar Coordinates](#polar-coordinates)
+  - [Find Angle MBC](#find-angle-mbc)
+  - [Triangle Quest 2](#triangle-quest-2)
+  - [Mod Divmod](#mod-divmod)
+  - [Power - Mod Power](#power---mod-power)
+  - [Integers Come In All Sizes](#integers-come-in-all-sizes)
+  - [Triangle Quest](#triangle-quest)
   - [The Captain's Room](#the-captains-room)
   - [Set Mutations](#set-mutations)
   - [union](#union)
@@ -70,6 +74,7 @@ Dùng tools: [này](https://luciopaiva.com/markdown-toc/), nếu có tiếng vi�
   - [Validating phone numbers](#validating-phone-numbers)
   - [Validating and Parsing Email Addresses](#validating-and-parsing-email-addresses)
   - [Word Order](#word-order)
+  - [Say "Hello, World!" With Python](#say-hello-world-with-python)
 
 </td>
 </tr>
@@ -790,6 +795,10 @@ for key in q:
         inroi+=[key]
 ```
 
-
+## Say "Hello, World!" With Python
+https://www.hackerrank.com/challenges/py-hello-world/problem
+```python
+print("Hello, World!")
+```
 
 
