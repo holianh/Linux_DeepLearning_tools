@@ -103,77 +103,6 @@ Tham khảo: [tại đây](https://www.hackerrank.com/challenges/itertools-produ
 
 # giải bài tập trong Hackerrank.com phần Python
 
-# Math
-
-## Polar Coordinates
-https://www.hackerrank.com/challenges/polar-coordinates/problem
-```python
-from cmath import phase 
-z=input() # a | bj | a+bj
-z=complex(z)
-r   =abs(z)
-phi =phase(z)
-print(r)
-print(phi)
-```
-
-## Find Angle MBC
-https://www.hackerrank.com/challenges/find-angle/problem
-```python
-import math
-ab=int(input())
-bc=int(input())
-print(f"{round(180*math.atan(ab/bc)/math.pi)}°")
-```
-
-## Triangle Quest 2
-https://www.hackerrank.com/challenges/triangle-quest-2/problem
-```
-10^1/9=1
-10^2/9=11
-10^3/9=111
-10^4/9=1111
-...
-và
-1*1=1
-11*11=121
-111*111=12321
-1111*1111=1234321
-...
-```
-```python
-for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
-    print ((10**i//9)**2)
-```
-
-## Mod Divmod
-https://www.hackerrank.com/challenges/python-mod-divmod/problem
-```python
-a=int(input())
-b=int(input())
-print(f"{a//b}\n{a%b}\n{divmod(a,b)}")
-```
-
-## Power - Mod Power
-https://www.hackerrank.com/challenges/python-power-mod-power/problem
-```python
-a,b,m=[int(input()) for _ in range(3)]
-print("{}\n{}".format(pow(a,b),pow(a,b,m)))
-```
-
-## Integers Come In All Sizes
-https://www.hackerrank.com/challenges/python-integers-come-in-all-sizes/problem
-```python
-a,b,c,d=[int(input()) for _ in range(4)]
-print(a**b+c**d)
-```
-
-## Triangle Quest
-https://www.hackerrank.com/challenges/python-quest-1/problem
-```python
-for i in range(1,int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
-    print(round(i*(10**i//9)))
-```
 
 # itertools
 
@@ -276,6 +205,25 @@ without = fact(n-aCount) // fact((n-aCount)-k) if (n-aCount)>=k else 0
 print(1-(without / combs) if combs else 0)
 
 ```
+
+##   DefaultDict Tutorial
+https://www.hackerrank.com/challenges/defaultdict-tutorial/problem
+
+```python
+n,m=map(int,input().split())
+
+from collections import defaultdict
+d = defaultdict(list)
+
+for k in range(n):
+    d[input()].append(k+1)
+for k in range(m):
+    kkey=input()
+    if (kkey in d): print(*d[kkey])
+    else: print(-1)
+```
+
+
 ##   
 
 ```python
@@ -296,11 +244,79 @@ print(1-(without / combs) if combs else 0)
 ```python
 
 ```
-##   
 
+# Math
+
+## Polar Coordinates
+https://www.hackerrank.com/challenges/polar-coordinates/problem
 ```python
-
+from cmath import phase 
+z=input() # a | bj | a+bj
+z=complex(z)
+r   =abs(z)
+phi =phase(z)
+print(r)
+print(phi)
 ```
+
+## Find Angle MBC
+https://www.hackerrank.com/challenges/find-angle/problem
+```python
+import math
+ab=int(input())
+bc=int(input())
+print(f"{round(180*math.atan(ab/bc)/math.pi)}°")
+```
+
+## Triangle Quest 2
+https://www.hackerrank.com/challenges/triangle-quest-2/problem
+```
+10^1/9=1
+10^2/9=11
+10^3/9=111
+10^4/9=1111
+...
+và
+1*1=1
+11*11=121
+111*111=12321
+1111*1111=1234321
+...
+```
+```python
+for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print ((10**i//9)**2)
+```
+
+## Mod Divmod
+https://www.hackerrank.com/challenges/python-mod-divmod/problem
+```python
+a=int(input())
+b=int(input())
+print(f"{a//b}\n{a%b}\n{divmod(a,b)}")
+```
+
+## Power - Mod Power
+https://www.hackerrank.com/challenges/python-power-mod-power/problem
+```python
+a,b,m=[int(input()) for _ in range(3)]
+print("{}\n{}".format(pow(a,b),pow(a,b,m)))
+```
+
+## Integers Come In All Sizes
+https://www.hackerrank.com/challenges/python-integers-come-in-all-sizes/problem
+```python
+a,b,c,d=[int(input()) for _ in range(4)]
+print(a**b+c**d)
+```
+
+## Triangle Quest
+https://www.hackerrank.com/challenges/python-quest-1/problem
+```python
+for i in range(1,int(input())): #More than 2 lines will result in 0 score. Do not leave a blank line also
+    print(round(i*(10**i//9)))
+```
+
 
 
 ## The Captain's Room
