@@ -965,6 +965,48 @@ for k in range(m):
 
 ```
 
+## collections.Counter()
+
+https://www.hackerrank.com/challenges/collections-counter/problem
+```python
+from collections import Counter
+X_number_of_shoes        =int(input())
+Xs_shoe_sizes_in_the_shop=list(map(int, input().split()))
+shoe=dict(Counter(Xs_shoe_sizes_in_the_shop))
+# print(shoe)
+N_number_of_customers    =int(input())
+totalMoney=0
+for cus in range(N_number_of_customers):
+    size, money=list(map(int, input().split()))
+    if (size in shoe.keys()) and(shoe[size]>0):
+        totalMoney+=money
+        shoe[size]-=1
+print(totalMoney)
+
+```
+
+## Word Order
+đề:
+https://www.hackerrank.com/challenges/word-order/problem
+
+
+```python
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+d={}
+q=[]
+for k in range(n):
+    key=input()
+    d[key]=d.get(key,0)+1
+    q.append(key)    
+
+print(len(d))
+inroi=[]
+for key in q:
+    if not key in inroi:
+        print(d[key], end=' ')
+        inroi+=[key]
+```
 
 ## 
 
@@ -972,6 +1014,35 @@ for k in range(m):
 
 ```
 
+## 
+
+```python
+
+```
+
+## 
+
+```python
+
+```
+
+## 
+
+```python
+
+```
+
+## 
+
+```python
+
+```
+
+## 
+
+```python
+
+```
 
 
 
@@ -1067,28 +1138,6 @@ for _ in range(n):
 ```            
 
 
-## Word Order
-đề:
-https://www.hackerrank.com/challenges/word-order/problem
-
-
-```python
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-n = int(input())
-d={}
-q=[]
-for k in range(n):
-    key=input()
-    d[key]=d.get(key,0)+1
-    q.append(key)    
-
-print(len(d))
-inroi=[]
-for key in q:
-    if not key in inroi:
-        print(d[key], end=' ')
-        inroi+=[key]
-```
 
 
 
