@@ -1111,10 +1111,29 @@ for _ in range(int(input())):
 print(*[item for item in d])
 ```
 
-## 
+## Company Logo
+https://www.hackerrank.com/challenges/most-commons/problem
 
 ```python
+#!/bin/python3
 
+import math
+import os
+import random
+import re
+import sys
+from collections import defaultdict
+#from collections import OrderedDict 
+d = defaultdict(int)
+
+
+if __name__ == '__main__':
+    s = input()
+    #sl=list(s)
+    for c in s: d[c]+=1
+    d = dict(sorted(d.items(), key=lambda x: x[0]))
+    d = sorted(d.items(), key=lambda x: x[1], reverse=True)[:3]
+    [print(f"{key} {value}") for (key, value) in d]
 ```
 
 ## 
