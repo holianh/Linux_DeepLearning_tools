@@ -1135,6 +1135,13 @@ if __name__ == '__main__':
     d = sorted(d.items(), key=lambda x: x[1], reverse=True)[:3]
     [print(f"{key} {value}") for (key, value) in d]
 ```
+```python
+from collections import Counter, OrderedDict
+
+class OrderedCounter(Counter, OrderedDict):
+    pass
+[print(*c) for c in OrderedCounter(sorted(input())).most_common(3)]
+```
 
 ## 
 
