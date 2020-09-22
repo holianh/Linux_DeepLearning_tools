@@ -113,7 +113,11 @@ clear_output()
 exec(open('taLibs_imports.py').read())
 ``` 
   - TA progress: [code](TAprogress.py)
-  
+  - get size of var: 
+  ```python
+      from sys import getsizeof
+      print(getsizeof( datahome ),'bytes')
+  ```
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
    - Keras: __save model + weight__ to files, [here](Keras_funcs.py#L2)
