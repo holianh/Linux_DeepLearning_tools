@@ -11,6 +11,12 @@ This is all Header in this file:
 
 [Link hay cần làm](Link-hay-can-lam.md)
 
+# 1. Colab
+  - colab running time:
+  ```python
+!pip install ipython-autotime
+%load_ext autotime
+  ```
 # 1. Linux DeepLearning tools
 These are some useful tools to use with Linux (focus on Ubuntu) when working with Deep Learning. [Tham khảo:](https://peshmerge.io/how-to-install-cuda-9-0-on-with-cudnn-7-1-4-on-ubuntu-18-04/)
   - 1. Install Ubuntu 18.04
