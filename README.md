@@ -118,6 +118,7 @@ exec(open('taLibs_imports.py').read())
       from sys import getsizeof
       print(getsizeof( datahome ),'bytes')
   ```
+  - get size of any object: import [this](TAlibs_getsize.py)
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
    - Keras: __save model + weight__ to files, [here](Keras_funcs.py#L2)
