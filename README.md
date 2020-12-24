@@ -137,6 +137,9 @@ exec(open('taLibs_imports.py').read())
   - Edit ipython Notebook html scroll field: div class="..." => div class="..." style="overflow-y: scroll; height:400px;"
   - Server-Client Flask on Window: [full code](https://github.com/holianh/Flask_on_Window)
   - Server - Client predict: [code](server_client.md)
+  - Đọc file CSV=> array: [code](php-html-js.md#%C4%91%E1%BB%8Dc-file-csv-array)
+  - js post thông tin (jquery) yêu cầu xoá thông tin trên server: [code](php-html-js.md#js-post-th%C3%B4ng-tin-jquery-y%C3%AAu-c%E1%BA%A7u-xo%C3%A1-th%C3%B4ng-tin-tr%C3%AAn-server)
+  
    
    
    # 8. Ứng dụng khác
