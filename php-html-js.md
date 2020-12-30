@@ -95,4 +95,23 @@ if(isset($_POST['type'])) {
 }
 ```
 
-# 
+# html to excel:
+```html
+    <table id="simpleTable1">
+        <thead><tr><th>A</th><th>B</th><th>C</th></tr></thead>
+        <tbody>
+              <tr><td>1</td><td>2</td><td>3</td></tr>
+              <tr><td>1</td><td>2</td><td>3</td></tr>
+              <tr><td>1</td><td>2</td><td>3</td></tr>             
+        </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <button id="button-excel">Create Excel</button>
+    <script type="text/javascript">
+        let button = document.querySelector("#button-excel");
+        button.addEventListener("click", e => {
+          let table = document.querySelector("#simpleTable1");
+          TableToExcel.convert(table);
+      });
+    </script>
+```
