@@ -78,6 +78,7 @@ Useful linux command
    -  Plot history and accuray when training with Keras to PDF, [view](python_funcs_codes.py#L38)
    - Save data to json file, [view](python_funcs_codes.py#L113) 
    - Files_2csv_inDir: Find and Add All wav & label files to *.CSV, [view](python_funcs_codes.py#L130)
+   - Colab run time running time: ```!pip install ipython-autotime        %load_ext autotime```
    - New calculate Running time + progress display: [xem](taLibs_Datetime.md#class-running-time-waiting-time)
    - New calculate running time simple (rất đơn giản): [xem](taLibs_Datetime.md#running-time-waiting-time)
    - Datetime Vietnam timezone+7: [xem](taLibs_Datetime.md#date-time-7-vietnam-time)
