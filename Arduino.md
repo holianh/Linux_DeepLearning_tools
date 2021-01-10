@@ -211,7 +211,48 @@ void serialEvent() {
 # Send/receive data to server HTTPS
 ## Wifiduino từ EPS8266:
 Code này nạp vào arduino :
+Key code, code tối thiểu để chạy được:
+```c++
+#define USING_AXTLS
+#include <ESP8266WiFi.h>
+#include <WiFiClientSecureAxTLS.h>
+using namespace axTLS;
+#ifndef STASSID
+#define STASSID "Khong-Co-Mang"
+#define STAPSK  "06122015"
+#endif
+const char* ssid     = STASSID;
+const char* password = STAPSK;
+const char* host = "aisolutions.vn"; // online
+// Open host web, Lclick a lock on left of address>certificate>detail>Thumbprint
+const char fingerprint[] = "58f32f2e18e23ed2fa6e04c7b287e9c41db638a5"; 
+const int httpsPort = 443;
+WiFiClientSecure client;
+void setup() {
+	Serial.begin(115200);
+	WiFi.mode(WIFI_STA);
+	WiFi.begin(ssid, password);
+	while (WiFi.status() != WL_CONNECTED){delay(500);Serial.print(".");}
+	Serial.println(WiFi.localIP());
+	if (!client.connect(host, httpsPort)){Serial.println("connection failed");delay(5000);return;}
+	if (client.verify(fingerprint, host)){Serial.println("certificate matches");} 
+	else {Serial.println("certificate doesn't match");}
 
+	String url = "/test/post-get.php?id=1&value=Mot";
+	client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+	 "Host: " + host + "\r\n" +
+	 "User-Agent: BuildFailureDetectorESP8266\r\n" +
+	 "Connection: close\r\n\r\n");
+	while (client.connected()) {String line = client.readStringUntil('\n'); if (line == "\r") {break;}}
+	while(client.available()){
+	  String line = client.readStringUntil('\n');
+	  Serial.println(line);
+	  if(line.substring(0,7) == "Success"){Serial.write("Thanh cong");}}
+	client.stop();
+}
+void loop() {
+}
+```
 <details>
     <summary>Full code Wifiduino </summary>
   
