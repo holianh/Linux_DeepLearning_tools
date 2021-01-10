@@ -154,7 +154,7 @@ exec(open('taLibs_imports.py').read())
    - Cách active Window và office: Chạy CMD gán key mới tại đây: [xem](active_window_office.md#c%C3%A1ch-active-window-v%C3%A0-office) 
    - Window tool: Hiển thị pass wifi trên máy tính window: [xem](windows-tool-ultility.md#hi%E1%BB%83n-th%E1%BB%8B-pass-wifi-tr%C3%AAn-m%C3%A1y-t%C3%ADnh)
    
-   #10. Arduino
+   # 10. Arduino 
    - Display: TFT 2.4" China [Code](Arduino.md#tft-24-china--arduino-due)
    - Arduino send/get data to/from https[Code](Arduino.md#sendreceive-data-to-server-https)
     
