@@ -1,6 +1,9 @@
 - [Display](#Display)
   - [TFT 2.4" China](#tft-24-china--arduino-due)
-
+- [Arduino send/get data to/from https](sendreceive-data-to-server-https)
+  - [Code arduino](#wifiduino-t%E1%BB%AB-eps8266)
+  - [Code PHP: get/return data](#code-php-server) 
+  
 # Display
 ## TFT 2.4" China & Arduino DUE
 Dùng thư viện Adafruit_GFX và MCUFRIEND_kbv
