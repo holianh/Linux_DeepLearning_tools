@@ -183,13 +183,13 @@ p.ex1 {
 ```
 
 </details>
+
 # html js chart pan zoom:
+
 <details>
 <summary>Full code:</summary>
+	
 ```html
-
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
