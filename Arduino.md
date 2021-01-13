@@ -760,9 +760,80 @@ String SendHTML(uint8_t led1stat, uint8_t led2stat){
 </details>
 
 
+## Code Arduino gửi thông tin lên server module hoá
+Code này đã được biến đổi thành module (func) để có thể truyền nhận trên WiFiduino 8266, kết nối lên aisolutions test.
+
+<details>
+<summary>Full code</summary>
+```C++
+
+#define USING_AXTLS
+#include <ESP8266WiFi.h>
+
+// WiFi: =====================================
+#include <WiFiClientSecureAxTLS.h>
+using namespace axTLS;
+#ifndef STASSID
+#define STASSID "Tact"
+#define STAPSK  "12345677"
+#endif
+const char* ssid     = STASSID;
+const char* password = STAPSK;
+const char* host = "aisolutions.vn"; // online
+// Open host web, Lclick a lock on left of address>certificate>detail>Thumbprint
+const char fingerprint[] = "58f32f2e18e23ed2fa6e04c7b287e9c41db638a5"; 
+const int httpsPort = 443;
+WiFiClientSecure client;
+void FnWifiSetup(){
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED){
+    delay(500);
+    Serial.print("-");
+  }
+  Serial.println(WiFi.localIP());
+}
+String FnWiFiSendRec(uint8_t id,  float value){
+  char RET[255];
+  if (!client.connect(host, httpsPort)){Serial.println("connection failed");delay(5000);return "";}
+  //if (client.verify(fingerprint, host)){Serial.println("certificate matches");}else {Serial.println("certificate doesn't match");}
+  if (!client.verify(fingerprint, host)){Serial.println("certificate doesn't match");}
+
+  String url = "/test/post-get.php?id=" + String(id) + "&value=" + String(value);
+  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+   "Host: " + host + "\r\n" +
+   "User-Agent: BuildFailureDetectorESP8266\r\n" +
+   "Connection: close\r\n\r\n");
+  while (client.connected()) {String line = client.readStringUntil('\n');if (line == "\r"){break;}}
+  while(client.available()){
+    String line = client.readStringUntil('\n');
+    Serial.println(line);
+    if(line.substring(0,7) == "Success"){
+      Serial.write("Thanh cong"); 
+      strcpy(RET, line.c_str());
+    }
+  }
+  client.stop();
+  return RET;
+}
+//=========================================
+
+
+void setup() {
+  Serial.begin(115200);
+  FnWifiSetup();
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  FnWiFiSendRec(2,4.5);
+  delay(1000);
+}
+```
+</details>	
 
 <details>
 <summary>Full code</summary>
 	
 </details>	
-
