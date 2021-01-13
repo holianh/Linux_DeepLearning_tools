@@ -765,6 +765,7 @@ Code này đã được biến đổi thành module (func) để có thể truy�
 
 <details>
 <summary>Full code</summary>
+
 ```C++
 
 #define USING_AXTLS
@@ -831,6 +832,7 @@ void loop() {
   delay(1000);
 }
 ```
+
 </details>	
 
 <details>
