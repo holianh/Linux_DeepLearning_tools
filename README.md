@@ -132,6 +132,7 @@ exec(open('taLibs_imports.py').read())
    - tensorboard <enter>: locate tensorboard/program.py | xargs sed -i -e "s/logdir', ''/logdir', os.getcwd()/g"
    - Keras python jupyter notebook: Live plot Loss accuracy when training : [here](Keras_funcs.py#L475)
    - Keras check GPU exists: from tensorflow.python.client import device_lib;print(device_lib.list_local_devices())   
+   - Cách dùng HDF5 để lưu/store large dataset [code](Deep_Learning_funcs.md#c%C3%A1ch-d%C3%B9ng-hdf5-%C4%91%E1%BB%83-l%C6%B0ustore-large-dataset)
   
   # 7. WEB Services
   - Build a front end web application: Send data without reload page [Youtube](https://goo.gl/4jNWzF)
