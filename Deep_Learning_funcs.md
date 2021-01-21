@@ -89,13 +89,13 @@ def _bytes_feature(value):
 def write_tfrecords_file(out_path: str, images: np.ndarray, labels: np.ndarray) -> None:
     """Write all image-label pairs into a single .tfrecord file.
     :param out_path: File path of the .tfrecord file to generate or overwrite.
-    :param images: array with first dimension being the image index. Every images[i].tostring() is
+    :param images: array with first dimension being the image index. Every images[i].tobytes() is
         serialized and written into the file as 'image': wrap_bytes(img_bytes)
     :param labels: 1d array of integers. labels[i] is the label of images[i]. Written as 'label': wrap_int64(label)"""
     assert len(images) == len(labels)
     with tf.io.TFRecordWriter(out_path) as writer:  # could use writer_options parameter to enable compression
         for i in range(len(labels)):
-            img_bytes = images[i].tostring()  # Convert the image to raw bytes.
+            img_bytes = images[i].tobytes()  # Convert the image to raw bytes.
             label = labels[i]
             data = {'image': _bytes_feature(img_bytes), 'label': _int64_feature(label)}
             feature = tf.train.Features(feature=data)  # Wrap the data as TensorFlow Features.
@@ -110,7 +110,7 @@ def parse_example(serialized, shape=(256, 256, 1)):
     parsed_example = tf.io.parse_single_example(serialized=serialized, features=features)
     label = parsed_example['label']
     image_raw = parsed_example['image']  # Get the image as raw bytes.
-    image = tf.decode_raw(image_raw, tf.float32)  # Decode the raw bytes so it becomes a tensor with type.
+    image = tf.io.decode_raw(image_raw, tf.float32)  # Decode the raw bytes so it becomes a tensor with type.
     image = tf.reshape(image, shape=shape)
     return image, label  # this function will be called once (to add it to tf graph; then parse images individually)
 
