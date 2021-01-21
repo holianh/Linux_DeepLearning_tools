@@ -121,6 +121,7 @@ exec(open('taLibs_imports.py').read())
   ```
   - get size of any object: import [this](TAlibs_getsize.py)
   - download gdrive share file in colab: `!gdown --id xxx` hoặc: `!gdown https://drive.google.com/uc?id=1-t9SO--H4WmP7wUl1tVNNeDkq47hjbv4 -O model.pth -q`
+  - Python fastest way to get mp3 length [code](Deep_Learning_funcs.md#python-fastest-way-to-get-mp3-length)
    # 6. Keras funcs list
    this is all useful Keras functions, can be directly use
    - Keras: __save model + weight__ to files, [here](Keras_funcs.py#L2)
