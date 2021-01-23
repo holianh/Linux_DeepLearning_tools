@@ -71,21 +71,26 @@ class TADataProcessing:
       self.pindex_char  =join(dataHome,'idindex_char.pickle')
       self.ptrain_MFCC  =join(dataHome,'MFCC_train.pickle')
       self.Alldata      =join(dataHome,'ViVo_Alldata_MFCCs_Labels.h5')
-      self.fnvocab_size =join(dataHome,'vocab_size.pickle')
+
+      self.plen_vocab    =join(dataHome,'len_vocab.pickle')
+      self.plen_maxMfcc  =join(dataHome,'len_maxMfcc.pickle')
+      self.plen_maxLabel =join(dataHome,'len_maxLabel.pickle')
 
       self.pTrainText='/content/dataset/vivos/train/prompts.txt'
       
       self.MFCCs_test_=None
       self.MFCCs_train=None 
+
       self.MaxlenMFCC =0
       self.MaxlenLabel=0 
+      self.vocab_size=0
       
       self.Len_Labels__test=[]
       self.Len_Labels_train=[]
       self.Len_mfcc__test=[]
       self.Len_mfcc_train=[]
 
-      self.vocab_size=0
+      
       if datasetPath:
         self.fnLoad_data_final(datasetPath)
       
@@ -188,18 +193,18 @@ class TADataProcessing:
     Vocab=MakeVocabs(self.train_corpus,Vocab)    
     charslist=list(Vocab)
     charslist.sort()
-    self.vocab_size=charslist
+    self.vocab_size=len(charslist)
     for k,ch in enumerate(charslist):
         self.char_index[ch] = k
         self.index_char[k] = ch
     self.fnSaveObject(self.pchar_index,self.char_index)
     self.fnSaveObject(self.pindex_char,self.index_char)
-    self.fnSaveObject(self.fnvocab_size,self.vocab_size)    
+    self.fnSaveObject(self.plen_vocab,self.vocab_size)
     print("Done!")
   def fnLoad_Char_index(self): 
     self.char_index = pickle.load( open( self.pchar_index, "rb" ) )
     self.index_char = pickle.load( open( self.pindex_char, "rb" ) )
-    self.vocab_size = pickle.load( open( self.fnvocab_size, "rb" ) )
+    self.vocab_size = pickle.load( open( self.plen_vocab, "rb" ) )
 
   def fnMakeLabels(self):
     """
@@ -221,19 +226,24 @@ class TADataProcessing:
         for line_num, json_line in enumerate(json_line_file):
           spec = json.loads(json_line)
           label=[self.char_index[word] for word in  spec['text'].split()]
-          self.MaxlenLabel=max(self.MaxlenLabel,len(label))
+          
           All_Labels.append(label)
       return All_Labels
     self.TestLabels =MakeLabels(self.test_corpus)
     self.TrainLabels=MakeLabels(self.train_corpus)
     self.Len_Labels__test=[len(lbl) for lbl in self.TestLabels]
-    self.Len_Labels_train=[len(lbl) for lbl in self.TrainLabels]    
+    self.Len_Labels_train=[len(lbl) for lbl in self.TrainLabels]   
+
+    self.MaxlenLabel=max(self.MaxlenLabel,max(self.Len_Labels__test),len(self.Len_Labels_train)) 
+
     self.TestLabels =self.fnPaddingList_2D(self.TestLabels)
     self.TrainLabels=self.fnPaddingList_2D(self.TrainLabels)
     print('Test  Label:',self.TestLabels.shape)
     print('train Label:',self.TrainLabels.shape)
     self.fnSaveObject(self.plabel_test_,self.TestLabels)
     self.fnSaveObject(self.plabel_train,self.TrainLabels)
+    self.fnSaveObject(self.plen_maxLabel,self.MaxlenLabel)
+
     print("OK!")
 
   def fnPlot_mfcc_feature(self,vis_mfcc_feature, title='',ylabel='',xlabel=''):
@@ -260,6 +270,7 @@ class TADataProcessing:
     if exists(self.ptest_MFCC):
       self.MFCCs_test_=self.fnLoadpickle(self.ptest_MFCC)
       self.MFCCs_train=self.fnLoadpickle(self.ptrain_MFCC)
+      self.MFCCs_train=self.fnLoadpickle(self.ptrain_MFCC)
       print(f"MFCCs_test_:{self.MFCCs_test_.shape}\nMFCCs_train:{self.MFCCs_train.shape}")
       return
     print("Start fnMakeMFCC")
@@ -274,21 +285,24 @@ class TADataProcessing:
                 spec = json.loads(json_line)   
                 fn=spec['wavPaths']
                 (rate,sig) = wav.read(fn)
-                mfcc_feat = mfcc(sig,rate,numcep=80)
-                self.MaxlenMFCC=max(self.MaxlenMFCC,len(mfcc_feat))
+                mfcc_feat = mfcc(sig,rate,numcep=80)                
                 MFCCs.append(mfcc_feat)
                 pbar.update(n=1)
                 # if line_num>3:break
         return MFCCs
     self.MFCCs_test_=MakeMFCC(lblpath[0])
     self.Len_mfcc__test=[len(lbl) for lbl in self.MFCCs_test_]
+    self.MaxlenMFCC=max(self.MaxlenMFCC,max(self.Len_mfcc__test))
     self.MFCCs_test_=self.fnPaddingList_3D(self.MFCCs_test_)
     self.fnSaveObject(self.ptest_MFCC,  self.MFCCs_test_)
     
     self.MFCCs_train=MakeMFCC(lblpath[1])
     self.Len_mfcc_train=[len(lbl) for lbl in self.MFCCs_train]
+    self.MaxlenMFCC=max(self.MaxlenMFCC,max(self.Len_mfcc_train))
     self.MFCCs_train=self.fnPaddingList_3D(self.MFCCs_train)
     self.fnSaveObject(self.ptrain_MFCC, self.MFCCs_train)
+    
+    self.fnSaveObject(self.plen_maxMfcc , self.MaxlenMFCC)
     
     print(f"MFCCs_test_:{self.MFCCs_test_.shape}\nMFCCs_train:{self.MFCCs_train.shape}")
     print(f"len mfcc: test={len(self.MFCCs_test_)}, train={len(self.MFCCs_train)}, \
@@ -333,12 +347,10 @@ class TADataProcessing:
       Mặc định khi lưu: datasetPath='Alldata_MFCCs_Labels.h5'
       Load cách này chỉ dùng để đưa vào .fit
       Khi nào dùng xong, thì gọi hàm:  `fnLoad_data_final_close` để đóng dataset lại.
-    """
-    
+    """    
     if not datasetPath:
       datasetPath=self.Alldata
-    self.h5f = h5py.File(datasetPath, 'r')
-   
+    self.h5f = h5py.File(datasetPath, 'r')   
     self.MFCCs_train     =  self.h5f['MFCCs_train']
     self.TrainLabels     =  self.h5f['TrainLabels']
     self.Len_Labels__test=  self.h5f['Len_Labels__test']
@@ -347,7 +359,9 @@ class TADataProcessing:
     self.Len_mfcc_train  =  self.h5f['Len_mfcc_train']
     self.MFCCs_test_     =  self.h5f['MFCCs_test_']
     self.TestLabels      =  self.h5f['TestLabels']
-    self.vocab_size      =  self.h5f['vocab_size']
+    self.vocab_size      =  self.h5f['vocab_size'][()]
+    self.MaxlenMFCC      =  self.h5f['MaxlenMFCC'][()]
+    self.MaxlenLabel     =  self.h5f['MaxlenLabel'][()]
     
   def fnLoad_data_final_close(self):    
     self.h5f.close()
@@ -379,6 +393,9 @@ class TADataProcessing:
     h5f.create_dataset('MFCCs_test_', data=self.MFCCs_test_)
     h5f.create_dataset('TestLabels', data=self.TestLabels)
     h5f.create_dataset('vocab_size', data=self.vocab_size)
+    h5f.create_dataset('MaxlenMFCC', data=self.MaxlenMFCC)
+    h5f.create_dataset('MaxlenLabel',data=self.MaxlenLabel)
+    
     h5f.close()
     # !rsync --progress {datasetPath} '/content/drive/Shareddrives/DataSets/Speech_Vietnamese/'
     print("Done!")
@@ -404,11 +421,24 @@ if __name__ == '__main__':
   Len_mfcc__test  =  h5f['Len_mfcc__test']
   Len_mfcc_train  =  h5f['Len_mfcc_train']
   MFCCs_test_     =  h5f['MFCCs_test_']
-  TestLabels      =  h5f['TestLabels']      
-  vocab_size =  h5f['vocab_size']
+  TestLabels      =  h5f['TestLabels']
+  vocab_size      =  h5f['vocab_size'][()]
+  MaxlenMFCC      =  h5f['MaxlenMFCC'][()]
+  MaxlenLabel     =  h5f['MaxlenLabel'][()]
   # Define model, train:
   # ............................
-  print(MFCCs_train.shape)
+  print('MFCCs_train:',MFCCs_train.shape)
+  print('TrainLabels:',TrainLabels.shape)
+  print('Len_Labels__test:',Len_Labels__test.shape)
+  print('Len_Labels_train:',Len_Labels_train.shape)
+  print('Len_mfcc__test:',Len_mfcc__test.shape)
+  print('Len_mfcc_train:',Len_mfcc_train.shape)
+  print('MFCCs_test_:',MFCCs_test_.shape)
+  print('TestLabels:',TestLabels.shape)
+  print('vocab_size:',vocab_size)
+  print('MaxlenMFCC:',MaxlenMFCC)
+  print('MaxlenLabel:',MaxlenLabel)
+ 
   h5f.close()
 ```
 
