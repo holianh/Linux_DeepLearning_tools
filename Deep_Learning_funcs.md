@@ -1,3 +1,417 @@
+# ViVo dataset preprocessing
+Tải file, rồi xử lý hết tất cả các thứ, lưu vào file rồi, chỉ việc chạy 1 lần thôi, các lần sau thì load là đủ
+Cách dùng:
+```python
+
+  # Download file: ViVo_Alldata_MFCCs_Labels.h5 from gdrive:
+  # !gdown --id 1APS-lUzQ_iBepXwe-sMNh3bbVeogUhz4 
+  import h5py
+  datasetPath='ViVo_Alldata_MFCCs_Labels.h5'
+  h5f = h5py.File(datasetPath, 'r')
+
+  MFCCs_train     =  h5f['MFCCs_train']
+  TrainLabels     =  h5f['TrainLabels']
+  Len_Labels__test=  h5f['Len_Labels__test']
+  Len_Labels_train=  h5f['Len_Labels_train']
+  Len_mfcc__test  =  h5f['Len_mfcc__test']
+  Len_mfcc_train  =  h5f['Len_mfcc_train']
+  MFCCs_test_     =  h5f['MFCCs_test_']
+  TestLabels      =  h5f['TestLabels']    
+  # Define model, train:
+  # ............................
+  
+  h5f.close()
+```
+
+<details>
+  <summary>Vivo Full code:</summary>
+
+```python
+import csv, json, os, librosa, mmap, pickle, h5py,random
+from tqdm.notebook import tqdm
+from IPython.display import clear_output 
+from os.path import exists, join
+import matplotlib.pyplot as plt
+import numpy as np
+
+try:
+  from mutagen.mp3 import MP3
+  import soundfile as sf
+  from python_speech_features import mfcc 
+  import scipy.io.wavfile as wav
+except:
+  !pip install mutagen 
+  !pip install soundfile
+  !pip install python_speech_features
+  from mutagen.mp3 import MP3
+  import soundfile as sf
+  from python_speech_features import mfcc 
+  import scipy.io.wavfile as wav
+  clear_output()
+
+class TADataProcessing:
+  def __init__(self,  dataHome     ='/content/dataset/vivos',
+                      Data_GdriveID='1--lnmOwkbAyVr-3rFf-kaLqDVE7bW-bQ',
+                      datasetPath=None):
+      """
+        datasetPath='/content/dataset/vivos/Alldata_MFCCs_Labels.h5'
+      """
+      self.dataHome=dataHome
+      self.gdriveID=Data_GdriveID
+      
+      self.pchar_index = 'idchar_index.pickle'
+      self.pindex_char = 'idindex_char.pickle'
+      self.char_index = {}
+      self.index_char = {} 
+
+      self.test_corpus ='corpus_test.json'
+      self.train_corpus='corpus_train.json'
+
+      self.ptest_MFCC ='MFCC_test_.pickle'
+      self.ptrain_MFCC='MFCC_train.pickle'
+
+      self.plabel_train ='label_train.pickle'
+      self.plabel_test_ ='label_test_.pickle'
+
+      self.MFCCs_test_=None
+      self.MFCCs_train=None
+      self.Alldata  ='ViVo_Alldata_MFCCs_Labels.h5'
+      self.MaxlenMFCC =0
+      self.MaxlenLabel=0 
+      
+      self.Len_Labels__test=[]
+      self.Len_Labels_train=[]
+      self.Len_mfcc__test=[]
+      self.Len_mfcc_train=[]
+      if datasetPath:
+        self.fnLoad_data_final(datasetPath)
+      
+
+  def fndownload(self):
+    if exists(self.dataHome):return
+    print("Starting download...")
+    !gdown --id 1--lnmOwkbAyVr-3rFf-kaLqDVE7bW-bQ
+    # !wget https://ailab.hcmus.edu.vn/assets/vivos.tar.gz
+    # !rsync --progress vivos.tar.gz  /content/drive/Shareddrives/DataSets/Speech_Vietnamese/
+    !mkdir dataset 
+    !tar xzf vivos.tar.gz -C ./dataset
+    ptrain_lbl=join(self.dataHome,"train/prompts.txt")
+    !head {ptrain_lbl}
+    print("Downloaded!")
+
+  def audio_duaration(self,path):
+    if path.endswith('.mp3'):
+      try:
+          audio = MP3(path)
+          length = audio.info.length
+          return length
+      except:
+          return None
+    elif path.endswith('.wav'):
+      f = sf.SoundFile(path)
+      length=len(f) / f.samplerate
+      return length
+  def fileNLines(self,fileID): return len(open(fileID).readlines())
+  def PrepareData_ViVo(self,subdir,label_file,output_file='valid_corpus.json'):
+    """
+    data_org=join(self.dataHome,"test/waves/{fileID}.wav")
+    1. Đọc hết file:
+        label  => fileID và lbl
+        fileID => pwav
+        pwav   => wLength
+    """
+    labels = []
+    durations = []
+    wavPaths = []
+    label_file =join(self.dataHome,label_file)
+    output_file=join(self.dataHome,output_file)
+
+    FLENGTH=self.fileNLines(label_file)
+    with open(label_file) as tsvfile:
+        tsvreader = csv.reader(tsvfile, delimiter=" ")
+        pbar = tqdm(total=FLENGTH) # Init pbar
+
+        for cnt,line in enumerate(tsvreader):
+            # print(line)
+            fileID=line[0]
+            label=' '.join(line[1:])
+            # print(self.dataHome,subdir,fileID[:-4],fileID)
+            audio_file = join(self.dataHome,subdir,fileID[:-4],fileID)+'.wav'
+            if not exists(audio_file):continue
+            if (cnt%(FLENGTH//5)==0): print (cnt, audio_file)            
+            duration=self.audio_duaration(audio_file)
+            if duration>0:
+                if len(label)>1:
+                    wavPaths.append(audio_file)
+                    durations.append(duration)
+                    labels.append(label)
+            pbar.update(n=1)
+    with open(output_file, 'w') as out_file:
+        for i in range(len(wavPaths)):
+            line = json.dumps({'wavPaths': wavPaths[i], 
+                               'duration': durations[i],
+                               'text': labels[i]})
+            out_file.write(line + '\n')
+  def fnMake_Descfile(self, test_subdir      ='test/waves/',
+                            test_label_file  ="test/prompts.txt",
+                            train_subdir     ='train/waves/',
+                            train_label_file ="train/prompts.txt"
+                            ):
+    """
+      Muốn có thêm dev, thì cần phải sửa thêm. đây mới chỉ có test, train
+      train_corpus={
+        {"wavPaths": "...", "duration": xx, "text": "..."}
+        ...
+        {"wavPaths": "...", "duration": xx, "text": "..."}
+      }
+      Output:/content/dataset/vivos/test_corpus.json
+            :/content/dataset/vivos/train_corpus.json
+    """    
+    if exists(join(self.dataHome,self.test_corpus)):return
+    print("Start fnMake_Descfile")
+    output_file =self.test_corpus
+    self.PrepareData_ViVo(test_subdir,test_label_file,output_file)
+    output_file =self.train_corpus
+    self.PrepareData_ViVo(train_subdir,train_label_file,output_file)
+    print("Finished")
+
+  def fnMakeVocab(self):
+    """
+      output: /content/dataset/vivos/idchar_index.pickle
+    """
+    if exists(join(self.dataHome,self.pchar_index)):return
+    print("Start fnMakeVocab")
+    def MakeVocabs(desc_file,Vocab=set()): 
+        with open(desc_file) as json_line_file:
+            for line_num, json_line in enumerate(json_line_file):
+                spec = json.loads(json_line)   
+                Vocab.update(set(spec['text'].split()))
+        return Vocab
+    Vocab=MakeVocabs(join(self.dataHome,self.test_corpus))
+    Vocab=MakeVocabs(join(self.dataHome,self.train_corpus),Vocab)    
+    charslist=list(Vocab)
+    charslist.sort()
+    for k,ch in enumerate(charslist):
+        self.char_index[ch] = k
+        self.index_char[k] = ch
+    with open(join(self.dataHome,self.pchar_index), 'wb') as handle:
+        pickle.dump(self.char_index,handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+    with open(join(self.dataHome,self.pindex_char), 'wb') as handle:
+        pickle.dump(self.index_char,handle, protocol=pickle.HIGHEST_PROTOCOL)
+    print("Done!")
+  def fnLoad_Char_index(self): 
+    self.char_index = pickle.load( open( join(self.dataHome,self.pchar_index), "rb" ) )
+    self.index_char = pickle.load( open( join(self.dataHome,self.pindex_char), "rb" ) )
+     
+  def fnMakeLabels(self):
+    """
+      output: /content/dataset/vivos/traintest_label.py.npz
+    """
+    if exists(join(self.dataHome,self.plabel_test_)):
+      self.TestLabels=self.fnLoadpickle(join(self.dataHome,self.plabel_test_))
+      self.TrainLabels=self.fnLoadpickle(join(self.dataHome,self.plabel_train))
+      print('Test  Label:',self.TestLabels.shape)
+      print('train Label:',self.TrainLabels.shape)
+      return
+    print("Start fnMakeLabels")
+    def MakeLabels(desc_file):
+      All_Labels=[] 
+      desc_file=join(self.dataHome,desc_file)
+      if len(self.char_index)<1:
+        self.fnLoad_Char_index()
+      with open(desc_file) as json_line_file:
+        for line_num, json_line in enumerate(json_line_file):
+          spec = json.loads(json_line)
+          label=[self.char_index[word] for word in  spec['text'].split()]
+          self.MaxlenLabel=max(self.MaxlenLabel,len(label))
+          All_Labels.append(label)
+      return All_Labels
+    self.TestLabels =MakeLabels(self.test_corpus)
+    self.TrainLabels=MakeLabels(self.train_corpus)
+    self.Len_Labels__test=[len(lbl) for lbl in self.TestLabels]
+    self.Len_Labels_train=[len(lbl) for lbl in self.TrainLabels]    
+    self.TestLabels =self.fnPaddingList_2D(self.TestLabels)
+    self.TrainLabels=self.fnPaddingList_2D(self.TrainLabels)
+    print('Test  Label:',self.TestLabels.shape)
+    print('train Label:',self.TrainLabels.shape)
+    self.fnSaveObject(join(self.dataHome,self.plabel_test_),self.TestLabels)
+    self.fnSaveObject(join(self.dataHome,self.plabel_train),self.TrainLabels)
+    print("OK!")
+
+  def fnPlot_mfcc_feature(self,vis_mfcc_feature, title='Normalized MFCC',ylabel='Time',xlabel='MFCC Coefficient'):
+    fig = plt.figure(figsize=(12,5))
+    ax = fig.add_subplot(111)
+    im = ax.imshow(vis_mfcc_feature, cmap=plt.cm.jet, aspect='auto')
+    plt.title(title)
+    plt.ylabel(ylabel)
+    plt.xlabel(xlabel)   
+    plt.show()
+  
+  def fnSaveObject(self,fileout,Object2save):
+    with open(fileout, 'wb') as filehandle:
+      pickle.dump(Object2save, filehandle)
+
+  def fnLoadpickle(self,file2load):
+    return pickle.load( open(file2load, "rb" ))
+
+  def fnMakeMFCC(self):
+    """
+      Tạo ra file json chứa list of list các MFCC (chưa padding)
+    """
+    if exists(join(self.dataHome,self.ptest_MFCC)):
+      self.MFCCs_test_=self.fnLoadpickle(join(self.dataHome,self.ptest_MFCC))
+      self.MFCCs_train=self.fnLoadpickle(join(self.dataHome,self.ptrain_MFCC))
+      print(f"MFCCs_test_:{self.MFCCs_test_.shape}\nMFCCs_train:{self.MFCCs_train.shape}")
+      return
+    print("Start fnMakeMFCC")
+    lblpath=[ join(self.dataHome,self.test_corpus),
+              join(self.dataHome,self.train_corpus)]
+    def MakeMFCC(desc_file):
+        MFCCs=[]
+        FLENGTH=len(open(desc_file).readlines())
+        with open(desc_file) as json_line_file:
+            pbar = tqdm(total=FLENGTH) # Init pbar
+            for line_num, json_line in enumerate(json_line_file):
+                spec = json.loads(json_line)   
+                fn=spec['wavPaths']
+                (rate,sig) = wav.read(fn)
+                mfcc_feat = mfcc(sig,rate,numcep=80)
+                self.MaxlenMFCC=max(self.MaxlenMFCC,len(mfcc_feat))
+                MFCCs.append(mfcc_feat)
+                pbar.update(n=1)
+                # if line_num>3:break
+        return MFCCs
+    self.MFCCs_test_=MakeMFCC(lblpath[0])
+    self.Len_mfcc__test=[len(lbl) for lbl in self.MFCCs_test_]
+    self.MFCCs_test_=self.fnPaddingList_3D(self.MFCCs_test_)
+    self.fnSaveObject(join(self.dataHome,self.ptest_MFCC),  self.MFCCs_test_)
+    
+    self.MFCCs_train=MakeMFCC(lblpath[1])
+    self.Len_mfcc_train=[len(lbl) for lbl in self.MFCCs_train]
+    self.MFCCs_train=self.fnPaddingList_3D(self.MFCCs_train)
+    self.fnSaveObject(join(self.dataHome,self.ptrain_MFCC), self.MFCCs_train)
+    
+    print(f"MFCCs_test_:{self.MFCCs_test_.shape}\nMFCCs_train:{self.MFCCs_train.shape}")
+    print(f"len mfcc: test={len(self.MFCCs_test_)}, train={len(self.MFCCs_train)}, \
+      \nmfcc[0] shape={self.MFCCs_train[0].shape}, \nmfcc[1] shape={self.MFCCs_train[1].shape}")
+    print("fnMakeMFCC done!")
+  def fnShuffle (self,Xdata,Ydata):
+    mylist=np.arange(len(Ydata))
+    random.shuffle(mylist)
+    newX=[Xdata[mylist[k]] for k in mylist]
+    newY=[Ydata[mylist[k]] for k in mylist]
+    return newX,newY
+  def fnPaddingList_2D(self,aList,maxLengh=None):
+    """
+      aList[batch, lengh]
+    """
+    if not maxLengh:
+      maxLengh = max([len(r) for r in aList])
+    def PaddingList2D(SS):
+        b = np.zeros([len(aList),maxLengh])
+        for i,j in enumerate(SS):
+            b[i][0:len(j)] = j
+        return b
+    return PaddingList2D(aList)
+
+  def fnPaddingList_3D(self,aList,maxLengh=None,maxWidth=None):
+    """
+      aList[batch, nparray[lengh, width]]
+    """
+    if not maxLengh:
+      maxLengh = max([len(r) for r in aList])
+    if not maxWidth:
+      maxWidth = max([r.shape[1] for r in aList])
+    def PaddingList3D(SS):
+        b = np.zeros([len(aList),maxLengh,maxWidth])
+        for i,j in enumerate(SS):
+            b[i,0:len(j)] = j
+        return b
+    return PaddingList3D(aList)
+    
+  def fnLoad_data_final(self,datasetPath=None):
+    """
+      Mặc định khi lưu: datasetPath='Alldata_MFCCs_Labels.h5'
+      Load cách này chỉ dùng để đưa vào .fit
+      Khi nào dùng xong, thì gọi hàm:  `fnLoad_data_final_close` để đóng dataset lại.
+    """
+    if not datasetPath:
+      datasetPath=join(self.dataHome,self.Alldata)
+    self.h5f = h5py.File(datasetPath, 'r')
+   
+    self.MFCCs_train     =  self.h5f['MFCCs_train']
+    self.TrainLabels     =  self.h5f['TrainLabels']
+    self.Len_Labels__test=  self.h5f['Len_Labels__test']
+    self.Len_Labels_train=  self.h5f['Len_Labels_train']
+    self.Len_mfcc__test  =  self.h5f['Len_mfcc__test']
+    self.Len_mfcc_train  =  self.h5f['Len_mfcc_train']
+    self.MFCCs_test_     =  self.h5f['MFCCs_test_']
+    self.TestLabels      =  self.h5f['TestLabels']
+  def fnLoad_data_final_close(self):    
+    self.h5f.close()
+
+  def fnVivoData_processing(self):
+    datasetPath=join(self.dataHome,self.Alldata)
+    if exists(datasetPath):return
+    print("Start fnVivoData_processing...")
+    # Downlaod data:----------------------------------------
+    self.fndownload()
+    # Step 2: Chuẩn hoá file đầu vào:-----------------------
+    self.fnMake_Descfile()
+    # Step 3: Tạo từ điển từ vựng:-----------------------
+    self.fnMakeVocab()
+    # Step 4: Tạo Test, Train Labels:-----------------------
+    self.fnMakeLabels()
+    #Step 5: Make MFCC
+    self.fnMakeMFCC()
+
+    h5f = h5py.File(datasetPath, 'w')
+    h5f.create_dataset('MFCCs_train', data=self.MFCCs_train)
+    h5f.create_dataset('TrainLabels', data=self.TrainLabels)
+    
+    h5f.create_dataset('Len_Labels__test', data=self.Len_Labels__test)
+    h5f.create_dataset('Len_Labels_train', data=self.Len_Labels_train)
+    h5f.create_dataset('Len_mfcc__test', data=self.Len_mfcc__test)
+    h5f.create_dataset('Len_mfcc_train', data=self.Len_mfcc_train)
+
+    h5f.create_dataset('MFCCs_test_', data=self.MFCCs_test_)
+    h5f.create_dataset('TestLabels', data=self.TestLabels)
+    h5f.close()
+    # !rsync --progress {datasetPath} '/content/drive/Shareddrives/DataSets/Speech_Vietnamese/'
+    print("Done!")
+
+if __name__ == '__main__':
+  Vivo=TADataProcessing()  
+  Vivo.fnVivoData_processing()
+  # !rsync --progress "/content/dataset/vivos/ViVo_Alldata_MFCCs_Labels.h5" '/content/drive/Shareddrives/DataSets/Speech_Vietnamese/'
+  # Vivo.fnLoad_data_final()
+  # print('Vivo.MFCCs_test_.shape:',Vivo.MFCCs_test_.shape)
+  # Vivo.fnLoad_data_final_close()
+
+  # Download file: ViVo_Alldata_MFCCs_Labels.h5 from gdrive:
+  # !gdown --id 1APS-lUzQ_iBepXwe-sMNh3bbVeogUhz4 
+  import h5py
+  datasetPath='ViVo_Alldata_MFCCs_Labels.h5'
+  h5f = h5py.File(datasetPath, 'r')
+
+  MFCCs_train     =  h5f['MFCCs_train']
+  TrainLabels     =  h5f['TrainLabels']
+  Len_Labels__test=  h5f['Len_Labels__test']
+  Len_Labels_train=  h5f['Len_Labels_train']
+  Len_mfcc__test  =  h5f['Len_mfcc__test']
+  Len_mfcc_train  =  h5f['Len_mfcc_train']
+  MFCCs_test_     =  h5f['MFCCs_test_']
+  TestLabels      =  h5f['TestLabels']    
+  # Define model, train:
+  # ............................
+  
+  h5f.close()
+```
+
+</details>
+
+
 # Cách dùng HDF5 để lưu/store large dataset 
 https://github.com/tflearn/tflearn
 ```python
