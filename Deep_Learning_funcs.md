@@ -2,25 +2,36 @@
 Tải file, rồi xử lý hết tất cả các thứ, lưu vào file rồi, chỉ việc chạy 1 lần thôi, các lần sau thì load là đủ
 Cách dùng:
 ```python
+import h5py
+datasetPath='/content/dataset/vivos/ViVo_Alldata_MFCCs_Labels.h5'
+h5f = h5py.File(datasetPath, 'r')
 
-  # Download file: ViVo_Alldata_MFCCs_Labels.h5 from gdrive:
-  # !gdown --id 1APS-lUzQ_iBepXwe-sMNh3bbVeogUhz4 
-  import h5py
-  datasetPath='ViVo_Alldata_MFCCs_Labels.h5'
-  h5f = h5py.File(datasetPath, 'r')
+MFCCs_train     =  h5f['MFCCs_train']
+TrainLabels     =  h5f['TrainLabels']
+Len_Labels__test=  h5f['Len_Labels__test']
+Len_Labels_train=  h5f['Len_Labels_train']
+Len_mfcc__test  =  h5f['Len_mfcc__test']
+Len_mfcc_train  =  h5f['Len_mfcc_train']
+MFCCs_test_     =  h5f['MFCCs_test_']
+TestLabels      =  h5f['TestLabels']
+vocab_size      =  h5f['vocab_size'][()]
+MaxlenMFCC      =  h5f['MaxlenMFCC'][()]
+MaxlenLabel     =  h5f['MaxlenLabel'][()]
+# Define model, train:
+# ............................
+print('MFCCs_train:',MFCCs_train.shape)
+print('TrainLabels:',TrainLabels.shape)
+print('Len_Labels__test:',Len_Labels__test.shape)
+print('Len_Labels_train:',Len_Labels_train.shape)
+print('Len_mfcc__test:',Len_mfcc__test.shape)
+print('Len_mfcc_train:',Len_mfcc_train.shape)
+print('MFCCs_test_:',MFCCs_test_.shape)
+print('TestLabels:',TestLabels.shape)
+print('vocab_size:',vocab_size)
+print('MaxlenMFCC:',MaxlenMFCC)
+print('MaxlenLabel:',MaxlenLabel)
 
-  MFCCs_train     =  h5f['MFCCs_train']
-  TrainLabels     =  h5f['TrainLabels']
-  Len_Labels__test=  h5f['Len_Labels__test']
-  Len_Labels_train=  h5f['Len_Labels_train']
-  Len_mfcc__test  =  h5f['Len_mfcc__test']
-  Len_mfcc_train  =  h5f['Len_mfcc_train']
-  MFCCs_test_     =  h5f['MFCCs_test_']
-  TestLabels      =  h5f['TestLabels']    
-  # Define model, train:
-  # ............................
-  
-  h5f.close()
+h5f.close()
 ```
 
 <details>
