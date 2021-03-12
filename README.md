@@ -56,6 +56,8 @@ Useful linux command
   - Ubuntu compress, zip, unzip files with progress: [xem](Ubuntu_System.md#ubuntu-compress-zip-unzip-files-with-progress)
   - Copy file in Ubuntu with progress:   [xem](Ubuntu_System.md#copy-file-in-ubuntu-with-progress)
   - folder size: !du -hs "dir/path/"
+  - Rút gọn path trong ubuntu terminal: PROMPT_DIRTRIM=1 (thêm vào cuôí ~/.bashrc)
+
 # 3. Check Envs for Deep Learning
   - nvidia-smi , watch -n 0.3 nvidia-smi, nvidia-smi -l 1
   - nvcc -V
