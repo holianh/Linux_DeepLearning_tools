@@ -162,3 +162,6 @@ exec(open('taLibs_imports.py').read())
    - Display: TFT 2.4" China [Code](Arduino.md#tft-24-china--arduino-due)
    - Arduino send/get data to/from https[Code](Arduino.md#sendreceive-data-to-server-https)
     
+   # 10. Best soft 
+   - Quay phim ghi hình trực tiếp: OBS (dùng filter: MIC: noise suppression, Webcam: fileter, có nhiều cái hay lắm)
+   - Fastest video trimming: Avidemux (cắt bỏ từng khúc video siêu nhanh luôn, save cái là xong)
