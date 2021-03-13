@@ -143,9 +143,6 @@ if(isset($_POST['type'])) {
 </details>
 
 # html pre, p, div max height:
-
-<details>
-<summary>Full code:</summary>
 	
 ```html
 <style>
@@ -156,6 +153,9 @@ if(isset($_POST['type'])) {
     </style>
 ```
 
+<details>
+<summary>Full code:</summary>
+	
 Nếu muốn riêng 1 class nào đó:
 
 ```html
