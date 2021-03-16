@@ -1,3 +1,9 @@
+# Lệnh hay trong Sublime-Text
+  1. Multi-cusor: Bôi đen 1 vùng => Ctr-Shift-L / ctr + click
+  2. insert increase number: multi cusor => ctr_alt_i
+  3. 
+
+
 # Chỉnh sửa snippet html để có mẫu chuẩn:
 khi bấm ctr_shift_p, chọn snippet html sẽ có mẫu như mình mong muốn:
 ## cài đặt:
@@ -7,6 +13,10 @@ Chọn snippet HTML: thay code trong đó bằng cái ở đây
 
 Chú ý: trong snippet code, thay `$` bằng: `\$`
 
+hoặc thêm cái snippet mới cho dễ.
+
+<details> 
+	<summary>title or explanatory caption</summary>  
 
 ```html
 <snippet>
@@ -131,5 +141,6 @@ if (isset(\$_POST['type'])) {
 
 ```
 
-
+ </details>
+ 
 
