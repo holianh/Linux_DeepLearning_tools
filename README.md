@@ -147,6 +147,7 @@ exec(open('taLibs_imports.py').read())
   - Chỉnh sửa snippet của sublime text: [code](sublime-text.md#ch%E1%BB%89nh-s%E1%BB%ADa-snippet-html-%C4%91%E1%BB%83-c%C3%B3-m%E1%BA%ABu-chu%E1%BA%A9n)
   - html to excel:[code](php-html-js.md#html-to-excel)
   - html max height, html-pre-p-div-max-height: [code](php-html-js.md#html-pre-p-div-max-height) : `<style>pre {max-height: 300px; overflow: auto; } </style>`
+  - thu gọn/mở rộng html: `<details>	<summary>title or explanatory caption</summary> ... </details>`
    
    # 8. Ứng dụng khác
    - Get link Fshare full speed:  [http://fullcrack.vn/get-link-fshare/](http://fullcrack.vn/get-link-fshare/) và [https://tools.nhacm.com/](https://tools.nhacm.com/)
