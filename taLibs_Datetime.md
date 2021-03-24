@@ -111,5 +111,6 @@ time.sleep(2.4)
 cnt+=1         # Đã chạy được
 TRan=datetime.now()-start
 Twait=((Ntotal-cnt)/cnt)*TRan
-print(f'TRan:{str(TRan)[:-7]}-Twait:{str(Twait)[:-7]}')
+#print(f'TRan:{str(TRan)[:-7]}-Twait:{str(Twait)[:-7]}')
+print(f'Cnt:{cnt}, loss:{cnt:>0.4f}  TRan:{str(TRan)[:-7]}-Twait:{str(Twait)[:-7]}')
 ```
