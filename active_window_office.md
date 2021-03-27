@@ -23,6 +23,34 @@ Get ConfirmationID (step3) transmission of Windows operating systems and Office 
 
 ## Step 1: Open CMD with administrator privileges (Run as administrator).
 
+## Chuyển đổi office 2019 Retail sang VL
+Chạy đoạn code này trong CMD admin
+
+```bash
+
+reg Delete HKLM\Software\Wow6432Node\Microsoft\Office\16.0\Common\OEM /f
+reg Delete HKLM\Software\Microsoft\Office\16.0\Common\OEM /f
+cscript slmgr.vbs /upk 70d9ceb6-6dfa-4da4-b413-18c1c3c76e2e
+cscript slmgr.vbs /upk de52bd50-9564-4adc-8fcb-a345c17f84f9
+cscript slmgr.vbs /upk 84832881-46ef-4124-8abc-eb493cdcf78e
+cscript slmgr.vbs /upk 52c4d79f-6e1a-45b7-b479-36b666e0a2f8
+cscript slmgr.vbs /upk 5f472f1e-eb0a-4170-98e2-fb9e7f6ff535
+cscript slmgr.vbs /upk a3072b8f-adcc-4e75-8d 62-fdeb9 bdfae57
+cscript slmgr.vbs /upk 70d9ceb6-6dfa-4da4-b413-18c1c3c76e2e
+if exist "%ProgramFiles%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles%\Microsoft Office\Office16"
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office16\ospp.vbs" cd /d "%ProgramFiles(x86)%\Microsoft Office\Office16"
+cscript ospp.vbs /remhst
+cscript ospp.vbs /ckms-domain
+for /f %i in ('dir /b ..\root\Licenses16\ProPlus2019VL_MAK*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%i"
+cscript //nologo ospp.vbs /inpkey:TNJMC-468RB-B4QTR-W32BX-BKP63
+cscript //nologo ospp.vbs /act
+cscript //nologo ospp.vbs /dinstid > step2.txt
+start step2.txt
+cls
+cscript ospp.vbs /actcid:
+```
+
+
 ## Step 2A: Active Windows Chạy lệnh sau:
 
 (thay [your_product_key] bằng key của mình)
