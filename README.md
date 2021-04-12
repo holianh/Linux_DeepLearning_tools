@@ -159,6 +159,12 @@ exec(open('taLibs_imports.py').read())
    - google spreadsheet: gsheet: Nhập data vào ô B4:E4, tự động copy, sắp xếp xuống vùng bên dưới [code](gsheet_scripts.md#nh%E1%BA%ADp-data-v%C3%A0o-%C3%B4-b4e4-t%E1%BB%B1-%C4%91%E1%BB%99ng-copy-s%E1%BA%AFp-x%E1%BA%BFp-xu%E1%BB%91ng-v%C3%B9ng-b%C3%AAn-d%C6%B0%E1%BB%9Bi)
    - Cách active Window và office: Chạy CMD gán key mới tại đây: [xem](active_window_office.md#c%C3%A1ch-active-window-v%C3%A0-office) 
    - Window tool: Hiển thị pass wifi trên máy tính window: [xem](windows-tool-ultility.md#hi%E1%BB%83n-th%E1%BB%8B-pass-wifi-tr%C3%AAn-m%C3%A1y-t%C3%ADnh)
+   - Xoá menu dual boot, xoá onekey ghost boot menu: 
+        ```
+        1) chạy bcdedit
+        2) Copy nội dung dòng Identifier (vd {curent} , {default}, {6fsdasdaa-qrtyytg-...}
+        3) chạy bcdedit /delete <Identifier vừa copy> là xong, có thể chạy lại bcdedit để ktra.
+        ```
    
    # 10. Arduino 
    - Display: TFT 2.4" China [Code](Arduino.md#tft-24-china--arduino-due)
