@@ -3,6 +3,23 @@
   2. insert increase number: multi cusor => ctr_alt_i
   3. 
 
+# Thêm phím F5 để insert datetime
+
+1. Vào preference>browse package
+2. tạo file insert_datetime.py
+3. Điền nội dung code dưới đây vào
+```python
+import sublime, sublime_plugin, time
+
+class InsertDatetimeCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        sel = self.view.sel();
+        for s in sel:
+            self.view.replace(edit, s, time.ctime())
+```
+4. Preference > Binding keys: thêm đoạn sau đây vào: `{ "keys": ["f5"], "command": "insert_datetime"}` chú ý thêm dấu phẩy (,) để ngăn cách phần tử json
+Nguồn: [tại đây](https://forum.sublimetext.com/t/easiest-way-to-insert-date-time-with-a-single-keypress/4134)
+
 
 # Chỉnh sửa snippet html để có mẫu chuẩn:
 khi bấm ctr_shift_p, chọn snippet html sẽ có mẫu như mình mong muốn:
