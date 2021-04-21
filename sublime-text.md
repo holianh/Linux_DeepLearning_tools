@@ -5,7 +5,6 @@
 <summary> Key Sublime Text 3 Key nhap truc tiep</summary>  
 
 ```
-Key Sublime Text 3.2.1
 ----- BEGIN LICENSE -----
 Member J2TeaM
 Single User License
