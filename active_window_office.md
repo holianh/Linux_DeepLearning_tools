@@ -110,3 +110,9 @@ cls
 cscript ospp.vbs /dstatus
 echo
 ```
+
+
+# Bộ cài các loại:
+
+ - [Microsoft Office Pro Plus 2016-2019 v2007 (Build 13029.20460) (x64).zip (4.5G)](https://drive.google.com/u/0/uc?id=1xgqeCJrvtrMDgs30_bJwI5V_70_3bvNr&export=download):
+
