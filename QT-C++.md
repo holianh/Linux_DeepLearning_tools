@@ -1,10 +1,12 @@
 # Ghi đọc file với C++
 
 Dữ liệu dạng:
+```
 <text>=<value>\n
 <text>=<value>\n
 ...
 <text>=<value>\n
+```
 
 <details>
 	<summary>Code đọc ghi file config</summary>
