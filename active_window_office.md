@@ -116,3 +116,15 @@ echo
 
  - [Microsoft Office Pro Plus 2016-2019 v2007 (Build 13029.20460) (x64).zip (4.5G)](https://drive.google.com/u/0/uc?id=1xgqeCJrvtrMDgs30_bJwI5V_70_3bvNr&export=download):
 
+# Key chuyển đổi:
+
+## Home => pro
+
+```
+sc config LicenseManager start= auto & net start LicenseManager
+sc config wuauserv start= auto & net start wuauserv
+changepk.exe /productkey X3W8N-3WQCV-2MXDF-K77MK-7XMP6
+exit
+```
+Tham khảo: https://tapchiai.net/chi-tiet-cach-nang-cap-tu-win-10-home-len-win-10-pro.html
+
