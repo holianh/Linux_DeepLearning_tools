@@ -71,3 +71,33 @@ public:
 ```
 	
 </details>
+
+
+# Hướng dẫn đọc biến của class khác từ class này
+
+Giả sử có 2 class, Class A và Class B, Class B muốn đọc thông tin trong class A, thì làm tn?
+1. Khai báo 
+
+```c++
+// file clsA.h:
+class clsA:
+{
+	public:
+	....
+	static int var1; // vì là static nên không được khởi tạo trước
+	....
+}
+
+int clsA:var1=1; // khởi tạo nó ở đây, hoặc trong file .cpp
+
+```
+
+3. Trong class B, 
+
+```c++
+#include clsA.h
+clsA mA; // Khai báo handle cho class clsA
+if(mA.var1){ // đọc giá trị biến trong clsA
+	....
+}
+```
