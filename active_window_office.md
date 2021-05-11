@@ -84,6 +84,17 @@ cscript.exe "%windir%\system32\slmgr.vbs" /ato
 
 
 ## Step 2B: Active Office Chạy lệnh sau:
+Trước khi active, bạn nên chạy cái này để xem và xoá hết key cũ đi:
+
+```bash
+for %a in (4,5,6) do (if exist "%ProgramFiles%\Microsoft Office\Office1%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft Office\Office1%a")
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%a\ospp.vbs" (cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%a"))&cls
+cscript ospp.vbs /dstatus 
+cscript ospp.vbs /unpkey:XXXXX
+```
+với XXXXX là 5 ký tự cuối của key đã tồn tại
+
+rồi chạy cái này để active
 
 ```bash
 for %a in (4,5,6) do (if exist "%ProgramFiles%\Microsoft Office\Office1%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft Office\Office1%a")
