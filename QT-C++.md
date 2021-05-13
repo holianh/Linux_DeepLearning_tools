@@ -101,3 +101,52 @@ if(mA.var1){ // đọc giá trị biến trong clsA
 	....
 }
 ```
+
+# Khai báo biến toàn cục cho nhiều file trong chường trình (extern var)
+
+__header__:
+```c++
+#ifndef HEADER_H
+#define HEADER_H
+
+// any source file that includes this will be able to use "global_x"
+extern int global_x;
+
+void print_global_x();
+
+#endif
+```
+
+__source 1__:
+
+```c++
+// since global_x still needs to be defined somewhere,
+// we define it (for example) in this source file
+int global_x; // Kinh nghiệm là khai báo trước khi include header cho proj lớn sẽ chạy được, không hiểu sao.
+
+#include "header.h"
+
+int main()
+{
+    //set global_x here:
+    global_x = 5;
+
+    print_global_x();
+}
+```
+
+__source 2__:
+
+```C++
+#include <iostream>
+#include "header.h"
+
+void print_global_x()
+{
+    //print global_x here:
+    std::cout << global_x << std::endl;
+}
+```
+
+
+
