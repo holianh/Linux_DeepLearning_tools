@@ -6,6 +6,7 @@
 Python:
 
 ```python
+import requests 
 CompanyName='TA'
 URL = "https://aisolutions.vn/apps/auto_booking/getdata.php"
 data = {'dir':CompanyName, 'security':'RSA'}
