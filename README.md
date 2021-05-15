@@ -149,6 +149,7 @@ exec(open('taLibs_imports.py').read())
   - html max height, html-pre-p-div-max-height: [code](php-html-js.md#html-pre-p-div-max-height) : `<style>pre {max-height: 300px; overflow: auto; } </style>`
   - thu gọn/mở rộng html: `<details>	<summary>title or explanatory caption</summary> ... </details>`
   -  Web Kết nối CSDL sqlite với PHP: [code](web-data.md#web-k%E1%BA%BFt-n%E1%BB%91i-csdl-sqlite-v%E1%BB%9Bi-php)
+  -  upload file and some other fields to php server: [Code](PHP-Python.md#upload-file-and-some-other-fields-to-php-server)
    
    # 8. Ứng dụng khác
    - Get link Fshare full speed:  [http://fullcrack.vn/get-link-fshare/](http://fullcrack.vn/get-link-fshare/) và [https://tools.nhacm.com/](https://tools.nhacm.com/)
