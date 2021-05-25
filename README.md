@@ -174,6 +174,7 @@ exec(open('taLibs_imports.py').read())
    # 11. Best soft 
    - Quay phim ghi hình trực tiếp: OBS (dùng filter: MIC: noise suppression, Webcam: fileter, có nhiều cái hay lắm)
    - Fastest video trimming: Avidemux (cắt bỏ từng khúc video siêu nhanh luôn, save cái là xong)
+   - Tải phần mềm bẻ khoá tại: (http://fullcrack.vn)[http://fullcrack.vn] khá chuẩn, server nhanh
 
 
    # 12. QT-C++
