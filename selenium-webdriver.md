@@ -14,4 +14,26 @@ driver = webdriver.Chrome(chrome_options=chrome_options)
 driver.get( mURL) #   taURL)#  
 ```
 
+# Chờ cho đến khi load trang
+
+```python
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Firefox()
+driver.get('https://pythonbasics.org')
+timeout = 3
+try:
+    element_present = EC.presence_of_element_located((By.ID, 'main'))
+    #element_present = EC.presence_of_element_located((By.CLASS_NAME, 'btn')) #By.ID
+    WebDriverWait(driver, timeout).until(element_present)
+except TimeoutException:
+    print("Timed out waiting for page to load")
+finally:
+    print("Page loaded")
+ ```
+
 
