@@ -181,3 +181,7 @@ exec(open('taLibs_imports.py').read())
    # 12. QT-C++
    - Ghi đọc file với C++ [Code](QT-C++.md#ghi-%C4%91%E1%BB%8Dc-file-v%E1%BB%9Bi-c)
    - 
+  
+   # 13. Tạo bộ cài
+  - Tạo file chạy (1 file exe duy nhất) từ python (vào đúng chỗ, đang chạy bth): `pyinstaller -F <tenfile.py>` ví dụ: `pyinstaller -F "VSM-cpp-h-txt-[backup].py" `
+  
