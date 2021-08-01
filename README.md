@@ -176,7 +176,7 @@ exec(open('taLibs_imports.py').read())
    - Fastest video trimming: Avidemux (cắt bỏ từng khúc video siêu nhanh luôn, save cái là xong)
    - Tải phần mềm bẻ khoá tại: [http://fullcrack.vn](http://fullcrack.vn) khá chuẩn, server nhanh
    - Sublime Text 4 tự bẻ khoá [Ở đây](https://laptrinhvb.net/bai-viet/chuyen-de-csharp/--SOFTWARE---Actived-Sublime-Text-4-version-4107/b6a67a2ae1c00de2.html)
-
+   - License Pycharm pro: /home/aisolutions.vn/..../stores/phan_mem/pycharmpro: 88k 1 máy
 
    # 12. QT-C++
    - Ghi đọc file với C++ [Code](QT-C++.md#ghi-%C4%91%E1%BB%8Dc-file-v%E1%BB%9Bi-c)
