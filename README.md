@@ -150,6 +150,7 @@ exec(open('taLibs_imports.py').read())
   - thu gọn/mở rộng html: `<details>	<summary>title or explanatory caption</summary> ... </details>`
   -  Web Kết nối CSDL sqlite với PHP: [code](web-data.md#web-k%E1%BA%BFt-n%E1%BB%91i-csdl-sqlite-v%E1%BB%9Bi-php)
   -  upload file and some other fields to php server: [Code](PHP-Python.md#upload-file-and-some-other-fields-to-php-server)
+  - PHP sort multi column array [sắp xếp mảng đa chiều](php-html-js.md#php-sort-multi-column-array)
    
    # 8. Ứng dụng khác
    - Get link Fshare full speed:  [http://fullcrack.vn/get-link-fshare/](http://fullcrack.vn/get-link-fshare/) và [https://tools.nhacm.com/](https://tools.nhacm.com/)
