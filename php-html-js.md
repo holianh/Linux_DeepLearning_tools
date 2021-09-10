@@ -417,10 +417,79 @@ function vn_str_filter ($str){
    }	
 ```	
 </details>
+
+# PHP sort multi column array
+Sắp xếp mảng theo nhiều cột trong PHP
 	
 <details>
-<summary>Full code:</summary>
+<summary>Cách số 1, sắp xếp theo ID cột:</summary>
 
+```php
+ $tallest_buildings = [
+            ["Burj Khalifa"           , "Dubai"    , "United Arab Emirates" , 828 , 163 , 2010] ,
+            ["Burj Khalifa"           , "Dubai"    , "United Arab Emirates" , 666 , 163 , 2010] ,
+            ["Burj Khalifa"           , "Dubai"    , "United Arab Emirates" , 666 , 163 , 444]  ,
+            ["Shanghai Tower"         , "Shanghai" , "China"                , 632 , 128 , 2015] ,
+            ["Abraj Al-Bait Towers"   , "Mecca"    , "Saudi Arabia"         , 601 , 120 , 2012] ,
+            ["Ping An Finance Center" , "Shenzhen" , "China"                , 599 , 115 , 2017] ,
+            ["Lotte World Tower"      , "Seoul"    , "South Korea"          , 554 , 123 , 2016]
+        ];
+         
+        function storey_sort($building_a, $building_b) { // Sort by: Floors => Height => Year
+            list($c0,$c1,$c2)=array_values([3,4,5]); // The column index
+            $v1= $building_a[$c0] - $building_b[$c0];
+            if($v1==0){
+                $v1= $building_a[$c1] - $building_b[$c1];
+                if($v1==0){
+                    $v1= $building_a[$c2] - $building_b[$c2];
+                }
+            }
+            return $v1;
+        }
+         
+        usort($tallest_buildings, "storey_sort" );
+         
+        foreach($tallest_buildings as $tall_building) {
+            list($building, $city, $country, $height, $floors,$year) = array_values($tall_building);
+            echo $building." is in ".$city.", ".$country.". It is ".$height." meters tall with ".$floors." floors. $year\n<br>";
+        }
+```
+	
+</details>
+
+<details>
+<summary>Cách số 2, mảng có tên, sắp xếp theo tên:</summary>
+
+```php
+	
+ $tallest_buildings = [
+            ["Building" => "Burj Khalifa","City" => "Dubai","Country" => "United Arab Emirates","Height" => 828,"Floors" => 163,"Year" => 2010],
+            ["Building" => "Burj Khalifa","City" => "Dubai","Country" => "United Arab Emirates","Height" => 666,"Floors" => 163,"Year" => 2010],
+            ["Building" => "Burj Khalifa","City" => "Dubai","Country" => "United Arab Emirates","Height" => 666,"Floors" => 163,"Year" => 444],
+            ["Building" => "Shanghai Tower","City" => "Shanghai","Country" => "China","Height" => 632,"Floors" => 128,"Year" => 2015],
+            ["Building" => "Abraj Al-Bait Towers","City" => "Mecca","Country" => "Saudi Arabia","Height" => 601,"Floors" => 120,"Year" => 2012],
+            ["Building" => "Ping An Finance Center","City" => "Shenzhen","Country" => "China","Height" => 599,"Floors" => 115,"Year" => 2017],
+            ["Building" => "Lotte World Tower","City" => "Seoul","Country" => "South Korea" ,"Height" => 554,"Floors" => 123,"Year" => 2016]
+        ];
+         
+        function storey_sort($building_a, $building_b) { // Sort by: Floors => Height => Year
+            $v1= $building_a["Floors"] - $building_b["Floors"];
+            if($v1==0){
+                $v1= $building_a["Height"] - $building_b["Height"];
+                if($v1==0){
+                    $v1= $building_a["Year"] - $building_b["Year"];
+                }
+            }
+            return $v1;
+        }
+         
+        usort($tallest_buildings, "storey_sort");
+         
+        foreach($tallest_buildings as $tall_building) {
+            list($building, $city, $country, $height, $floors,$year) = array_values($tall_building);
+            echo $building." is in ".$city.", ".$country.". It is ".$height." meters tall with ".$floors." floors. $year\n<br>";
+        }
+```	
 </details>
 
 <details>
