@@ -505,9 +505,11 @@ Sắp xếp mảng theo nhiều cột trong PHP
 </label>	
 ```	
 
-Loại 2:
+Loại 2: tham khảo: [Xem](https://gitbrent.github.io/bootstrap4-toggle/)
 	
 ```html
+	
+
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 
