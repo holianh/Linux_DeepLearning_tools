@@ -492,9 +492,35 @@ Sắp xếp mảng theo nhiều cột trong PHP
 ```	
 </details>
 
+# Các loại checkbox đẹp
 <details>
 <summary>Full code:</summary>
 
+```html
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<label class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      <span class="custom-control-description">Check this<br> custom checkbox</span>
+</label>	
+```	
+
+Loại 2:
+	
+```html
+<head>...
+	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"              rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js">
+</head>
+
+<label><input type='checkbox' id='less5' name='Less' 
+   data-toggle='switchbutton'
+   checked data-width='100' 
+   onclick='mFnLesson()'
+   data-onstyle='primary' />
+	<span for='lless5'>Hướng dẫn làm bài tập Hackerrank 6  (Không có ghi chú gì 6)<br/></span>
+</label><br> 
+```
 </details>
 
 <details>
