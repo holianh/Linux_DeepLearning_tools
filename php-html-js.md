@@ -548,3 +548,31 @@ Loại 2: tham khảo: [Xem](https://gitbrent.github.io/bootstrap4-toggle/)
 
 
 
+<details>
+<summary>Full code:</summary>
+
+</details>
+
+
+
+<details>
+<summary>Full code:</summary>
+
+</details>
+
+
+
+<details>
+<summary>Full code:</summary>
+
+</details>
+
+
+
+<details>
+<summary>Full code:</summary>
+
+</details>
+
+
+
