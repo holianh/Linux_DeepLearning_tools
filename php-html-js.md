@@ -508,18 +508,34 @@ Sắp xếp mảng theo nhiều cột trong PHP
 Loại 2:
 	
 ```html
-<head>...
-	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css"              rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js">
-</head>
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
 
-<label><input type='checkbox' id='less5' name='Less' 
-   data-toggle='switchbutton'
-   checked data-width='100' 
-   onclick='mFnLesson()'
-   data-onstyle='primary' />
-	<span for='lless5'>Hướng dẫn làm bài tập Hackerrank 6  (Không có ghi chú gì 6)<br/></span>
-</label><br> 
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+<input id="toggle-trigger" type="checkbox" data-toggle="toggle">
+<button class="btn btn-success" onclick="toggleApiOn()">On by API</button>
+<button class="btn btn-danger" onclick="toggleApiOff()">Off by API</button>
+<button class="btn btn-success" onclick="toggleInpOn()">On by Input</button>
+<button class="btn btn-danger" onclick="toggleInpOff()">Off by Input</button>
+<script>
+  function toggleApiOn() {
+    $('#toggle-trigger').bootstrapToggle('on');
+  }
+  function toggleApiOff() {
+    $('#toggle-trigger').bootstrapToggle('off');
+  }
+  function toggleInpOn() {
+    $('#toggle-trigger').prop('checked', true).change();
+  }
+  function toggleInpOff() {
+    $('#toggle-trigger').prop('checked', false).change();
+  }
+</script>
+<input type="checkbox" id=cb checked data-toggle="toggle" data-on="<i class='fa fa-play'></i> Play" data-off="<i class='fa fa-pause'></i> Pause"> 
+
+
 ```
 </details>
 
