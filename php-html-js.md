@@ -541,9 +541,44 @@ Loại 2: tham khảo: [Xem](https://gitbrent.github.io/bootstrap4-toggle/)
 ```
 </details>
 
+# PHP data SQLite:
 <details>
 <summary>Full code:</summary>
+	
+```PHP
+<?php
+echo "connecting via SQLite3<BR>";
 
+unlink('mysqlitedb.db');
+$db = new SQLite3('mysqlitedb.db');
+
+$db->exec('CREATE TABLE foo (id INTEGER, bar STRING)');
+$db->exec("INSERT INTO foo (id, bar) VALUES (1, 'This is a test')");
+
+$stmt = $db->prepare('SELECT bar FROM foo WHERE id=:id');
+$stmt->bindValue(':id', 1, SQLITE3_INTEGER);
+
+$result = $stmt->execute();
+var_dump($result->fetchArray());
+
+echo "<P>Connecting via PDO<BR>";
+
+unlink('mysqlitepdo.db');
+$db = new PDO('sqlite:mysqlitepdo.db');
+
+$db->exec('CREATE TABLE foo (id INTEGER, bar STRING)');
+$db->exec("INSERT INTO foo (id, bar) VALUES (1, 'This is a test')");
+
+$stmt = $db->prepare('SELECT bar FROM foo WHERE id=:id');
+$stmt->bindValue(':id', 1, SQLITE3_INTEGER);
+
+$result = $stmt->execute();
+var_dump($stmt->fetchAll());
+
+?>	
+```
+https://stackoverflow.com/questions/18659913/what-is-the-difference-between-sqlite3-and-pdo-sqlite
+	
 </details>
 
 
