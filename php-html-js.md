@@ -582,14 +582,58 @@ https://stackoverflow.com/questions/18659913/what-is-the-difference-between-sqli
 </details>
 
 
-
+# Send Array to PHP server
 <details>
 <summary>Full code:</summary>
 
+```html
+// in js
+arrItem=[
+	["1", "2","5","4","6"],
+	["2", "2","6","8","0"],
+	["3", "4","6","7","5"],
+	];
+myIDidx=1;
+	
+	html="<span  id='"+arrItem[myIDidx]+"'><button type='button' class='btn btn-primary' onclick='fnAdd2Data(\""+arrItem[myIDidx]+" \",\""+ fixedEncodeURIComponent(JSON.stringify(arrItem)) +"\")'>Thêm vào Hệ thống</button> </span>"
+	// $("#IDabc").html(html) // Gán giá trị này cho 1 id nào đó.
+	
+	function fixedEncodeURIComponent(str) {
+	    return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
+		return '%' + c.charCodeAt(0).toString(16);
+	    });
+	}
+	function fnAdd2Data(ID,mStr){
+		console.log(mStr);
+		 $.ajax({
+		    type: "POST",
+		    url: "",
+		    data: {mStr:mStr},
+		    success: function(res) {
+		       $("#"+ID).html("Done!");
+		       console.log(res);
+		    },
+		    error: function() {
+			alert('Lỗi, không gửi lên server được');
+		    }
+		});
+	}	
+```
+	
+Trên server php chạy:
+```PHP
+if (isset($_POST['mStr'])){
+	$mStr=$_POST['mStr'];
+	$mStr1=urldecode($mStr);
+	echo $mStr1;
+	die();
+}		
+```	
+	
 </details>
 
 
-
+# Khác
 <details>
 <summary>Full code:</summary>
 
