@@ -633,14 +633,85 @@ if (isset($_POST['mStr'])){
 </details>
 
 
-# Khác
+# Table filter
+	
 <details>
 <summary>Full code:</summary>
+	
+```html
+<div class="container-fluid shadow-lg bg-white rounded" style="max-width:90%;">		
+		<form>
+			<div class="input-group">
+			    <div class="input-group-prepend">
+			      <div class="input-group-text" id="btnGroupAddon">Tìm kiếm</div>
+			    </div>
+			    <input id="myInput" onkeyup="myFunction()" type="text" class="form-control" placeholder="Nhập từ khoá tìm kiếm" aria-label="Nhập từ khoá tìm kiếm" aria-describedby="btnGroupAddon">
+			    <input type="reset" value="Reset" onclick="mClear()"> <button type="button" onclick="toExcel()">Download</button>
+			</div>
+		</form> 
 
+		<div class="row" style="max-height: 1200px; overflow: auto;">
+		 <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+		 <script type="text/javascript">            
+			  function toExcel(){
+			      TableToExcel.convert(document.querySelector("#myTable"));
+			  }
+		  </script>
+
+	  	<table class="table table-inverse table-hover" id="myTable">
+		  	<thead>
+		  		<tr>
+		  			<th>#</th>
+		  			<th style="width:30%;">Câu chú</th>
+		  			<th>Số lần đọc</th>
+		  			<th>Tác dụng</th>
+		  			<th>Chú ý</th>
+		  		</tr>
+		  	</thead>
+		  	<tbody>		  		
+				<tr><td>49</td><td>94242</td><td></td><td>Luân xa 7: Não, Thần niệm </td><td>PHÁP<br></td></tr>
+				<tr><td>50</td><td>2116</td><td></td><td>Luân xa 6: Tai, Mắt, Xoang </td><td>PHÁP<br></td></tr>
+				<tr><td>51</td><td>6122</td><td></td><td>Luân xa 5: Cổ họng </td><td>PHÁP<br></td></tr>
+				<tr><td>52</td><td>3102</td><td></td><td>Luân xa 4: Khu vực Tim </td><td>PHÁP<br></td></tr>
+				<tr><td>53</td><td>2106</td><td></td><td>Luân xa 4: Khu vực Phổi, Khí quản, Phế quản </td><td>PHÁP<br></td></tr>
+				<tr><td>54</td><td>6404</td><td></td><td>Luân xa 3: Gan, Mật, Tụy, Ruột, Thận, Bao tử </td><td>PHÁP<br></td></tr>
+				<tr><td>55</td><td>1312</td><td></td><td>Luân xa 2: Ruột, Tử cung, Bọng đái </td><td>PHÁP<br></td></tr>
+				<tr><td>56</td><td>2106</td><td></td><td>Luân xa 1: Âm đạo, Dương vật, Hậu môn </td><td>PHÁP<br></td></tr>			
+		  	</tbody>
+		  </table>
+		   <script type="text/javascript">
+		        const myFunction = () => {
+					  const trs = document.querySelectorAll('#myTable tr:not(.header)')
+					  const filter = document.querySelector('#myInput').value
+					  const regex = new RegExp(filter, 'i')
+					  const isFoundInTds = td => regex.test(td.innerHTML)
+					  const isFound = childrenArr => childrenArr.some(isFoundInTds)
+					  const setTrStyleDisplay = ({ style, children }) => {
+					    style.display = isFound([
+					      ...children // <-- All columns
+					    ]) ? '' : 'none' 
+					  }
+					  
+					  trs.forEach(setTrStyleDisplay)
+					}
+				function mClear( ){ 
+					document.querySelector('#myInput').value="";
+					myFunction();
+				}
+		    </script>
+
+		  <br>
+		  <br>
+		  <br>
+		</div>
+		</div>
+			   
+```
+		
 </details>
 
 
-
+# Khác
 <details>
 <summary>Full code:</summary>
 
