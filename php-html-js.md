@@ -710,14 +710,39 @@ if (isset($_POST['mStr'])){
 		
 </details>
 
-
-# Khác
+# SerializeArray JS PHP
+	
+```javascript
+datastring = $("#frmOrders").serializeArray(); 
+datastring.push({name: "taUpdateOrders",value:"1"});
+```	
 <details>
 <summary>Full code:</summary>
 
+```js
+<script type="text/javascript">
+	function fnOrders(){
+	    datastring = $("#frmOrders").serializeArray(); 
+	    datastring.push({name: "taUpdateOrders",value:"1"});
+	    console.table(datastring);
+	    $.ajax({
+		    url: '',  
+		    method: 'post', 
+		    data: datastring, 
+		    success: function(r) { 
+			console.log(r); 
+			// alert(r);
+			// $("#dInfo").html(r);  
+		    },
+		    error: function(r) {                   
+		    }
+		});  
+	}
+	</script>	
+```	
 </details>
 
-
+# Khác
 
 <details>
 <summary>Full code:</summary>
