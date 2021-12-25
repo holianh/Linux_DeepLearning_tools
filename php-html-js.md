@@ -711,6 +711,7 @@ if (isset($_POST['mStr'])){
 </details>
 
 # SerializeArray JS PHP
+Lưu ý: phải có __name__ trong các input/textares/select,... mới nhận được giá trị
 	
 ```javascript
 datastring = $("#frmOrders").serializeArray(); 
