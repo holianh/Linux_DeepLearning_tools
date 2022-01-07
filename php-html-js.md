@@ -1,3 +1,11 @@
+# timezone +7 HoChiMinh
+
+```php
+session_start();
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+$email=$_COOKIE["email"];
+```
+
 # Đọc file CSV=> array:
 <details>
 <summary>Full code:</summary>
